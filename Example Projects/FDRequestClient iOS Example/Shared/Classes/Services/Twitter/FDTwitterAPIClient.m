@@ -85,18 +85,6 @@ static NSDateFormatter *_searchDateFormatter;
 
 
 #pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	
-	// Call the base destructor.
-	[super dealloc];
-}
-
-
-#pragma mark -
 #pragma mark Public Methods
 
 - (void)listsForUserId: (NSString *)userId 
@@ -120,8 +108,6 @@ static NSDateFormatter *_searchDateFormatter;
 			requestMethod: TWRequestMethodGET];
 	
 	request.account = account;
-	
-	[parameters release];
 	
 	// Load list request.
 	[self _loadRequest: request 
@@ -156,8 +142,6 @@ static NSDateFormatter *_searchDateFormatter;
 				completion(response.status, response.error, nil, nil);
 			}
 		}];
-	
-	[request release];
 }
 
 - (void)tweetsForListId: (NSString *)listId 
@@ -190,8 +174,6 @@ static NSDateFormatter *_searchDateFormatter;
 	
 	request.account = account;
 	
-	[parameters release];
-	
 	// Load list's statuses request
 	[self _loadRequest: request 
 		transformBlock: ^id(id jsonObject)
@@ -212,8 +194,6 @@ static NSDateFormatter *_searchDateFormatter;
 				completion(response.status, response.error, nil);
 			}
 		}];
-	
-	[request release];
 }
 
 - (void)profileImageForScreenName: (NSString *)screenName 
@@ -241,8 +221,6 @@ static NSDateFormatter *_searchDateFormatter;
 	
 	request.account = account;
 	
-	[parameters release];
-	
 	// Load profile image request.
 	[self loadURLRequest: [request signedURLRequest] 
 		urlRequestType: FDURLRequestTypeImage 
@@ -261,8 +239,6 @@ static NSDateFormatter *_searchDateFormatter;
 				completion(response.status, response.error, nil, nil);
 			}
 		}];
-	
-	[request release];
 }
 
 - (void)tweetsForSearchQuery: (NSString *)query 
@@ -305,8 +281,6 @@ static NSDateFormatter *_searchDateFormatter;
 	
 	request.account = account;
 	
-	[parameters release];
-	
 	// Load search request.
 	[self _loadRequest: request 
 		transformBlock: ^id(id jsonObject)
@@ -314,9 +288,8 @@ static NSDateFormatter *_searchDateFormatter;
 			// Transform tweets into local entities.
 			NSArray *jsonResults = [jsonObject objectForKey: @"results"];
 			
-			NSMutableArray *tweets = [[[NSMutableArray alloc] 
-				initWithCapacity: [jsonResults count]] 
-					autorelease];
+			NSMutableArray *tweets = [[NSMutableArray alloc] 
+				initWithCapacity: [jsonResults count]];
 			
 			// NOTE: The structure of tweets returned from the search API differ than those from the REST API
 			for (NSDictionary *jsonTweet in jsonResults)
@@ -352,8 +325,6 @@ static NSDateFormatter *_searchDateFormatter;
 					url.expandedURL = [NSURL URLWithString: expandedURLAsString];
 					
 					[tweet.urls addObject: url];
-					
-					[url release];
 				}
 				
 				// NOTE: Users returned from the search API are lighter than user objects returned from the REST API.
@@ -372,11 +343,7 @@ static NSDateFormatter *_searchDateFormatter;
 				
 				tweet.user = user;
 				
-				[user release];
-				
 				[tweets addObject: tweet];
-				
-				[tweet release];
 			}
 			
 			NSString *maxTweetId = [jsonObject objectForKey: @"max_id_str"];
@@ -404,8 +371,6 @@ static NSDateFormatter *_searchDateFormatter;
 				completion(response.status, response.error, nil, nil);
 			}
 		}];
-	
-	[request release];
 }
 
 
@@ -462,9 +427,8 @@ static NSDateFormatter *_searchDateFormatter;
 	NSNumber *listedCount = [jsonObject objectForKey: @"listed_count"];
 	NSString *followedByAuthenticatedUserAsString = [jsonObject objectForKey: @"following"];
 	
-	FDTwitterUser *twitterUser = [[[FDTwitterUser alloc] 
-		init] 
-			autorelease];
+	FDTwitterUser *twitterUser = [[FDTwitterUser alloc] 
+		init];
 	
 	twitterUser.userId = userId;
 	twitterUser.screenName = screenName;
@@ -512,9 +476,8 @@ static NSDateFormatter *_searchDateFormatter;
 	NSDictionary *jsonUser = [jsonObject objectForKey: @"user"];
 	FDTwitterUser *user = [self _twitterUserFromJSONObject: jsonUser];
 	
-	FDTweet *tweet = [[[FDTweet alloc] 
-		init] 
-			autorelease];
+	FDTweet *tweet = [[FDTweet alloc] 
+		init];
 	
 	tweet.tweetId = tweetId;
 	tweet.text = text;
@@ -542,8 +505,6 @@ static NSDateFormatter *_searchDateFormatter;
 		url.expandedURL = [NSURL URLWithString: expandedURLAsString];
 		
 		[tweet.urls addObject: url];
-		
-		[url release];
 	}
 	
 	return tweet;
@@ -559,9 +520,8 @@ static NSDateFormatter *_searchDateFormatter;
 	NSDictionary *jsonUser = [jsonObject objectForKey: @"user"];
 	FDTwitterUser *user = [self _twitterUserFromJSONObject: jsonUser];
 	
-	FDTwitterList *list = [[[FDTwitterList alloc] 
-		init] 
-			autorelease];
+	FDTwitterList *list = [[FDTwitterList alloc] 
+		init];
 	
 	list.listId = listId;
 	list.name = name;
@@ -575,9 +535,8 @@ static NSDateFormatter *_searchDateFormatter;
 
 - (NSArray *)_twitterUsersFromJSONObject: (NSArray *)jsonObject
 {
-	NSMutableArray *twitterUsers = [[[NSMutableArray alloc] 
-		initWithCapacity: [jsonObject count]] 
-			autorelease];
+	NSMutableArray *twitterUsers = [[NSMutableArray alloc] 
+		initWithCapacity: [jsonObject count]];
 	
 	for (NSDictionary *jsonUser in jsonObject)
 	{
@@ -591,9 +550,8 @@ static NSDateFormatter *_searchDateFormatter;
 
 - (NSArray *)_tweetsFromJSONObject: (NSArray *)jsonObject
 {
-	NSMutableArray *tweets = [[[NSMutableArray alloc] 
-		initWithCapacity: [jsonObject count]] 
-			autorelease];
+	NSMutableArray *tweets = [[NSMutableArray alloc] 
+		initWithCapacity: [jsonObject count]];
 	
 	for (NSDictionary *jsonTweet in jsonObject)
 	{
@@ -607,9 +565,8 @@ static NSDateFormatter *_searchDateFormatter;
 
 - (NSArray *)_twitterListsFromJSONObject: (NSArray *)jsonObject
 {
-	NSMutableArray *twitterLists = [[[NSMutableArray alloc] 
-		initWithCapacity: [jsonObject count]] 
-			autorelease];
+	NSMutableArray *twitterLists = [[NSMutableArray alloc] 
+		initWithCapacity: [jsonObject count]];
 	
 	for (NSDictionary *jsonList in jsonObject)
 	{

@@ -2,8 +2,6 @@
 
 @interface FDTwitterUser : NSObject<
 	NSCoding>
-{
-}
 
 
 #pragma mark -

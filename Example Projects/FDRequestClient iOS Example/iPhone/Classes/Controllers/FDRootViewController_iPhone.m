@@ -26,8 +26,6 @@
 	[self pushViewController: exampleListController 
 		animated: NO];
 	
-	[exampleListController release];
-	
 	// Return initialized instance.
 	return self;
 }

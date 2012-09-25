@@ -26,7 +26,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 
 @implementation FDSearchGitHubRepositoriesController
 {
-	@private FDGitHubAPIClient *_gitHubAPIClient;
+	@private __strong FDGitHubAPIClient *_gitHubAPIClient;
 	@private int _currentPage;
 }
 
@@ -77,19 +77,6 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc 
-{
-	// Release instance variables.
-	[_gitHubAPIClient release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -182,10 +169,9 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 		
 		if (cell == nil)
 		{
-			cell = [[[UITableViewCell alloc] 
+			cell = [[UITableViewCell alloc] 
 				initWithStyle: UITableViewCellStyleSubtitle 
-					reuseIdentifier: CellIdentifier] 
-						autorelease];
+					reuseIdentifier: CellIdentifier];
 		}
 		
 		FDGitHubRepository *gitHubRepository = [self.searchResults objectAtIndex: indexPath.row];
@@ -220,8 +206,6 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 		
 		[self.navigationController pushViewController: gitHubRepositoryDetailController 
 			animated: YES];
-		
-		[gitHubRepositoryDetailController release];
 	}
 }
 

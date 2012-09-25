@@ -16,11 +16,11 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 @implementation FDHTTPRequest
 {
-	@private FDHTTPRequestMethod _method;
-	@private NSMutableDictionary *_httpHeaderFields;
-	@private NSMutableDictionary *_parameters;
-	@private NSData *_messageBody;
-	@private FDHTTPRequestMessageBodyProvider _messageBodyProvider;
+	@private __strong FDHTTPRequestMethod _method;
+	@private __strong NSMutableDictionary *_httpHeaderFields;
+	@private __strong NSMutableDictionary *_parameters;
+	@private __strong NSData *_messageBody;
+	@private __strong FDHTTPRequestMessageBodyProvider _messageBodyProvider;
 }
 
 
@@ -61,15 +61,13 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	if (_messageBody != messageBody)
 	{
 		// Clear message body provider. It and message body are mutually exclusive.
-		[_messageBodyProvider release];
 		_messageBodyProvider = nil;
 		
 		// Release old value.
-		[_messageBody release];
 		_messageBody = nil;
 		
 		// Retain new value.
-		_messageBody = [messageBody retain];
+		_messageBody = messageBody;
 	}
 }
 
@@ -79,14 +77,9 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	if (_messageBodyProvider != messageBodyProvider)
 	{
 		// Clear message body. It and message body provider are mutually exclusive.
-		[_messageBody release];
 		_messageBody = nil;
 		
-		// Release old value.
-		[_messageBodyProvider release];
-		_messageBodyProvider = nil;
-		
-		// Retain new value.
+		// Update message body provider.
 		_messageBodyProvider = [messageBodyProvider copy];
 	}
 }
@@ -114,23 +107,6 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_method release];
-	[_httpHeaderFields release];
-	[_parameters release];
-	[_messageBody release];
-	[_messageBodyProvider release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -184,9 +160,8 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 				queryString];
 		}
 		
-		url = [[[NSURL alloc] 
-			initWithString: urlAsString] 
-				autorelease];
+		url = [[NSURL alloc] 
+			initWithString: urlAsString];
 	}
 	else
 	{
@@ -194,11 +169,10 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	}
 	
 	// Create a mutable URL request for the URL and add the HTTP header fields to it.
-	NSMutableURLRequest *rawURLRequest = [[[NSMutableURLRequest alloc] 
+	NSMutableURLRequest *rawURLRequest = [[NSMutableURLRequest alloc] 
 		initWithURL: url 
 			cachePolicy: self.cachePolicy 
-			timeoutInterval: self.timeoutInterval] 
-				autorelease];
+			timeoutInterval: self.timeoutInterval];
 	
 	[rawURLRequest setAllHTTPHeaderFields: _httpHeaderFields];
 	

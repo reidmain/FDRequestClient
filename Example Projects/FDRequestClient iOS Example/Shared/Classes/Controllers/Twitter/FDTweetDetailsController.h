@@ -11,7 +11,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, retain) FDTweet *tweet;
+@property (nonatomic, strong) FDTweet *tweet;
 
 
 #pragma mark -

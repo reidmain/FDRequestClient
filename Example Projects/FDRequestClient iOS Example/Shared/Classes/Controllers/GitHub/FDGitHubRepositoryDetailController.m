@@ -20,9 +20,9 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 
 @interface FDGitHubRepositoryDetailController ()
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIView *tableHeaderView;
-@property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UIView *tableHeaderView;
+@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
 
 
 - (void)_initializeGitHubRepositoryDetailController;
@@ -36,12 +36,12 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 
 @implementation FDGitHubRepositoryDetailController
 {
-	@private UITableView *_tableView;
-	@private UIView *_tableHeaderView;
-	@private UILabel *_descriptionLabel;
+	@private __strong UITableView *_tableView;
+	@private __strong UIView *_tableHeaderView;
+	@private __strong UILabel *_descriptionLabel;
 	
-	@private FDGitHubRepository *_gitHubRepository;
-	@private NSMutableArray *_rows;
+	@private __strong FDGitHubRepository *_gitHubRepository;
+	@private __strong NSMutableArray *_rows;
 }
 
 
@@ -112,17 +112,6 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 	// nil out delegates of any instance variables.
 	_tableView.delegate = nil;
 	_tableView.dataSource = nil;
-	
-	// Release instance variables.
-	[_tableView release];
-	[_tableHeaderView release];
-	[_descriptionLabel release];
-	
-	[_gitHubRepository release];
-	[_rows release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -201,10 +190,9 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 		
 		if (cell == nil)
 		{
-			cell = [[[UITableViewCell alloc] 
+			cell = [[UITableViewCell alloc] 
 				initWithStyle: UITableViewCellStyleValue2 
-					reuseIdentifier: CellIdentifier] 
-						autorelease];
+					reuseIdentifier: CellIdentifier];
 		}
 		
 		NSString *row = [_rows objectAtIndex: indexPath.row];

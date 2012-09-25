@@ -5,14 +5,14 @@
 
 @implementation FDTweet
 {
-	@private NSString *_tweetId;
-	@private FDTwitterUser *_user;
-	@private NSString *_text;
-	@private NSDate *_creationDate;
-	@private NSMutableArray *_urls;
+	@private __strong NSString *_tweetId;
+	@private __strong FDTwitterUser *_user;
+	@private __strong NSString *_text;
+	@private __strong NSDate *_creationDate;
+	@private __strong NSMutableArray *_urls;
 	@private BOOL _favourited;
 	@private BOOL _retweeted;
-	@private NSUInteger _retweetCount;
+	@private unsigned int _retweetCount;
 }
 
 
@@ -55,22 +55,6 @@
 	return self;
 }
 
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_tweetId release];
-	[_user release];
-	[_text release];
-	[_creationDate release];
-	[_urls release];
-	
-	// Call the base destructor.
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark Overridden Methods

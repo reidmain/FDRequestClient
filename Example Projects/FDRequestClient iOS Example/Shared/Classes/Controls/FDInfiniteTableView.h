@@ -9,7 +9,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, assign) IBOutlet id<FDInfiniteTableViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<FDInfiniteTableViewDataSource> dataSource;
 
 
 #pragma mark -

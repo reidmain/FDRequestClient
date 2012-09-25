@@ -16,7 +16,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 
 @interface FDTweetListController ()
 
-@property (nonatomic, readwrite, retain) IBOutlet FDInfiniteTableView *infiniteTableView;
+@property (nonatomic, readwrite, strong) IBOutlet FDInfiniteTableView *infiniteTableView;
 
 
 - (void)_initializeTweetListController;
@@ -30,9 +30,9 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 
 @implementation FDTweetListController
 {
-	@private FDInfiniteTableView *_infiniteTableView;
+	@private __strong FDInfiniteTableView *_infiniteTableView;
 	
-	@private NSMutableArray *_tweets;
+	@private __strong NSMutableArray *_tweets;
 }
 
 
@@ -88,14 +88,6 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 	// nil out delegates of any instance variables.
 	_infiniteTableView.delegate = nil;
 	_infiniteTableView.dataSource = nil;
-	
-	// Release instance variables.
-	[_infiniteTableView release];
-	
-	[_tweets release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -132,8 +124,6 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 		
 		[_infiniteTableView insertRowsAtIndexPaths: rowsToInsert 
 			withRowAnimation: rowAnimation];
-		
-		[rowsToInsert release];
 	}
 }
 
@@ -160,8 +150,6 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 		
 		[_infiniteTableView deleteRowsAtIndexPaths: rowsToDelete 
 			withRowAnimation: rowAnimation];
-		
-		[rowsToDelete release];
 	}
 }
 
@@ -253,10 +241,9 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 		
 		if (cell == nil)
 		{
-			cell = [[[UITableViewCell alloc] 
+			cell = [[UITableViewCell alloc] 
 				initWithStyle: UITableViewCellStyleSubtitle 
-					reuseIdentifier: CellIdentifier] 
-						autorelease];
+					reuseIdentifier: CellIdentifier];
 			
 			cell.detailTextLabel.numberOfLines = 3;
 			
@@ -297,8 +284,6 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 		
 		[self.navigationController pushViewController: tweetDetailsController 
 			animated: YES];
-		
-		[tweetDetailsController release];
 	}
 }
 

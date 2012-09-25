@@ -79,8 +79,6 @@ static void * const _loadImageOperationKey;
 			&_loadImageOperationKey, 
 			loadImageOperation, 
 			OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-		
-		[httpRequest release];
 	}
 }
 

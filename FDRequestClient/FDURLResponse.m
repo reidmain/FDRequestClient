@@ -7,9 +7,9 @@
 @implementation FDURLResponse
 {
 	@private FDURLResponseStatus _status;
-	@private id _content;
-	@private NSError *_error;
-	@private NSURLResponse *_rawURLResponse;
+	@private __strong id _content;
+	@private __strong NSError *_error;
+	@private __strong NSURLResponse *_rawURLResponse;
 }
 
 
@@ -35,30 +35,16 @@
 	{
 		return nil;
 	}
+
 	
 	// Initialize instance variables.
 	_status = status;
-	_content = [content retain];
-	_error = [error retain];
-	_rawURLResponse = [rawURLResponse retain];
+	_content = content;
+	_error = error;
+	_rawURLResponse = rawURLResponse;
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_content release];
-	[_error release];
-	[_rawURLResponse release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

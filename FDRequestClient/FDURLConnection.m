@@ -12,19 +12,19 @@
 
 @implementation FDURLConnection
 {
-	@private NSURLRequest *_urlRequestToLoad;
-	@private FDURLRequest *_urlRequest;
-	@private FDURLRequestType _urlRequestType;
+	@private __strong NSURLRequest *_urlRequestToLoad;
+	@private __strong FDURLRequest *_urlRequest;
+	@private __strong FDURLRequestType _urlRequestType;
 	@private BOOL _connectionLoaded;
 	@private BOOL _connectionOpen;
 	@private BOOL _connectionCancelled;
-	@private NSURLResponse *_rawURLResponse;
+	@private __strong NSURLResponse *_rawURLResponse;
 	@private long long _expectedDataLength;
-	@private NSMutableData *_receivedData;
-	@private NSError *_error;
+	@private __strong NSMutableData *_receivedData;
+	@private __strong NSError *_error;
 	
-	@private FDURLConnectionAuthorizationBlock _authorizationBlock;
-	@private FDURLConnectionProgressBlock _progressBlock;
+	@private __strong FDURLConnectionAuthorizationBlock _authorizationBlock;
+	@private __strong FDURLConnectionProgressBlock _progressBlock;
 }
 
 
@@ -41,7 +41,7 @@
 	}
 	
 	// Initialize instance variables.
-	_urlRequestToLoad = [urlRequest retain];
+	_urlRequestToLoad = urlRequest;
 	_urlRequest = nil;
 	_urlRequestType = [urlRequestType copy];
 	_connectionLoaded = NO;
@@ -69,30 +69,10 @@
 	}
 	
 	// Initialize instance variables.
-	_urlRequest = [urlRequest retain];
+	_urlRequest = urlRequest;
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_urlRequest release];
-	[_urlRequestType release];
-	[_rawURLResponse release];
-	[_receivedData release];
-	[_error release];
-	
-	[_authorizationBlock release];
-	[_progressBlock release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -118,7 +98,7 @@
 	// Generate the URL request to load, if it does not already exist.
 	if (_urlRequestToLoad == nil)
 	{
-		_urlRequestToLoad = [[_urlRequest rawURLRequest] retain];
+		_urlRequestToLoad = [_urlRequest rawURLRequest];
 	}
 	
 	// Load the data from disk if the URL is a file.
@@ -129,9 +109,7 @@
 	// Otherwise, open up a URL connection to download the response for the URL.
 	else
 	{
-		[_authorizationBlock release];
 		_authorizationBlock = [authorizationBlock copy];
-		[_progressBlock release];
 		_progressBlock = [progessBlock copy];
 		
 		NSURLConnection *urlConnection = [[NSURLConnection alloc] 
@@ -161,10 +139,8 @@
 			[urlConnection cancel];
 		}
 		
-		[urlConnection release];
-		
-		[_authorizationBlock release];
-		[_progressBlock release];
+		_authorizationBlock = nil;
+		_progressBlock = nil;
 	}
 	
 	id responseContent = nil;
@@ -187,7 +163,7 @@
 				initWithData: _receivedData 
 					encoding: NSUTF8StringEncoding];
 			
-			responseContent = [receivedDataAsString autorelease];
+			responseContent = receivedDataAsString;
 		}
 		else if ([_urlRequestType isEqualToString: FDURLRequestTypeImage] == YES)
 		{
@@ -226,12 +202,11 @@
 		status = FDURLResponseStatusFailed;
 	}
 	
-	FDURLResponse *urlResponse = [[[FDURLResponse alloc] 
+	FDURLResponse *urlResponse = [[FDURLResponse alloc] 
 		_initWithStatus: status 
 			content: responseContent 
 			error: _error 
-			rawURLResponse: _rawURLResponse] 
-				autorelease];
+			rawURLResponse: _rawURLResponse];
 	
 	return urlResponse;
 }
@@ -286,8 +261,7 @@
 	}
 	
 	// Store URL response so it can be returned.
-	[_rawURLResponse release];
-	_rawURLResponse = [response retain];
+	_rawURLResponse = response;
 	
 	// Store the expected data length, if it is known.
 	long long expectedContentLength = [response expectedContentLength];
@@ -302,7 +276,6 @@
 	}
 	
 	// Create container to store received data.
-	[_receivedData release];
 	_receivedData = [[NSMutableData alloc] 
 		initWithCapacity: capacity];
 }
@@ -359,8 +332,7 @@
 	// If the connection fails, update flag to indicate that the URL connection has been closed and store the error so it can be returned.
 	_connectionOpen = NO;
 	
-	[_error release];
-	_error = [error retain];
+	_error = error;
 }
 
 

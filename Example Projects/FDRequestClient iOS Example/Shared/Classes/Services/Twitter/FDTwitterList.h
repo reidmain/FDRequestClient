@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *listDescription;
 @property (nonatomic, assign) unsigned int memberCount;
 @property (nonatomic, assign) unsigned int subscriberCount;
-@property (nonatomic, retain) FDTwitterUser *creator;
+@property (nonatomic, strong) FDTwitterUser *creator;
 
 
 @end // @interface FDTwitterList

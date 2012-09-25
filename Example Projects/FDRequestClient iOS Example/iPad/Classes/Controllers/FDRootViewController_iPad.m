@@ -26,11 +26,7 @@
 	UINavigationController *masterController = [[UINavigationController alloc] 
 		initWithRootViewController: exampleListController];
 	
-	[exampleListController release];
-	
 	self.masterViewController = masterController;
-	
-	[masterController release];
 	
 	// Create a search tweets controller and make it the detail controller of the split view controller.
 	FDSearchTweetsController *searchTweetsController = [[FDSearchTweetsController alloc] 
@@ -39,11 +35,7 @@
 	UINavigationController *detailController = [[UINavigationController alloc] 
 		initWithRootViewController: searchTweetsController];
 	
-	[searchTweetsController release];
-	
 	self.detailViewController = detailController;
-	
-	[detailController release];
 	
 	// Return initialized instance.
 	return self;
@@ -61,8 +53,6 @@
 		initWithRootViewController: viewController];
 	
 	self.detailViewController = detailController;
-	
-	[detailController release];
 }
 
 

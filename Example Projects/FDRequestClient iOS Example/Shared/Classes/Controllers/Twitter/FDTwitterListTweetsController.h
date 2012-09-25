@@ -10,7 +10,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, retain) FDTwitterList *twitterList;
+@property (nonatomic, strong) FDTwitterList *twitterList;
 
 
 #pragma mark -

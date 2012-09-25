@@ -18,10 +18,10 @@
 
 @implementation FDSearchController
 {
-	@private FDInfiniteTableView *_infiniteTableView;
-	@private UISearchBar *_searchBar;
+	@private __strong FDInfiniteTableView *_infiniteTableView;
+	@private __strong UISearchBar *_searchBar;
 	
-	@private NSMutableArray *_searchResults;
+	@private __strong NSMutableArray *_searchResults;
 }
 
 
@@ -79,15 +79,6 @@
 	_infiniteTableView.delegate = nil;
 	_infiniteTableView.dataSource = nil;
 	_searchBar.delegate = nil;
-	
-	// Release instance variables.
-	[_infiniteTableView release];
-	[_searchBar release];
-	
-	[_searchResults release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -124,8 +115,6 @@
 		
 		[_infiniteTableView insertRowsAtIndexPaths: rowsToInsert 
 			withRowAnimation: rowAnimation];
-		
-		[rowsToInsert release];
 	}
 }
 
@@ -152,8 +141,6 @@
 		
 		[_infiniteTableView deleteRowsAtIndexPaths: rowsToDelete 
 			withRowAnimation: rowAnimation];
-		
-		[rowsToDelete release];
 	}
 }
 

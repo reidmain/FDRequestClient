@@ -14,8 +14,8 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, assign) id<FDRequestClientDelegate> delegate;
-@property (nonatomic, assign) id<FDRequestClientCache> cache;
+@property (nonatomic, weak) id<FDRequestClientDelegate> delegate;
+@property (nonatomic, weak) id<FDRequestClientCache> cache;
 
 
 #pragma mark -

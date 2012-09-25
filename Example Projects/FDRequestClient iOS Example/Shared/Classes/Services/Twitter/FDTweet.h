@@ -11,7 +11,7 @@
 #pragma mark Properties
 
 @property (nonatomic, copy) NSString *tweetId;
-@property (nonatomic, retain) FDTwitterUser *user;
+@property (nonatomic, strong) FDTwitterUser *user;
 @property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, readonly) NSMutableArray *urls;

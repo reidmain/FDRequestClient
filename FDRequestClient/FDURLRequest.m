@@ -14,8 +14,8 @@ NSString * const FDURLRequestTypeJSON = @"json";
 
 @implementation FDURLRequest
 {
-	@private NSURLRequest *_rawURLRequest;
-	@private FDURLRequestType _type;
+	@private __strong NSURLRequest *_rawURLRequest;
+	@private __strong FDURLRequestType _type;
 }
 
 
@@ -65,7 +65,7 @@ NSString * const FDURLRequestTypeJSON = @"json";
 	}
 	
 	// Initialize instance variables.
-	_rawURLRequest = [urlRequest retain];
+	_rawURLRequest = urlRequest;
 	_type = [FDURLRequestTypeRaw copy];
 	
 	// Return initialized instance.
@@ -76,15 +76,6 @@ NSString * const FDURLRequestTypeJSON = @"json";
 #pragma mark -
 #pragma mark Destructor
 
-- (void)dealloc
-{
-	// Release instance variables.
-	[_rawURLRequest release];
-	[_type release];
-	
-	// Call the base destructor.
-    [super dealloc];
-}
 
 
 #pragma mark -

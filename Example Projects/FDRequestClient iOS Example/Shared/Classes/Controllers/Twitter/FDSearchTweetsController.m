@@ -8,7 +8,7 @@
 
 @interface FDSearchTweetsController ()
 
-@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
 
 
 - (void)_initializeSearchTweetsController;
@@ -22,11 +22,11 @@
 
 @implementation FDSearchTweetsController
 {
-	@private UISearchBar *_searchBar;
+	@private __strong UISearchBar *_searchBar;
 	
-	@private FDTwitterAPIClient *_twitterAPIClient;
+	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 	@private unsigned int _currentPage;
-	@private NSString *_maxTweetId;
+	@private __strong NSString *_maxTweetId;
 }
 
 
@@ -92,15 +92,6 @@
 {
 	// nil out delegates of any instance variables.
 	_searchBar.delegate = nil;
-	
-	// Release instance variables.
-	[_searchBar release];
-	
-	[_twitterAPIClient release];
-	[_maxTweetId release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -123,7 +114,6 @@
 			
 			if (status == FDURLResponseStatusSucceed)
 			{
-				[_maxTweetId release];
 				_maxTweetId = [maxTweetId copy];
 				
 				[self addTweets: tweets 

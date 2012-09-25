@@ -16,15 +16,15 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 
 @interface FDTweetDetailsController ()
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIView *tableHeaderView;
-@property (nonatomic, retain) IBOutlet UIImageView *profileImageView;
-@property (nonatomic, retain) IBOutlet UILabel *nameLabel;
-@property (nonatomic, retain) IBOutlet UILabel *screenNameLabel;
-@property (nonatomic, retain) IBOutlet UILabel *textLabel;
-@property (nonatomic, retain) IBOutlet UIView *tableFooterView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic, retain) IBOutlet UILabel *noListsLabel;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UIView *tableHeaderView;
+@property (nonatomic, strong) IBOutlet UIImageView *profileImageView;
+@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *screenNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *textLabel;
+@property (nonatomic, strong) IBOutlet UIView *tableFooterView;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) IBOutlet UILabel *noListsLabel;
 
 - (void)_initializeTweetDetailsController;
 
@@ -37,20 +37,20 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 
 @implementation FDTweetDetailsController
 {
-	@private UITableView *_tableView;
-	@private UIView *_tableHeaderView;
-	@private UIImageView *_profileImageView;
-	@private UILabel *_nameLabel;
-	@private UILabel *_screenNameLabel;
-	@private UILabel *_textLabel;
-	@private UIView *_tableFooterView;
-	@private UIActivityIndicatorView *_activityIndicatorView;
-	@private UILabel *_noListsLabel;
+	@private __strong UITableView *_tableView;
+	@private __strong UIView *_tableHeaderView;
+	@private __strong UIImageView *_profileImageView;
+	@private __strong UILabel *_nameLabel;
+	@private __strong UILabel *_screenNameLabel;
+	@private __strong UILabel *_textLabel;
+	@private __strong UIView *_tableFooterView;
+	@private __strong UIActivityIndicatorView *_activityIndicatorView;
+	@private __strong UILabel *_noListsLabel;
 	
-	@private FDTweet *_tweet;
-	@private FDTwitterAPIClient *_twitterAPIClient;
+	@private __strong FDTweet *_tweet;
+	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 	@private BOOL _listsRequested;
-	@private NSMutableArray *_lists;
+	@private __strong NSMutableArray *_lists;
 }
 
 
@@ -127,24 +127,6 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 	// nil out delegates of any instance variables.
 	_tableView.dataSource = nil;
 	_tableView.delegate = nil;
-	
-	// Release instance variables.
-	[_tableView release];
-	[_tableHeaderView release];
-	[_profileImageView release];
-	[_nameLabel release];
-	[_screenNameLabel release];
-	[_textLabel release];
-	[_tableFooterView release];
-	[_activityIndicatorView release];
-	[_noListsLabel release];
-	
-	[_tweet release];
-	[_twitterAPIClient release];
-	[_lists release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -278,10 +260,9 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 	
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] 
+		cell = [[UITableViewCell alloc] 
 			initWithStyle: UITableViewCellStyleSubtitle 
-				reuseIdentifier: CellIdentifier] 
-					autorelease];
+				reuseIdentifier: CellIdentifier];
 	}
 	
 	if (tableView == _tableView)
@@ -314,8 +295,6 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 		
 		[self.navigationController pushViewController: twitterListTweetsController 
 			animated: YES];
-		
-		[twitterListTweetsController release];
 	}
 }
 

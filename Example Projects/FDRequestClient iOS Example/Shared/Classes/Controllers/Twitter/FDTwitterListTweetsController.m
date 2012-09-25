@@ -17,8 +17,8 @@
 
 @implementation FDTwitterListTweetsController
 {
-	@private FDTwitterList *_twitterList;
-	@private FDTwitterAPIClient *_twitterAPIClient;
+	@private __strong FDTwitterList *_twitterList;
+	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 }
 
 
@@ -51,7 +51,7 @@
 	}
 	
 	// Initialize instance variables.
-	_twitterList = [twitterList retain];
+	_twitterList = twitterList;
 	
 	// Set controller's title.
 	self.title = _twitterList.name;
@@ -90,20 +90,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc 
-{
-	// Release instance variables.
-	[_twitterList release];
-	[_twitterAPIClient release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

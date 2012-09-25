@@ -22,12 +22,12 @@
 
 @implementation FDURLConnectionOperation
 {
-	@private NSMutableArray *_completionBlocks;
-	@private FDURLConnection *_urlConnection;
-	@private FDURLConnectionAuthorizationBlock _authorizationBlock;
-	@private FDURLConnectionProgressBlock _progressBlock;
-	@private FDURLConnectionDataParserBlock _dataParserBlock;
-	@private FDURLConnectionTransformBlock _transformBlock;
+	@private __strong NSMutableArray *_completionBlocks;
+	@private __strong FDURLConnection *_urlConnection;
+	@private __strong FDURLConnectionAuthorizationBlock _authorizationBlock;
+	@private __strong FDURLConnectionProgressBlock _progressBlock;
+	@private __strong FDURLConnectionDataParserBlock _dataParserBlock;
+	@private __strong FDURLConnectionTransformBlock _transformBlock;
 }
 
 
@@ -118,24 +118,6 @@
 
 
 #pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_completionBlocks release];
-	[_urlConnection release];
-	[_authorizationBlock release];
-	[_progressBlock release];
-	[_dataParserBlock release];
-	[_transformBlock release];
-	
-	// Call the base destructor.
-    [super dealloc];
-}
-
-
-#pragma mark -
 #pragma mark Public Methods
 
 - (void)addCompletionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock
@@ -144,8 +126,6 @@
 	FDURLConnectionOperationCompletionBlock copiedCompletionBlock = [completionBlock copy];
 	
 	[_completionBlocks addObject: copiedCompletionBlock];
-	
-	[copiedCompletionBlock release];
 }
 
 

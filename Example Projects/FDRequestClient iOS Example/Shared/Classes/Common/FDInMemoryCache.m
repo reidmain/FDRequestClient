@@ -7,7 +7,7 @@
 
 @implementation FDInMemoryCache
 {
-	@private NSCache *_cache;
+	@private __strong NSCache *_cache;
 }
 
 
@@ -28,19 +28,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_cache release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -70,12 +57,11 @@
 			
 			if (cachedResponseContent != nil)
 			{
-				cachedResponse = [[[FDURLResponse alloc] 
+				cachedResponse = [[FDURLResponse alloc] 
 					_initWithStatus: FDURLResponseStatusSucceed 
 						content: cachedResponseContent 
 						error: nil 
-						rawURLResponse: nil] 
-							autorelease];
+						rawURLResponse: nil];
 			}
 		}
 	}
@@ -96,12 +82,11 @@
 		
 		if (cachedResponseContent != nil)
 		{
-			cachedResponse = [[[FDURLResponse alloc] 
+			cachedResponse = [[FDURLResponse alloc] 
 				_initWithStatus: FDURLResponseStatusSucceed 
 					content: cachedResponseContent 
 					error: nil 
-					rawURLResponse: nil] 
-						autorelease];
+					rawURLResponse: nil];
 		}
 	}
 	

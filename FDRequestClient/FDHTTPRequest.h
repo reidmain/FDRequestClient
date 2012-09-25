@@ -26,9 +26,9 @@ typedef NSString * FDHTTPRequestMethod;
 #pragma mark Properties
 
 @property (nonatomic, copy) FDHTTPRequestMethod method;
-@property (nonatomic, retain) NSDictionary *httpHeaderFields;
-@property (nonatomic, retain) NSDictionary *parameters;
-@property (nonatomic, retain) NSData *messageBody;
+@property (nonatomic, strong) NSDictionary *httpHeaderFields;
+@property (nonatomic, strong) NSDictionary *parameters;
+@property (nonatomic, strong) NSData *messageBody;
 @property (nonatomic, copy) FDHTTPRequestMessageBodyProvider messageBodyProvider;
 
 

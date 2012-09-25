@@ -32,8 +32,6 @@
 	
 	NSString *encodedString = [NSString stringWithString: encodedMutableString];
 	
-	[encodedMutableString release];
-	
 	return encodedString;
 }
 

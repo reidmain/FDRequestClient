@@ -5,12 +5,12 @@
 
 @implementation FDTwitterList
 {
-	@private NSString *_listId;
-	@private NSString *_name;
-	@private NSString *_listDescription;
+	@private __strong NSString *_listId;
+	@private __strong NSString *_name;
+	@private __strong NSString *_listDescription;
 	@private unsigned int _memberCount;
 	@private unsigned int _subscriberCount;
-	@private FDTwitterUser *_creator;
+	@private __strong FDTwitterUser *_creator;
 }
 
 
@@ -46,22 +46,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_listId release];
-	[_name release];
-	[_listDescription release];
-	[_creator release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

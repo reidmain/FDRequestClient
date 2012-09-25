@@ -11,7 +11,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, assign) IBOutlet id<FDExampleListControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<FDExampleListControllerDelegate> delegate;
 
 
 @end // @interface FDExampleListController

@@ -5,9 +5,9 @@
 
 @implementation FDTwitterURL
 {
-	@private NSURL *_rawURL;
-	@private NSURL *_displayURL;
-	@private NSURL *_expandedURL;
+	@private __strong NSURL *_rawURL;
+	@private __strong NSURL *_displayURL;
+	@private __strong NSURL *_expandedURL;
 }
 
 
@@ -37,21 +37,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_rawURL release];
-	[_displayURL release];
-	[_expandedURL release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

@@ -26,11 +26,11 @@
 
 @implementation FDInfiniteTableView
 {
-	@private id<FDInfiniteTableViewDataSource> _dataSource;
+	@private __weak id<FDInfiniteTableViewDataSource> _dataSource;
 	
-	@private UIView *_loadingView;
-	@private UIView *_loadingViewContainer;
-	@private UIActivityIndicatorView *_activityIndicatorView;
+	@private __strong UIView *_loadingView;
+	@private __strong UIView *_loadingViewContainer;
+	@private __strong UIActivityIndicatorView *_activityIndicatorView;
 	
 	@private BOOL _loadingData;
 }
@@ -79,21 +79,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_loadingView release];
-	[_loadingViewContainer release];
-	[_activityIndicatorView release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

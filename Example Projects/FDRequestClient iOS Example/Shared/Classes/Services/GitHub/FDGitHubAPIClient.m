@@ -65,18 +65,6 @@ static NSDateFormatter *_dateFormatter;
 
 
 #pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	
-	// Call the base destructor.
-	[super dealloc];
-}
-
-
-#pragma mark -
 #pragma mark Public Methods
 
 - (void)repositoriesForSearchQuery: (NSString *)query 
@@ -127,8 +115,6 @@ static NSDateFormatter *_dateFormatter;
 				completion(response.status, response.error, nil);
 			}
 		}];
-	
-	[request release];
 }
 
 
@@ -159,9 +145,8 @@ static NSDateFormatter *_dateFormatter;
 	NSString *lastPushDateAsString = [jsonObject objectForKey: @"pushed"];
 	NSDate *lastPushDate = [self _dateFromGitHubString: lastPushDateAsString];
 	
-	FDGitHubRepository *repository = [[[FDGitHubRepository alloc] 
-		init] 
-			autorelease];
+	FDGitHubRepository *repository = [[FDGitHubRepository alloc] 
+		init];
 	
 	repository.name = name;
 	repository.owner = owner;
@@ -179,9 +164,8 @@ static NSDateFormatter *_dateFormatter;
 
 - (NSArray *)_gitHubRepositoriesFromJSONObject: (NSArray *)jsonObject
 {
-	NSMutableArray *repositories = [[[NSMutableArray alloc] 
-		initWithCapacity: [jsonObject count]] 
-			autorelease];
+	NSMutableArray *repositories = [[NSMutableArray alloc] 
+		initWithCapacity: [jsonObject count]];
 	
 	for (NSDictionary *jsonRepository in jsonObject)
 	{

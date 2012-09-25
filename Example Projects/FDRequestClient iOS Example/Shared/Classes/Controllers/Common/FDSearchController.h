@@ -12,8 +12,8 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, retain) IBOutlet FDInfiniteTableView *infiniteTableView;
-@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) IBOutlet FDInfiniteTableView *infiniteTableView;
+@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic, readonly) NSArray *searchResults;
 

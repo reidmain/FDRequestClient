@@ -16,9 +16,9 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 
 @interface FDExampleListController ()
 {
-	@private NSMutableArray *_rows;
-	@private UITableView *_tableView;
-	@private id<FDExampleListControllerDelegate> _delegate;
+	@private __strong NSMutableArray *_rows;
+	@private __strong UITableView *_tableView;
+	@private __weak id<FDExampleListControllerDelegate> _delegate;
 }
 
 
@@ -84,13 +84,6 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 	// nil out delegates of any instance variables.
 	_tableView.dataSource = nil;
 	_tableView.delegate = nil;
-	
-	// Release instance variables.
-	[_rows release];
-	[_tableView release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -168,10 +161,9 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 	
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] 
+		cell = [[UITableViewCell alloc] 
 			initWithStyle: UITableViewCellStyleDefault 
-				reuseIdentifier: CellIdentifier] 
-					autorelease];
+				reuseIdentifier: CellIdentifier];
 	}
 	
 	NSString *row = [_rows objectAtIndex: indexPath.row];
@@ -199,15 +191,13 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 		
 		if (row == Row_SearchTweets)
 		{
-			viewController = [[[FDSearchTweetsController alloc] 
-				initWithDefaultNibName] 
-					autorelease];
+			viewController = [[FDSearchTweetsController alloc] 
+				initWithDefaultNibName];
 		}
 		else if (row == Row_SearchGitHubRepos)
 		{
-			viewController = [[[FDSearchGitHubRepositoriesController alloc] 
-				initWithDefaultNibName] 
-					autorelease];
+			viewController = [[FDSearchGitHubRepositoriesController alloc] 
+				initWithDefaultNibName];
 		}
 		
 		if (viewController != nil)

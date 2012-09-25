@@ -797,6 +797,7 @@
 		07162375160AAD2B00346A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
@@ -808,6 +809,7 @@
 		07162376160AAD2B00346A3C /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
@@ -819,6 +821,7 @@
 		07162377160AAD2B00346A3C /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";

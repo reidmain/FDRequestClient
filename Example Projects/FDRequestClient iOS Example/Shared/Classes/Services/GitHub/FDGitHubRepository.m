@@ -5,16 +5,16 @@
 
 @implementation FDGitHubRepository
 {
-	@private NSString *_name;
-	@private NSString *_owner;
-	@private NSString *_repoDescription;
-	@private NSString *_language;
+	@private __strong NSString *_name;
+	@private __strong NSString *_owner;
+	@private __strong NSString *_repoDescription;
+	@private __strong NSString *_language;
 	@private unsigned int _forkCount;
 	@private unsigned int _watcherCount;
 	@private unsigned int _followerCount;
-	@private NSURL *_url;
-	@private NSDate *_creationDate;
-	@private NSDate *_lastPushDate;
+	@private __strong NSURL *_url;
+	@private __strong NSDate *_creationDate;
+	@private __strong NSDate *_lastPushDate;
 }
 
 
@@ -58,25 +58,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_name release];
-	[_owner release];
-	[_repoDescription release];
-	[_language release];
-	[_url release];
-	[_creationDate release];
-	[_lastPushDate release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

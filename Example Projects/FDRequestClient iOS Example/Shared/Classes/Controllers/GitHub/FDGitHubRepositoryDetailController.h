@@ -11,7 +11,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, retain) FDGitHubRepository *gitHubRepository;
+@property (nonatomic, strong) FDGitHubRepository *gitHubRepository;
 
 
 #pragma mark -

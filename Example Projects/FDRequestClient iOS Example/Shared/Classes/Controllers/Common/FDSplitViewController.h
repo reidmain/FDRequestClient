@@ -6,8 +6,8 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, retain) IBOutlet UIViewController *masterViewController;
-@property (nonatomic, retain) IBOutlet UIViewController *detailViewController;
+@property (nonatomic, strong) IBOutlet UIViewController *masterViewController;
+@property (nonatomic, strong) IBOutlet UIViewController *detailViewController;
 
 
 @end // @interface FDSplitViewController

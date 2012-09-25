@@ -21,13 +21,13 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 
 @implementation FDTwitterUser
 {
-	@private NSString *_userId;
-	@private NSString *_screenName;
-	@private NSString *_name;
-	@private NSString *_location;
-	@private NSURL *_url;
-	@private NSString *_bio;
-	@private NSURL *_profileImageURL;
+	@private __strong NSString *_userId;
+	@private __strong NSString *_screenName;
+	@private __strong NSString *_name;
+	@private __strong NSString *_location;
+	@private __strong NSURL *_url;
+	@private __strong NSString *_bio;
+	@private __strong NSURL *_profileImageURL;
 	@private unsigned int _followingCount;
 	@private unsigned int _followerCount;
 	@private unsigned int _listedCount;
@@ -77,25 +77,6 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_userId release];
-	[_screenName release];
-	[_name release];
-	[_location release];
-	[_url release];
-	[_bio release];
-	[_profileImageURL release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 

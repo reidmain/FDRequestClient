@@ -18,7 +18,7 @@
 
 @implementation FDRequestClient
 {
-	@private NSOperationQueue *_operationQueue;
+	@private __strong NSOperationQueue *_operationQueue;
 }
 
 
@@ -34,7 +34,7 @@
 	}
 	
 	// Initialize instance variables.
-	_operationQueue = [operationQueue retain];
+	_operationQueue = operationQueue;
 	_delegate = nil;
 	_cache = nil;
 	
@@ -61,9 +61,8 @@
 	}
 	else
 	{
-		operationQueue = [[[NSOperationQueue alloc] 
-			init] 
-				autorelease];
+		operationQueue = [[NSOperationQueue alloc] 
+			init];
 		
 		operationQueue.maxConcurrentOperationCount = 1;
 	}
@@ -89,19 +88,6 @@
 	
 	// Return initialized instance.
 	return self;
-}
-
-
-#pragma mark -
-#pragma mark Destructor
-
-- (void)dealloc
-{
-	// Release instance variables.
-	[_operationQueue release];
-	
-	// Call the base destructor.
-	[super dealloc];
 }
 
 
@@ -133,15 +119,14 @@
 			dataParserBlock = [self _dataParserBlockForDataType: urlRequestType];
 		}
 		
-		urlConnectionOperation = [[[FDURLConnectionOperation alloc] 
+		urlConnectionOperation = [[FDURLConnectionOperation alloc] 
 			initWithURLRequest: urlRequest 
 				urlRequestType: urlRequestType 
 				authorizationBlock: authorizationBlock 
 				progressBlock: progressBlock 
 				dataParserBlock: dataParserBlock 
 				transformBlock: transformBlock 
-				completionBlock: completionBlock] 
-						autorelease];
+				completionBlock: completionBlock];
 		
 		[urlConnectionOperation addCompletionBlock: ^(FDURLResponse *urlResponse)
 			{
@@ -181,14 +166,13 @@
 			dataParserBlock = [self _dataParserBlockForDataType: urlRequest.type];
 		}
 		
-		urlConnectionOperation = [[[FDURLConnectionOperation alloc] 
+		urlConnectionOperation = [[FDURLConnectionOperation alloc] 
 			initWithURLRequest: urlRequest 
 				authorizationBlock: authorizationBlock 
 				progressBlock: progressBlock 
 				dataParserBlock: dataParserBlock 
 				transformBlock: transformBlock 
-				completionBlock: completionBlock] 
-						autorelease];
+				completionBlock: completionBlock];
 		
 		[urlConnectionOperation addCompletionBlock: ^(FDURLResponse *urlResponse)
 			{
