@@ -4,19 +4,6 @@
 #pragma mark Class Definition
 
 @implementation FDTwitterURL
-{
-	@private __strong NSURL *_rawURL;
-	@private __strong NSURL *_displayURL;
-	@private __strong NSURL *_expandedURL;
-}
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize rawURL = _rawURL;
-@synthesize displayURL = _displayURL;
-@synthesize expandedURL = _expandedURL;
 
 
 #pragma mark -

@@ -18,7 +18,6 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 {
 	@private __strong NSMutableArray *_rows;
 	@private __strong UITableView *_tableView;
-	@private __weak id<FDExampleListControllerDelegate> _delegate;
 }
 
 
@@ -32,12 +31,6 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 #pragma mark Class Definition
 
 @implementation FDExampleListController
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize delegate = _delegate;
 
 
 #pragma mark -

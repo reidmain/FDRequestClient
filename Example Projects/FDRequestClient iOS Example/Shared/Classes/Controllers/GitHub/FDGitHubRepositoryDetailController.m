@@ -36,23 +36,8 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 
 @implementation FDGitHubRepositoryDetailController
 {
-	@private __strong UITableView *_tableView;
-	@private __strong UIView *_tableHeaderView;
-	@private __strong UILabel *_descriptionLabel;
-	
-	@private __strong FDGitHubRepository *_gitHubRepository;
 	@private __strong NSMutableArray *_rows;
 }
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize tableView = _tableView;
-@synthesize tableHeaderView = _tableHeaderView;
-@synthesize descriptionLabel = _descriptionLabel;
-
-@synthesize gitHubRepository = _gitHubRepository;
 
 
 #pragma mark -

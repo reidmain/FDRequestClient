@@ -17,7 +17,6 @@
 
 @implementation FDTwitterListTweetsController
 {
-	@private __strong FDTwitterList *_twitterList;
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 }
 
@@ -25,7 +24,6 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize twitterList = _twitterList;
 - (void)setTwitterList: (FDTwitterList *)twitterList
 {
 	if (_twitterList != twitterList)

@@ -26,7 +26,7 @@
 
 @implementation FDInfiniteTableView
 {
-	@private __weak id<FDInfiniteTableViewDataSource> _dataSource;
+//	@private __weak id<FDInfiniteTableViewDataSource> _infiniteTableViewDataSource;
 	
 	@private __strong UIView *_loadingView;
 	@private __strong UIView *_loadingViewContainer;
@@ -39,13 +39,16 @@
 #pragma mark -
 #pragma mark Properties
 
-@synthesize dataSource = _dataSource;
--(void)setDataSource: (id<FDInfiniteTableViewDataSource>)dataSource
-{
-	super.dataSource = dataSource;
-	
-	_dataSource = dataSource;
-}
+//-(void)setDataSource: (id<FDInfiniteTableViewDataSource>)dataSource
+//{
+//	super.dataSource = dataSource;
+//	
+//	_infiniteTableViewDataSource = dataSource;
+//}
+//- (id<FDInfiniteTableViewDataSource>)dataSource
+//{
+//	return _infiniteTableViewDataSource;
+//}
 
 
 #pragma mark -
@@ -132,11 +135,11 @@
 		&& [self isDragging] == YES 
 		&& self.contentOffset.y + self.height > self.contentSize.height - _loadingView.height)
 	{
-		if ([_dataSource canLoadDataForInfiniteTableView: self] == YES)
+		if ([self.dataSource canLoadDataForInfiniteTableView: self] == YES)
 		{
 			[self showLoadingView];
 			
-			[_dataSource loadDataForInfiniteTableView: self];
+			[self.dataSource loadDataForInfiniteTableView: self];
 		}
 		else
 		{

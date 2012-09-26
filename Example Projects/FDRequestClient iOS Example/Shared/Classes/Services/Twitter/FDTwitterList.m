@@ -4,25 +4,6 @@
 #pragma mark Class Definition
 
 @implementation FDTwitterList
-{
-	@private __strong NSString *_listId;
-	@private __strong NSString *_name;
-	@private __strong NSString *_listDescription;
-	@private unsigned int _memberCount;
-	@private unsigned int _subscriberCount;
-	@private __strong FDTwitterUser *_creator;
-}
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize listId = _listId;
-@synthesize name = _name;
-@synthesize listDescription = _listDescription;
-@synthesize memberCount = _memberCount;
-@synthesize subscriberCount = _subscriberCount;
-@synthesize creator = _creator;
 
 
 #pragma mark -

@@ -4,29 +4,6 @@
 #pragma mark Class Definition
 
 @implementation FDTweet
-{
-	@private __strong NSString *_tweetId;
-	@private __strong FDTwitterUser *_user;
-	@private __strong NSString *_text;
-	@private __strong NSDate *_creationDate;
-	@private __strong NSMutableArray *_urls;
-	@private BOOL _favourited;
-	@private BOOL _retweeted;
-	@private unsigned int _retweetCount;
-}
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize tweetId = _tweetId;
-@synthesize user = _user;
-@synthesize text = _text;
-@synthesize creationDate = _creationDate;
-@synthesize urls = _urls;
-@synthesize favourited = _favourited;
-@synthesize retweeted = _retweeted;
-@synthesize retweetCount = _retweetCount;
 
 
 #pragma mark -

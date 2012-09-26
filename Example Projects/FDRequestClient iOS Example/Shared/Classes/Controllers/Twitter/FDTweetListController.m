@@ -16,7 +16,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 
 @interface FDTweetListController ()
 
-@property (nonatomic, readwrite, strong) IBOutlet FDInfiniteTableView *infiniteTableView;
+@property (nonatomic, strong, readwrite) IBOutlet FDInfiniteTableView *infiniteTableView;
 
 
 - (void)_initializeTweetListController;
@@ -30,19 +30,8 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 
 @implementation FDTweetListController
 {
-	@private __strong FDInfiniteTableView *_infiniteTableView;
-	
 	@private __strong NSMutableArray *_tweets;
 }
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize infiniteTableView = _infiniteTableView;
-
-@synthesize tweets = _tweets;
-
 
 #pragma mark -
 #pragma mark Constructors

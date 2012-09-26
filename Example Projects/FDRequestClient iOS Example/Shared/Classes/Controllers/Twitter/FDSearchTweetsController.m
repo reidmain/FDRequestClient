@@ -22,18 +22,10 @@
 
 @implementation FDSearchTweetsController
 {
-	@private __strong UISearchBar *_searchBar;
-	
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 	@private unsigned int _currentPage;
 	@private __strong NSString *_maxTweetId;
 }
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize searchBar = _searchBar;
 
 
 #pragma mark -

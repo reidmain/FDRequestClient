@@ -72,12 +72,6 @@ NSString * const FDURLRequestTypeJSON = @"json";
 	return self;
 }
 
-
-#pragma mark -
-#pragma mark Destructor
-
-
-
 #pragma mark -
 #pragma mark Properties
 
@@ -107,13 +101,6 @@ NSString * const FDURLRequestTypeJSON = @"json";
 
 - (NSURLRequest *)rawURLRequest;
 {
-//	// Create a NSURLRequest object from the FDURLRequest that can be sent using NSURLConnection.
-//	NSURLRequest *rawURLRequest = [[[NSURLRequest alloc] 
-//		initWithURL: _url 
-//			cachePolicy: _cachePolicy 
-//			timeoutInterval: _timeoutInterval] 
-//				autorelease];
-//	
 	return _rawURLRequest;
 }
 

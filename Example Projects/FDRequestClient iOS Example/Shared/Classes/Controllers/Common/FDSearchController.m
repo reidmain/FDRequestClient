@@ -18,20 +18,8 @@
 
 @implementation FDSearchController
 {
-	@private __strong FDInfiniteTableView *_infiniteTableView;
-	@private __strong UISearchBar *_searchBar;
-	
 	@private __strong NSMutableArray *_searchResults;
 }
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize infiniteTableView = _infiniteTableView;
-@synthesize searchBar = _searchBar;
-
-@synthesize searchResults = _searchResults;
 
 
 #pragma mark -

@@ -16,18 +16,13 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 @implementation FDHTTPRequest
 {
-	@private __strong FDHTTPRequestMethod _method;
 	@private __strong NSMutableDictionary *_httpHeaderFields;
 	@private __strong NSMutableDictionary *_parameters;
-	@private __strong NSData *_messageBody;
-	@private __strong FDHTTPRequestMessageBodyProvider _messageBodyProvider;
 }
 
 
 #pragma mark -
 #pragma mark Properties
-
-@synthesize method = _method;
 
 - (NSDictionary *)httpHeaderFields
 {
@@ -55,7 +50,6 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	[_parameters addEntriesFromDictionary: parameters];
 }
 
-@synthesize messageBody = _messageBody;
 -(void)setMessageBody: (NSData *)messageBody
 {
 	if (_messageBody != messageBody)
@@ -71,7 +65,6 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	}
 }
 
-@synthesize messageBodyProvider = _messageBodyProvider;
 -(void)setMessageBodyProvider: (FDHTTPRequestMessageBodyProvider)messageBodyProvider
 {
 	if (_messageBodyProvider != messageBodyProvider)
@@ -137,7 +130,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 #pragma mark -
 #pragma mark Overridden Methods
 
-- (NSURLRequest *)rawURLRequest;
+- (NSURLRequest *)rawURLRequest
 {
 	// If any query parameters exist, add them to the string of the URL.
 	NSURL *url = nil;

@@ -18,9 +18,9 @@ typedef enum
 #pragma mark Properties
 
 @property (nonatomic, readonly) FDURLResponseStatus status;
-@property (nonatomic, readonly) id content;
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) NSURLResponse *rawURLResponse;
+@property (nonatomic, strong, readonly) id content;
+@property (nonatomic, strong, readonly) NSError *error;
+@property (nonatomic, strong, readonly) NSURLResponse *rawURLResponse;
 
 
 @end // @interface FDURLResponse

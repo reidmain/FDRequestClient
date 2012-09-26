@@ -32,10 +32,6 @@
 
 
 #pragma mark -
-#pragma mark Properties
-
-
-#pragma mark -
 #pragma mark Constructors
 
 - (id)_initWithAuthorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 

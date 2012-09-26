@@ -20,35 +20,6 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 #pragma mark Class Definition
 
 @implementation FDTwitterUser
-{
-	@private __strong NSString *_userId;
-	@private __strong NSString *_screenName;
-	@private __strong NSString *_name;
-	@private __strong NSString *_location;
-	@private __strong NSURL *_url;
-	@private __strong NSString *_bio;
-	@private __strong NSURL *_profileImageURL;
-	@private unsigned int _followingCount;
-	@private unsigned int _followerCount;
-	@private unsigned int _listedCount;
-	@private BOOL _followedByAuthenticatedUser;
-}
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize userId = _userId;
-@synthesize screenName = _screenName;
-@synthesize name = _name;
-@synthesize location = _location;
-@synthesize url = _url;
-@synthesize bio = _bio;
-@synthesize profileImageURL = _profileImageURL;
-@synthesize followingCount = _followingCount;
-@synthesize followerCount = _followerCount;
-@synthesize listedCount = _listedCount;
-@synthesize followedByAuthenticatedUser = _followedByAuthenticatedUser;
 
 
 #pragma mark -

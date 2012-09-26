@@ -37,37 +37,10 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 
 @implementation FDTweetDetailsController
 {
-	@private __strong UITableView *_tableView;
-	@private __strong UIView *_tableHeaderView;
-	@private __strong UIImageView *_profileImageView;
-	@private __strong UILabel *_nameLabel;
-	@private __strong UILabel *_screenNameLabel;
-	@private __strong UILabel *_textLabel;
-	@private __strong UIView *_tableFooterView;
-	@private __strong UIActivityIndicatorView *_activityIndicatorView;
-	@private __strong UILabel *_noListsLabel;
-	
-	@private __strong FDTweet *_tweet;
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 	@private BOOL _listsRequested;
 	@private __strong NSMutableArray *_lists;
 }
-
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize tableView = _tableView;
-@synthesize tableHeaderView = _tableHeaderView;
-@synthesize profileImageView = _profileImageView;
-@synthesize nameLabel = _nameLabel;
-@synthesize screenNameLabel = _screenNameLabel;
-@synthesize textLabel = _textLabel;
-@synthesize tableFooterView = _tableFooterView;
-@synthesize activityIndicatorView = _activityIndicatorView;
-@synthesize noListsLabel = _noListsLabel;
-
-@synthesize tweet = _tweet;
 
 
 #pragma mark -

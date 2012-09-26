@@ -11,7 +11,7 @@
 #pragma mark -
 #pragma mark Properties
 
-@property (nonatomic, readonly, strong) FDInfiniteTableView *infiniteTableView;
+@property (nonatomic, strong, readonly) FDInfiniteTableView *infiniteTableView;
 
 @property (nonatomic, readonly) NSArray *tweets;
 
