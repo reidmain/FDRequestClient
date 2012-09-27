@@ -18,7 +18,7 @@
 		(CFStringRef)@"!*'();:@&=+$,/?%#[]",
 		kCFStringEncodingUTF8);
 	
-	return (__bridge NSString *)encodedString;
+	return (__bridge_transfer NSString *)encodedString;
 }
 
 
