@@ -1,5 +1,4 @@
 #import "UIImageView+WebImage.h"
-#import "FDRequestClient.h"
 #import "FDInMemoryCache.h"
 #import <objc/runtime.h>
 

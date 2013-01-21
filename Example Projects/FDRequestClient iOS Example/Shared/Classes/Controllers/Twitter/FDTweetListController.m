@@ -1,7 +1,6 @@
 #import "FDTweetListController.h"
 #import "FDTweet.h"
 #import "FDTweetDetailsController.h"
-#import "FDNullOrEmpty.h"
 #import "UIImageView+WebImage.h"
 #import "UIView+Layout.h"
 

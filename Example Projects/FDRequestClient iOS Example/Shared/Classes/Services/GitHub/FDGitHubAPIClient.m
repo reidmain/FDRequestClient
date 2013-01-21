@@ -1,5 +1,4 @@
 #import "FDGitHubAPIClient.h"
-#import "NSString+URLEncode.h"
 
 
 #pragma mark Class Extension

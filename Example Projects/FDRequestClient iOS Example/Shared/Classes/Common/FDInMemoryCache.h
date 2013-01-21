@@ -1,6 +1,3 @@
-#import "FDRequestClientCache.h"
-
-
 #pragma mark Class Interface
 
 @interface FDInMemoryCache : NSObject<

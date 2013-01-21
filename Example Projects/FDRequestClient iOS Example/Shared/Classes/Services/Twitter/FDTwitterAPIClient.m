@@ -1,7 +1,7 @@
 #import "FDTwitterAPIClient.h"
 #import <Twitter/Twitter.h>
-#import "FDNullOrEmpty.h"
 #import "NSDictionary+Accessing.h"
+#import <FDRequestClient/FDNullOrEmpty.h>
 
 
 #pragma mark Class Extension

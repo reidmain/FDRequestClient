@@ -1,6 +1,5 @@
 #import "FDInfiniteTableView.h"
 #import "UIView+Layout.h"
-#import "NSObject+PerformBlock.h"
 
 
 #pragma mark Constants

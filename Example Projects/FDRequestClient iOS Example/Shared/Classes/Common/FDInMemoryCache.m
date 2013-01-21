@@ -1,6 +1,5 @@
 #import "FDInMemoryCache.h"
-#import "FDHTTPRequest.h"
-#import "FDURLResponse+Private.h"
+#import <FDRequestClient/FDURLResponse+Private.h>
 
 
 #pragma mark Class Definition

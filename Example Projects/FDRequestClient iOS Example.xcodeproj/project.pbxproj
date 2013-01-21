@@ -63,16 +63,25 @@
 		0716243B160AB50400346A3C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716243A160AB50400346A3C /* Twitter.framework */; };
 		071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07162331160AAD2900346A3C /* InfoPlist.strings */; };
 		07612F61160FEC44006C48B4 /* launch_iphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */; };
-		07960166160FE75A0041B80D /* FDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960151160FE7590041B80D /* FDHTTPRequest.m */; };
-		07960167160FE75A0041B80D /* FDRequestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960154160FE7590041B80D /* FDRequestClient.m */; };
-		07960168160FE75A0041B80D /* FDURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960158160FE75A0041B80D /* FDURLConnection.m */; };
-		07960169160FE75A0041B80D /* FDURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796015A160FE75A0041B80D /* FDURLConnectionOperation.m */; };
-		0796016A160FE75A0041B80D /* FDURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796015C160FE75A0041B80D /* FDURLRequest.m */; };
-		0796016B160FE75A0041B80D /* FDURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0796015F160FE75A0041B80D /* FDURLResponse.m */; };
-		0796016C160FE75A0041B80D /* NSDictionary+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960161160FE75A0041B80D /* NSDictionary+URLEncode.m */; };
-		0796016D160FE75A0041B80D /* NSObject+PerformBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960163160FE75A0041B80D /* NSObject+PerformBlock.m */; };
-		0796016E160FE75A0041B80D /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07960165160FE75A0041B80D /* NSString+URLEncode.m */; };
+		27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27AE0F8816AD9D07001F5771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27AE0F3616AD966A001F5771;
+			remoteInfo = "FDRequestClient Static Library";
+		};
+		27AE0F8F16AD9FD4001F5771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27AE0F3516AD966A001F5771;
+			remoteInfo = FDRequestClient;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		07162316160AAD2900346A3C /* FDRequestClient iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FDRequestClient iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,28 +171,7 @@
 		071623D5160AB12200346A3C /* FDTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterUser.m; sourceTree = "<group>"; };
 		0716243A160AB50400346A3C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_iphone-568h@2x.png"; sourceTree = "<group>"; };
-		07960150160FE7590041B80D /* FDHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHTTPRequest.h; sourceTree = "<group>"; };
-		07960151160FE7590041B80D /* FDHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHTTPRequest.m; sourceTree = "<group>"; };
-		07960152160FE7590041B80D /* FDNullOrEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDNullOrEmpty.h; sourceTree = "<group>"; };
-		07960153160FE7590041B80D /* FDRequestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClient.h; sourceTree = "<group>"; };
-		07960154160FE7590041B80D /* FDRequestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClient.m; sourceTree = "<group>"; };
-		07960155160FE7590041B80D /* FDRequestClientCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientCache.h; sourceTree = "<group>"; };
-		07960156160FE75A0041B80D /* FDRequestClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientDelegate.h; sourceTree = "<group>"; };
-		07960157160FE75A0041B80D /* FDURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLConnection.h; sourceTree = "<group>"; };
-		07960158160FE75A0041B80D /* FDURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLConnection.m; sourceTree = "<group>"; };
-		07960159160FE75A0041B80D /* FDURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLConnectionOperation.h; sourceTree = "<group>"; };
-		0796015A160FE75A0041B80D /* FDURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLConnectionOperation.m; sourceTree = "<group>"; };
-		0796015B160FE75A0041B80D /* FDURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLRequest.h; sourceTree = "<group>"; };
-		0796015C160FE75A0041B80D /* FDURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLRequest.m; sourceTree = "<group>"; };
-		0796015D160FE75A0041B80D /* FDURLResponse+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FDURLResponse+Private.h"; sourceTree = "<group>"; };
-		0796015E160FE75A0041B80D /* FDURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLResponse.h; sourceTree = "<group>"; };
-		0796015F160FE75A0041B80D /* FDURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLResponse.m; sourceTree = "<group>"; };
-		07960160160FE75A0041B80D /* NSDictionary+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLEncode.h"; sourceTree = "<group>"; };
-		07960161160FE75A0041B80D /* NSDictionary+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLEncode.m"; sourceTree = "<group>"; };
-		07960162160FE75A0041B80D /* NSObject+PerformBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlock.h"; sourceTree = "<group>"; };
-		07960163160FE75A0041B80D /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
-		07960164160FE75A0041B80D /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
-		07960165160FE75A0041B80D /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDRequestClient Static Library.xcodeproj"; path = "../Static Library Project/FDRequestClient Static Library.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */,
 				0716243B160AB50400346A3C /* Twitter.framework in Frameworks */,
 				0716231B160AAD2900346A3C /* Foundation.framework in Frameworks */,
 				0716231D160AAD2900346A3C /* CoreGraphics.framework in Frameworks */,
@@ -564,40 +553,17 @@
 		0796014D160FE7500041B80D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				0796014F160FE7590041B80D /* FDRequestClient */,
+				27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */,
 			);
 			name = Vendors;
-			path = "FDRequestClient iOS Example/Vendors";
 			sourceTree = "<group>";
 		};
-		0796014F160FE7590041B80D /* FDRequestClient */ = {
+		27AE0F8216AD9D07001F5771 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07960152160FE7590041B80D /* FDNullOrEmpty.h */,
-				07960160160FE75A0041B80D /* NSDictionary+URLEncode.h */,
-				07960161160FE75A0041B80D /* NSDictionary+URLEncode.m */,
-				07960162160FE75A0041B80D /* NSObject+PerformBlock.h */,
-				07960163160FE75A0041B80D /* NSObject+PerformBlock.m */,
-				07960164160FE75A0041B80D /* NSString+URLEncode.h */,
-				07960165160FE75A0041B80D /* NSString+URLEncode.m */,
-				0796015B160FE75A0041B80D /* FDURLRequest.h */,
-				0796015C160FE75A0041B80D /* FDURLRequest.m */,
-				07960150160FE7590041B80D /* FDHTTPRequest.h */,
-				07960151160FE7590041B80D /* FDHTTPRequest.m */,
-				07960157160FE75A0041B80D /* FDURLConnection.h */,
-				07960158160FE75A0041B80D /* FDURLConnection.m */,
-				07960159160FE75A0041B80D /* FDURLConnectionOperation.h */,
-				0796015A160FE75A0041B80D /* FDURLConnectionOperation.m */,
-				0796015E160FE75A0041B80D /* FDURLResponse.h */,
-				0796015F160FE75A0041B80D /* FDURLResponse.m */,
-				0796015D160FE75A0041B80D /* FDURLResponse+Private.h */,
-				07960153160FE7590041B80D /* FDRequestClient.h */,
-				07960154160FE7590041B80D /* FDRequestClient.m */,
-				07960156160FE75A0041B80D /* FDRequestClientDelegate.h */,
-				07960155160FE7590041B80D /* FDRequestClientCache.h */,
+				27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */,
 			);
-			name = FDRequestClient;
-			path = ../../../FDRequestClient;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -614,6 +580,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				27AE0F9016AD9FD4001F5771 /* PBXTargetDependency */,
 			);
 			name = "FDRequestClient iOS Example";
 			productName = "FDRequestClient iOS Example";
@@ -639,12 +606,28 @@
 			mainGroup = 0716230B160AAD2900346A3C;
 			productRefGroup = 07162317160AAD2900346A3C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 27AE0F8216AD9D07001F5771 /* Products */;
+					ProjectRef = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				07162315160AAD2900346A3C /* FDRequestClient iOS Example */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFDRequestClient.a;
+			remoteRef = 27AE0F8816AD9D07001F5771 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		07162314160AAD2900346A3C /* Resources */ = {
@@ -712,19 +695,18 @@
 				071623DA160AB12200346A3C /* FDTwitterList.m in Sources */,
 				071623DB160AB12200346A3C /* FDTwitterURL.m in Sources */,
 				071623DC160AB12200346A3C /* FDTwitterUser.m in Sources */,
-				07960166160FE75A0041B80D /* FDHTTPRequest.m in Sources */,
-				07960167160FE75A0041B80D /* FDRequestClient.m in Sources */,
-				07960168160FE75A0041B80D /* FDURLConnection.m in Sources */,
-				07960169160FE75A0041B80D /* FDURLConnectionOperation.m in Sources */,
-				0796016A160FE75A0041B80D /* FDURLRequest.m in Sources */,
-				0796016B160FE75A0041B80D /* FDURLResponse.m in Sources */,
-				0796016C160FE75A0041B80D /* NSDictionary+URLEncode.m in Sources */,
-				0796016D160FE75A0041B80D /* NSObject+PerformBlock.m in Sources */,
-				0796016E160FE75A0041B80D /* NSString+URLEncode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27AE0F9016AD9FD4001F5771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FDRequestClient;
+			targetProxy = 27AE0F8F16AD9FD4001F5771 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		07162371160AAD2B00346A3C /* Debug */ = {
@@ -746,6 +728,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -768,6 +751,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -792,6 +776,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
