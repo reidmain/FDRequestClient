@@ -203,7 +203,7 @@
 	}
 	
 	FDURLResponse *urlResponse = [[FDURLResponse alloc] 
-		_initWithStatus: status 
+		initWithStatus: status 
 			content: responseContent 
 			error: _error 
 			rawURLResponse: _rawURLResponse];

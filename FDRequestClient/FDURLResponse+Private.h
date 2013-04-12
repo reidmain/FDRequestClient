@@ -6,13 +6,12 @@
 @interface FDURLResponse ()
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
-- (id)_initWithStatus: (FDURLResponseStatus)status 
+- (id)initWithStatus: (FDURLResponseStatus)status 
 	content: (id)content 
 	error: (NSError *)error 
 	rawURLResponse: (NSURLResponse *)rawURLResponse;
 
 
-@end // @interface FDURLResponse ()
+@end

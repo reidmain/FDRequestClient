@@ -57,7 +57,7 @@
 			if (cachedResponseContent != nil)
 			{
 				cachedResponse = [[FDURLResponse alloc] 
-					_initWithStatus: FDURLResponseStatusSucceed 
+					initWithStatus: FDURLResponseStatusSucceed 
 						content: cachedResponseContent 
 						error: nil 
 						rawURLResponse: nil];
@@ -82,7 +82,7 @@
 		if (cachedResponseContent != nil)
 		{
 			cachedResponse = [[FDURLResponse alloc] 
-				_initWithStatus: FDURLResponseStatusSucceed 
+				initWithStatus: FDURLResponseStatusSucceed 
 					content: cachedResponseContent 
 					error: nil 
 					rawURLResponse: nil];
