@@ -1,5 +1,6 @@
 #import "FDTwitterAPIClient.h"
 #import <Twitter/Twitter.h>
+#import <Social/Social.h>
 #import "NSDictionary+Accessing.h"
 #import <FDRequestClient/FDNullOrEmpty.h>
 
@@ -13,7 +14,7 @@
 - (void)_setMaxTweetId: (NSString *)maxTweetId 
 	forParameters: (NSMutableDictionary *)parameters;
 
-- (void)_loadRequest: (TWRequest *)request 
+- (void)_loadRequest: (SLRequest *)request 
 	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
 	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
 
@@ -26,24 +27,21 @@
 - (NSArray *)_twitterListsFromJSONObject: (NSArray *)jsonObject;
 
 
-@end // @interface FDTwitterAPIClient ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Variables
+#pragma mark - Class Variables
 
 static NSDateFormatter *_apiDateFormatter;
 static NSDateFormatter *_searchDateFormatter;
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDTwitterAPIClient
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 + (void)initialize
 {
@@ -84,8 +82,7 @@ static NSDateFormatter *_searchDateFormatter;
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)listsForUserId: (NSString *)userId 
 	cursor: (NSString *)cursor 
@@ -102,10 +99,10 @@ static NSDateFormatter *_searchDateFormatter;
 			nil];
 	
 	// Create lists request.
-	TWRequest *request = [[TWRequest alloc] 
-		initWithURL: resourceURL 
-			parameters: parameters 
-			requestMethod: TWRequestMethodGET];
+	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
+		requestMethod: SLRequestMethodGET 
+		URL: resourceURL 
+		parameters: parameters];
 	
 	request.account = account;
 	
@@ -167,10 +164,10 @@ static NSDateFormatter *_searchDateFormatter;
 		forParameters: parameters];
 	
 	// Create list's statuses request.
-	TWRequest *request = [[TWRequest alloc] 
-		initWithURL: resourceURL 
-			parameters: parameters 
-			requestMethod: TWRequestMethodGET];
+	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
+		requestMethod: SLRequestMethodGET 
+		URL: resourceURL 
+		parameters: parameters];
 	
 	request.account = account;
 	
@@ -214,15 +211,15 @@ static NSDateFormatter *_searchDateFormatter;
 			nil];
 	
 	// Create profile image request.
-	TWRequest *request = [[TWRequest alloc] 
-		initWithURL: resourceURL 
-			parameters: parameters 
-			requestMethod: TWRequestMethodGET];
+	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
+		requestMethod: SLRequestMethodGET 
+		URL: resourceURL 
+		parameters: parameters];
 	
 	request.account = account;
 	
 	// Load profile image request.
-	[self loadURLRequest: [request signedURLRequest] 
+	[self loadURLRequest: [request preparedURLRequest] 
 		urlRequestType: FDURLRequestTypeImage 
 		authorizationBlock: nil 
 		progressBlock: nil 
@@ -274,10 +271,10 @@ static NSDateFormatter *_searchDateFormatter;
 		forParameters: parameters];
 	
 	// Create search request.
-	TWRequest *request = [[TWRequest alloc] 
-		initWithURL: [NSURL URLWithString: resourceURLAsString] 
-			parameters: parameters 
-			requestMethod: TWRequestMethodGET];
+	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
+		requestMethod: SLRequestMethodGET 
+		URL: [NSURL URLWithString: resourceURLAsString] 
+		parameters: parameters];
 	
 	request.account = account;
 	
@@ -374,8 +371,7 @@ static NSDateFormatter *_searchDateFormatter;
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (NSURL *)_resourceURLForMethodName: (NSString *)methodName
 {
@@ -400,11 +396,11 @@ static NSDateFormatter *_searchDateFormatter;
 	}
 }
 
-- (void)_loadRequest: (TWRequest *)request 
+- (void)_loadRequest: (SLRequest *)request 
 	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
 	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock
 {
-	[self loadURLRequest: [request signedURLRequest] 
+	[self loadURLRequest: [request preparedURLRequest] 
 		urlRequestType: FDURLRequestTypeJSON 
 		authorizationBlock: nil 
 		progressBlock: nil 
@@ -579,4 +575,4 @@ static NSDateFormatter *_searchDateFormatter;
 }
 
 
-@end // @implementation FDTwitterAPIClient
+@end

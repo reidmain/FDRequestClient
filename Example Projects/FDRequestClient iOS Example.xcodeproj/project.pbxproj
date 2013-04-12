@@ -60,10 +60,10 @@
 		071623DA160AB12200346A3C /* FDTwitterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D1160AB12200346A3C /* FDTwitterList.m */; };
 		071623DB160AB12200346A3C /* FDTwitterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D3160AB12200346A3C /* FDTwitterURL.m */; };
 		071623DC160AB12200346A3C /* FDTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D5160AB12200346A3C /* FDTwitterUser.m */; };
-		0716243B160AB50400346A3C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716243A160AB50400346A3C /* Twitter.framework */; };
 		071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07162331160AAD2900346A3C /* InfoPlist.strings */; };
 		07612F61160FEC44006C48B4 /* launch_iphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */; };
 		27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */; };
+		27E3358D17189D1F0089D406 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E3358C17189D1F0089D406 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,9 +169,9 @@
 		071623D3160AB12200346A3C /* FDTwitterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterURL.m; sourceTree = "<group>"; };
 		071623D4160AB12200346A3C /* FDTwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTwitterUser.h; sourceTree = "<group>"; };
 		071623D5160AB12200346A3C /* FDTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterUser.m; sourceTree = "<group>"; };
-		0716243A160AB50400346A3C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_iphone-568h@2x.png"; sourceTree = "<group>"; };
 		27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDRequestClient Static Library.xcodeproj"; path = "../Static Library Project/FDRequestClient Static Library.xcodeproj"; sourceTree = "<group>"; };
+		27E3358C17189D1F0089D406 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 				0716231D160AAD2900346A3C /* CoreGraphics.framework in Frameworks */,
 				0716231F160AAD2900346A3C /* QuartzCore.framework in Frameworks */,
 				07162321160AAD2900346A3C /* UIKit.framework in Frameworks */,
-				0716243B160AB50400346A3C /* Twitter.framework in Frameworks */,
+				27E3358D17189D1F0089D406 /* Social.framework in Frameworks */,
 				27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +217,7 @@
 				0716231C160AAD2900346A3C /* CoreGraphics.framework */,
 				0716231E160AAD2900346A3C /* QuartzCore.framework */,
 				07162320160AAD2900346A3C /* UIKit.framework */,
-				0716243A160AB50400346A3C /* Twitter.framework */,
+				27E3358C17189D1F0089D406 /* Social.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -726,7 +726,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -748,7 +748,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -772,7 +772,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
