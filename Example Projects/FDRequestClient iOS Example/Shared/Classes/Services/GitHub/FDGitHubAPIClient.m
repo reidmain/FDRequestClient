@@ -122,9 +122,7 @@ static NSDateFormatter *_dateFormatter;
 
 - (NSDate *)_dateFromGitHubString: (NSString *)string
 {
-	NSString *trimmedString = [string stringByReplacingCharactersInRange: NSMakeRange(22, 1) withString: @""];
-	
-	NSDate *date = [_dateFormatter dateFromString: trimmedString];
+	NSDate *date = [_dateFormatter dateFromString: string];
 	
 	return date;
 }
