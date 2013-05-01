@@ -62,6 +62,7 @@
 		071623DC160AB12200346A3C /* FDTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D5160AB12200346A3C /* FDTwitterUser.m */; };
 		071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07162331160AAD2900346A3C /* InfoPlist.strings */; };
 		07612F61160FEC44006C48B4 /* launch_iphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */; };
+		2785D4221730B5AE007B99B1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2785D4211730B5AB007B99B1 /* Accounts.framework */; };
 		27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */; };
 		27E3358D17189D1F0089D406 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E3358C17189D1F0089D406 /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -170,6 +171,7 @@
 		071623D4160AB12200346A3C /* FDTwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTwitterUser.h; sourceTree = "<group>"; };
 		071623D5160AB12200346A3C /* FDTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterUser.m; sourceTree = "<group>"; };
 		07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_iphone-568h@2x.png"; sourceTree = "<group>"; };
+		2785D4211730B5AB007B99B1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDRequestClient Static Library.xcodeproj"; path = "../Static Library Project/FDRequestClient Static Library.xcodeproj"; sourceTree = "<group>"; };
 		27E3358C17189D1F0089D406 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 				0716231D160AAD2900346A3C /* CoreGraphics.framework in Frameworks */,
 				0716231F160AAD2900346A3C /* QuartzCore.framework in Frameworks */,
 				07162321160AAD2900346A3C /* UIKit.framework in Frameworks */,
+				2785D4221730B5AE007B99B1 /* Accounts.framework in Frameworks */,
 				27E3358D17189D1F0089D406 /* Social.framework in Frameworks */,
 				27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */,
 			);
@@ -217,6 +220,7 @@
 				0716231C160AAD2900346A3C /* CoreGraphics.framework */,
 				0716231E160AAD2900346A3C /* QuartzCore.framework */,
 				07162320160AAD2900346A3C /* UIKit.framework */,
+				2785D4211730B5AB007B99B1 /* Accounts.framework */,
 				27E3358C17189D1F0089D406 /* Social.framework */,
 			);
 			name = Frameworks;

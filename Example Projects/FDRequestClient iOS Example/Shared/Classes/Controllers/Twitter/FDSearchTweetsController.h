@@ -9,7 +9,7 @@
 
 #pragma mark - Constructors
 
-- (id)initWithDefaultNibName;
+- (id)initWithTwitterAccount: (ACAccount *)twitterAccount;
 
 
 @end

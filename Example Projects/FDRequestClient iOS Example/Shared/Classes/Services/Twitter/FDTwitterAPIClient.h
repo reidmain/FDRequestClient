@@ -12,22 +12,16 @@
 #pragma mark - Instance Methods
 
 - (void)listsForUserId: (NSString *)userId 
-	cursor: (NSString *)cursor 
 	account: (ACAccount *)account 
-	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *lists, NSString *nextCursor))completion;
+	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *lists))completion;
 
 - (void)tweetsForListId: (NSString *)listId 
 	maxTweetId: (NSString *)maxTweetId 
 	account: (ACAccount *)account 
 	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *tweets))completion;
 
-- (void)profileImageForScreenName: (NSString *)screenName 
-	account: (ACAccount *)account 
-	completion: (void (^)(FDURLResponseStatus status, NSError *error, UIImage *profileImage, NSURL *profileImageURL))completion;
-
 - (void)tweetsForSearchQuery: (NSString *)query 
-	tweetsPerPage: (unsigned int)tweetsPerPage 
-	page: (unsigned int)page 
+	count: (unsigned int)count 
 	maxTweetId: (NSString *)maxTweetId 
 	account: (ACAccount *)account 
 	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *tweets, NSString *maxTweetId))completion;

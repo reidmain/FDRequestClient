@@ -30,11 +30,12 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 @end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDTweetDetailsController
 {
+	@private __strong FDTweet *_tweet;
+	@private __strong ACAccount *_twitterAccount;
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
 	@private BOOL _listsRequested;
 	@private __strong NSMutableArray *_lists;
@@ -43,7 +44,8 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 
 #pragma mark - Constructors
 
-- (id)initWithDefaultNibName
+- (id)initWithTweet: (FDTweet *)tweet 
+	twitterAccount: (ACAccount *)twitterAccount
 {
 	// Abort if base initializer fails.
 	if ((self = [self initWithNibName: @"FDTweetDetailsView" 
@@ -51,6 +53,10 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 	{
 		return nil;
 	}
+	
+	// Initialize instance variables.
+	_tweet = tweet;
+	_twitterAccount = twitterAccount;
 
 	// Return initialized instance.
 	return self;
@@ -149,9 +155,8 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 		[_activityIndicatorView startAnimating];
 		
 		[_twitterAPIClient listsForUserId: _tweet.user.userId 
-			cursor: nil 
-			account: nil 
-			completion: ^(FDURLResponseStatus status, NSError *error, NSArray *lists, NSString *nextCursor)
+			account: _twitterAccount 
+			completion: ^(FDURLResponseStatus status, NSError *error, NSArray *lists)
 			{
 				if (status == FDURLResponseStatusSucceed)
 				{
@@ -184,7 +189,6 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 - (void)_initializeTweetDetailsController
 {
 	// Initialize instance variables.
-	_tweet = nil;
 	_twitterAPIClient = [[FDTwitterAPIClient alloc]	
 		init];
 	_listsRequested = NO;
@@ -256,7 +260,8 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 		FDTwitterList *twitterList = [_lists objectAtIndex: indexPath.row];
 		
 		FDTwitterListTweetsController *twitterListTweetsController = [[FDTwitterListTweetsController alloc] 
-			initWithTwitterList: twitterList];
+			initWithTwitterList: twitterList 
+				twitterAccount: _twitterAccount];
 		
 		[self.navigationController pushViewController: twitterListTweetsController 
 			animated: YES];

@@ -7,14 +7,10 @@
 @interface FDTwitterListTweetsController : FDTweetListController
 
 
-#pragma mark - Properties
-
-@property (nonatomic, strong) FDTwitterList *twitterList;
-
-
 #pragma mark - Constructors
 
-- (id)initWithTwitterList: (FDTwitterList *)twitterList;
+- (id)initWithTwitterList: (FDTwitterList *)twitterList 
+	twitterAccount: (ACAccount *)twitterAccount;
 
 
 @end

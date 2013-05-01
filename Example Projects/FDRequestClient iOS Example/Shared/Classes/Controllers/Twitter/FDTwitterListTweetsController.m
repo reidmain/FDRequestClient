@@ -12,32 +12,19 @@
 @end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDTwitterListTweetsController
 {
+	@private __strong FDTwitterList *_twitterList;
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
-}
-
-
-#pragma mark - Properties
-
-- (void)setTwitterList: (FDTwitterList *)twitterList
-{
-	if (_twitterList != twitterList)
-	{
-		_twitterList = twitterList;
-		
-		// Set controller's title.
-		self.title = _twitterList.name;
-	}
 }
 
 
 #pragma mark - Constructors
 
-- (id)initWithTwitterList: (FDTwitterList *)twitterList
+- (id)initWithTwitterList: (FDTwitterList *)twitterList 
+	twitterAccount: (ACAccount *)twitterAccount
 {
 	// Abort if base initializer fails.
 	if ((self = [self initWithNibName: @"FDTwitterListTweetsView" 
@@ -48,6 +35,7 @@
 	
 	// Initialize instance variables.
 	_twitterList = twitterList;
+	self.twitterAccount = twitterAccount;
 	
 	// Set controller's title.
 	self.title = _twitterList.name;
@@ -111,7 +99,7 @@
 	
 	[_twitterAPIClient tweetsForListId: _twitterList.listId 
 		maxTweetId: oldestTweet.tweetId 
-		account: nil 
+		account: self.twitterAccount 
 		completion: ^(FDURLResponseStatus status, NSError *error, NSArray *tweets)
 		{
 			[self.infiniteTableView doneLoading];

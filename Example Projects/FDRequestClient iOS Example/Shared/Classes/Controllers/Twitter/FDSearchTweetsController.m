@@ -21,14 +21,13 @@
 @implementation FDSearchTweetsController
 {
 	@private __strong FDTwitterAPIClient *_twitterAPIClient;
-	@private unsigned int _currentPage;
 	@private __strong NSString *_maxTweetId;
 }
 
 
 #pragma mark - Constructors
 
-- (id)initWithDefaultNibName
+- (id)initWithTwitterAccount: (ACAccount *)twitterAccount
 {
 	// Abort if base initializer fails.
 	if ((self = [self initWithNibName: @"FDSearchTweetsView" 
@@ -36,6 +35,9 @@
 	{
 		return nil;
 	}
+	
+	// Initialize instance variables.
+	self.twitterAccount = twitterAccount;
 
 	// Return initialized instance.
 	return self;
@@ -91,10 +93,9 @@
 	[super loadTweets];
 	
 	[_twitterAPIClient tweetsForSearchQuery: _searchBar.text 
-		tweetsPerPage: 50 
-		page: _currentPage++ 
+		count: 100 
 		maxTweetId: _maxTweetId 
-		account: nil 
+		account: self.twitterAccount 
 		completion: ^(FDURLResponseStatus status, NSError *error, NSArray *tweets, NSString *maxTweetId)
 		{
 			[self.infiniteTableView doneLoading];
@@ -117,7 +118,6 @@
 	// Initialize instance variables.
 	_twitterAPIClient = [[FDTwitterAPIClient alloc] 
 		init];
-	_currentPage = 1;
 	_maxTweetId = nil;
 	
 	// Set controller's title.
@@ -131,7 +131,6 @@
 {
 	[searchBar resignFirstResponder];
 	
-	_currentPage = 1;
 	_maxTweetId = nil;
 	
 	[self clearTweetsWithRowAnimation: UITableViewRowAnimationAutomatic];

@@ -1,5 +1,5 @@
 #import "FDRootViewController_iPad.h"
-#import "FDSearchTweetsController.h"
+#import "FDSearchGitHubRepositoriesController.h"
 
 
 #pragma mark Class Definition
@@ -27,12 +27,12 @@
 	
 	self.masterViewController = masterController;
 	
-	// Create a search tweets controller and make it the detail controller of the split view controller.
-	FDSearchTweetsController *searchTweetsController = [[FDSearchTweetsController alloc] 
+	// Create a search GitHub repositories controller and make it the detail controller of the split view controller.
+	FDSearchGitHubRepositoriesController *searchGitHubRepositoriesController = [[FDSearchGitHubRepositoriesController alloc]
 		initWithDefaultNibName];
 	
 	UINavigationController *detailController = [[UINavigationController alloc] 
-		initWithRootViewController: searchTweetsController];
+		initWithRootViewController: searchGitHubRepositoriesController];
 	
 	self.detailViewController = detailController;
 	

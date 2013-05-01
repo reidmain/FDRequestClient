@@ -34,8 +34,14 @@
 - (void)requestClient: (FDRequestClient *)requestClient 
 	cacheURLResponse: (FDURLResponse *)urlResponse
 {
+	if (FDIsEmpty(urlResponse.content) == YES 
+		|| FDIsEmpty([urlResponse.rawURLResponse URL]) == YES)
+	{
+		return;
+	}
+	
 	[_cache setObject: urlResponse.content 
-		forKey: [[urlResponse rawURLResponse] URL]];
+		forKey: [urlResponse.rawURLResponse URL]];
 }
 
 - (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 

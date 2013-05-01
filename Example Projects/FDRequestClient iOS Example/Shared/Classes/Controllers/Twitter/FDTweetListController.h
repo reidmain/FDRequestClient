@@ -1,4 +1,5 @@
 #import "FDInfiniteTableView.h"
+#import <Accounts/Accounts.h>
 
 
 #pragma mark Class Interface
@@ -12,6 +13,7 @@
 
 @property (nonatomic, strong, readonly) FDInfiniteTableView *infiniteTableView;
 
+@property (nonatomic, strong) ACAccount *twitterAccount;
 @property (nonatomic, readonly) NSArray *tweets;
 
 

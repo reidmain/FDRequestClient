@@ -1,4 +1,5 @@
 #import "FDTweet.h"
+#import <Accounts/Accounts.h>
 
 
 #pragma mark Class Interface
@@ -8,14 +9,10 @@
 	UITableViewDelegate>
 
 
-#pragma mark - Properties
-
-@property (nonatomic, strong) FDTweet *tweet;
-
-
 #pragma mark - Constructors
 
-- (id)initWithDefaultNibName;
+- (id)initWithTweet: (FDTweet *)tweet 
+	twitterAccount: (ACAccount *)twitterAccount;
 
 
 @end

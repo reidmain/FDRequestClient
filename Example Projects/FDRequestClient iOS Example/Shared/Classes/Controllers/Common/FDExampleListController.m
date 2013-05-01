@@ -1,4 +1,5 @@
 #import "FDExampleListController.h"
+#import <Social/Social.h>
 #import "FDSearchTweetsController.h"
 #import "FDSearchGitHubRepositoriesController.h"
 #import "UIView+Layout.h"
@@ -14,11 +15,6 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 #pragma mark - Class Extension
 
 @interface FDExampleListController ()
-{
-	@private __strong NSMutableArray *_rows;
-	@private __strong UITableView *_tableView;
-}
-
 
 - (void)_initializeExampleListController;
 
@@ -29,6 +25,12 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 #pragma mark - Class Definition
 
 @implementation FDExampleListController
+{
+	@private __strong NSMutableArray *_rows;
+	@private __strong UITableView *_tableView;
+	@private __strong ACAccountStore *_twitterAccountStore;
+	@private __strong ACAccountType *_twitterAccountType;
+}
 
 
 #pragma mark - Constructors
@@ -119,6 +121,8 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 			Row_SearchTweets, 
 			Row_SearchGitHubRepos, 
 			nil];
+	_twitterAccountStore = [[ACAccountStore alloc] init];
+	_twitterAccountType = [_twitterAccountStore accountTypeWithAccountTypeIdentifier: ACAccountTypeIdentifierTwitter];
 	
 	// Set controller's title.
 	self.title = @"Examples";
@@ -176,8 +180,44 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 		
 		if (row == Row_SearchTweets)
 		{
-			viewController = [[FDSearchTweetsController alloc] 
-				initWithDefaultNibName];
+			// v1.1 of the Twitter API requires a account for all requests so ask the user to access their Twitter accounts.
+			
+			// If a tweet is not able to be sent display an alert to the user.
+			if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeTwitter] == NO)
+			{
+				// If a SLComposeViewController is presented with all of its subviews removed when the user cannot tweet a alert view will be displayed with a button that will take users directly to Settings so they can setup a Twitter account.
+				SLComposeViewController *composeTweetController = [SLComposeViewController composeViewControllerForServiceType: SLServiceTypeTwitter];
+				
+				[composeTweetController.view.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+				
+				[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController: composeTweetController 
+					animated: NO 
+					completion: nil];
+			}
+			// Otherwise, request access to the user's Twitter accounts.
+			else
+			{
+				[_twitterAccountStore requestAccessToAccountsWithType: _twitterAccountType 
+					options: nil 
+					completion: ^(BOOL granted, NSError *error)
+						{
+							// NOTE: The completion handler is called on an arbitrary queue.
+							[self performBlockOnMainThread:^
+								{
+									if (granted == YES)
+									{
+										NSArray *twitterAccounts = [_twitterAccountStore accountsWithAccountType: _twitterAccountType];
+										ACAccount *twitterAccount = [twitterAccounts lastObject];
+										
+										FDSearchTweetsController *searchTweetsController = [[FDSearchTweetsController alloc] 
+											initWithTwitterAccount: twitterAccount];
+										
+										[_delegate exampleListController: self 
+											showViewController: searchTweetsController];
+									}
+								}];
+						}];
+			}
 		}
 		else if (row == Row_SearchGitHubRepos)
 		{

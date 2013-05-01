@@ -33,7 +33,6 @@
 #pragma mark - Class Variables
 
 static NSDateFormatter *_apiDateFormatter;
-static NSDateFormatter *_searchDateFormatter;
 
 
 #pragma mark - Class Definition
@@ -56,47 +55,25 @@ static NSDateFormatter *_searchDateFormatter;
 		_apiDateFormatter = [[NSDateFormatter alloc] 
 			init];
 		[_apiDateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
-//		[_apiDateFormatter setLocale: [[[NSLocale alloc] initWithLocaleIdentifier: @"en_US"] autorelease]];
-		
-		_searchDateFormatter = [[NSDateFormatter alloc] 
-			init];
-		[_searchDateFormatter setDateFormat: @"EEE, dd MMM yyyy HH:mm:ss Z"];
-//		[_searchDateFormatter setLocale: [[[NSLocale alloc] initWithLocaleIdentifier: @"en_US"] autorelease]];
 		
 		classInitialized = YES;
 	}
-}
-
-- (id)init
-{
-	// Abort if base initializer fails.
-	if ((self = [super init]) == nil)
-	{
-		return nil;
-	}
-	
-	// Initialize instance variables.
-	
-	// Return initialized instance.
-	return self;
 }
 
 
 #pragma mark - Public Methods
 
 - (void)listsForUserId: (NSString *)userId 
-	cursor: (NSString *)cursor 
 	account: (ACAccount *)account 
-	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *lists, NSString *nextCursor))completion
+	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *lists))completion
 {
 	// Create resource URL for lists request.
-	NSURL *resourceURL = [self _resourceURLForMethodName: @"lists"];
+	NSURL *resourceURL = [self _resourceURLForMethodName: @"lists/list"];
 	
 	// Create parameters for lists request.
-	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] 
-		initWithObjectsAndKeys: userId, 
-			@"user_id", 
-			nil];
+	NSDictionary *parameters = @{ 
+		@"user_id" : userId, 
+		@"reverse" : @"true" };
 	
 	// Create lists request.
 	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
@@ -111,32 +88,19 @@ static NSDateFormatter *_searchDateFormatter;
 		transformBlock: ^id(id jsonObject)
 		{
 			// Transform lists into local entities.
-			NSArray *jsonLists = [jsonObject objectForKey: @"lists"];
-			NSArray *lists = [self _twitterListsFromJSONObject: jsonLists];
+			NSArray *lists = [self _twitterListsFromJSONObject: jsonObject];
 			
-			NSNumber *nextCursor = [jsonObject objectForKey: @"next_cursor"];
-			
-			NSDictionary *transformResult = [NSDictionary dictionaryWithObjectsAndKeys: 
-				lists, 
-				@"lists", 
-				[nextCursor stringValue], 
-				@"nextCursor", 
-				nil];
-			
-			return transformResult;
+			return lists;
 		} 
 		completionBlock: ^(FDURLResponse *response)
 		{
 			if (response.status == FDURLResponseStatusSucceed)
 			{
-				NSArray *lists = [response.content objectForKey: @"lists"];
-				NSString *nextCursor = [response.content objectForKey: @"nextCursor"];
-				
-				completion(response.status, nil, lists, nextCursor);
+				completion(response.status, nil, response.content);
 			}
 			else
 			{
-				completion(response.status, response.error, nil, nil);
+				completion(response.status, response.error, nil);
 			}
 		}];
 }
@@ -193,79 +157,21 @@ static NSDateFormatter *_searchDateFormatter;
 		}];
 }
 
-- (void)profileImageForScreenName: (NSString *)screenName 
-	account: (ACAccount *)account 
-	completion: (void (^)(FDURLResponseStatus status, NSError *error, UIImage *profileImage, NSURL *profileImageURL))completion
-{
-	// Create resource URL for profile image request.
-	NSString *methodName = [NSString stringWithFormat: @"users/profile_image/%@", 
-		screenName];
-	
-	NSURL *resourceURL = [self _resourceURLForMethodName: methodName];
-	
-	// Create parameters for profile image request.
-	NSDictionary *parameters = [[NSDictionary alloc] 
-		initWithObjectsAndKeys: 
-			@"original", 
-			@"size", 
-			nil];
-	
-	// Create profile image request.
-	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
-		requestMethod: SLRequestMethodGET 
-		URL: resourceURL 
-		parameters: parameters];
-	
-	request.account = account;
-	
-	// Load profile image request.
-	[self loadURLRequest: [request preparedURLRequest] 
-		urlRequestType: FDURLRequestTypeImage 
-		authorizationBlock: nil 
-		progressBlock: nil 
-		dataParserBlock: nil 
-		transformBlock: nil 
-		completionBlock: ^(FDURLResponse *response)
-		{
-			if (response.status == FDURLResponseStatusSucceed)
-			{
-				completion(response.status, nil, response.content, [response.rawURLResponse URL]);
-			}
-			else
-			{
-				completion(response.status, response.error, nil, nil);
-			}
-		}];
-}
-
 - (void)tweetsForSearchQuery: (NSString *)query 
-	tweetsPerPage: (unsigned int)tweetsPerPage 
-	page: (unsigned int)page 
+	count: (unsigned int)count 
 	maxTweetId: (NSString *)maxTweetId 
 	account: (ACAccount *)account 
 	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *tweets, NSString *maxTweetId))completion
 {
 	// Create resource URL for search request.
-	NSString *resourceURLAsString = [NSString stringWithFormat: @"https://search.twitter.com/search.json"];
+	NSURL *resourceURL = [self _resourceURLForMethodName: @"search/tweets"];
 	
 	// Create paramters for search request.
 	NSMutableDictionary *parameters = [[NSMutableDictionary alloc] 
 		initWithObjectsAndKeys: 
-			@"true", 
-			@"include_entities", 
+			query, @"q", 
+			[NSString stringWithFormat:@"%u", count], @"count", 
 			nil];
-	
-	if (FDIsEmpty(query) == NO)
-	{
-		[parameters setObject: query 
-			forKey: @"q"];
-	}
-	
-	[parameters setObject: [NSString stringWithFormat: @"%d", tweetsPerPage] 
-		forKey: @"rpp"];
-	
-	[parameters setObject: [NSString stringWithFormat: @"%d", page] 
-		forKey: @"page"];
 	
 	[self _setMaxTweetId: maxTweetId 
 		forParameters: parameters];
@@ -273,7 +179,7 @@ static NSDateFormatter *_searchDateFormatter;
 	// Create search request.
 	SLRequest *request = [SLRequest requestForServiceType: SLServiceTypeTwitter 
 		requestMethod: SLRequestMethodGET 
-		URL: [NSURL URLWithString: resourceURLAsString] 
+		URL: resourceURL 
 		parameters: parameters];
 	
 	request.account = account;
@@ -283,74 +189,15 @@ static NSDateFormatter *_searchDateFormatter;
 		transformBlock: ^id(id jsonObject)
 		{
 			// Transform tweets into local entities.
-			NSArray *jsonResults = [jsonObject objectForKey: @"results"];
+			NSArray *jsonTweets = [jsonObject objectForKey: @"statuses"];
+			NSArray *tweets = [self _tweetsFromJSONObject: jsonTweets];
 			
-			NSMutableArray *tweets = [[NSMutableArray alloc] 
-				initWithCapacity: [jsonResults count]];
+			NSDictionary *searchMetadata = [jsonObject objectForKey: @"search_metadata"];
+			NSString *maxTweetId = [searchMetadata objectForKey: @"max_id_str"];
 			
-			// NOTE: The structure of tweets returned from the search API differ than those from the REST API
-			for (NSDictionary *jsonTweet in jsonResults)
-			{
-				FDTweet *tweet = [[FDTweet alloc] 
-					init];
-				
-				NSString *tweetId = [jsonTweet objectForKey: @"id_str"];
-				NSString *text = [jsonTweet objectForKey: @"text"];
-				
-				NSString *jsonDate = [jsonTweet objectForKey: @"created_at"];
-				NSDate *creationDate = [_searchDateFormatter dateFromString: jsonDate];
-				
-				tweet.tweetId = tweetId;
-				tweet.text = text;
-				tweet.creationDate = creationDate;
-				
-				NSDictionary *entities = [jsonTweet objectForKey: @"entities"];
-				
-				NSArray *jsonURLs = [entities objectForKey: @"urls"];
-				
-				for (NSDictionary *jsonURL in jsonURLs)
-				{
-					NSString *rawURLAsString = [jsonURL nonNullObjectForKey: @"url"];
-					NSString *displayURLAsString = [jsonURL nonNullObjectForKey: @"display_url"];
-					NSString *expandedURLAsString = [jsonURL nonNullObjectForKey: @"expanded_url"];
-					
-					FDTwitterURL *url = [[FDTwitterURL alloc] 
-						init];
-					
-					url.rawURL = [NSURL URLWithString: rawURLAsString];
-					url.displayURL = [NSURL URLWithString: displayURLAsString];
-					url.expandedURL = [NSURL URLWithString: expandedURLAsString];
-					
-					[tweet.urls addObject: url];
-				}
-				
-				// NOTE: Users returned from the search API are lighter than user objects returned from the REST API.
-				FDTwitterUser *user = [[FDTwitterUser alloc] 
-					init];
-				
-				NSString *userId = [jsonTweet objectForKey: @"from_user_id_str"];
-				NSString *screenName = [jsonTweet objectForKey: @"from_user"];
-				NSString *name = [jsonTweet objectForKey: @"from_user_name"];
-				NSString *profileImageURLAsString = [jsonTweet objectForKey: @"profile_image_url"];
-				
-				user.userId = userId;
-				user.screenName = screenName;
-				user.name = name;
-				user.profileImageURL = [NSURL URLWithString: profileImageURLAsString];
-				
-				tweet.user = user;
-				
-				[tweets addObject: tweet];
-			}
-			
-			NSString *maxTweetId = [jsonObject objectForKey: @"max_id_str"];
-			
-			NSDictionary *transformResult = [NSDictionary dictionaryWithObjectsAndKeys: 
-				tweets, 
-				@"tweets", 
-				maxTweetId, 
-				@"maxTweetId", 
-				nil];
+			NSDictionary *transformResult = @{ 
+				@"tweets" : tweets, 
+				@"maxTweetId" : maxTweetId };
 			
 			return transformResult;
 		} 
@@ -375,7 +222,7 @@ static NSDateFormatter *_searchDateFormatter;
 
 - (NSURL *)_resourceURLForMethodName: (NSString *)methodName
 {
-	NSString *resourceURLAsString = [NSString stringWithFormat: @"https://api.twitter.com/1/%@.json", 
+	NSString *resourceURLAsString = [NSString stringWithFormat: @"https://api.twitter.com/1.1/%@.json", 
 		methodName];
 	
 	NSURL *resourceURL = [NSURL URLWithString: resourceURLAsString];

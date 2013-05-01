@@ -258,8 +258,8 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 		FDTweet *tweet = [_tweets objectAtIndex: indexPath.row];
 		
 		FDTweetDetailsController *tweetDetailsController = [[FDTweetDetailsController alloc] 
-			initWithDefaultNibName];
-		tweetDetailsController.tweet = tweet;
+			initWithTweet: tweet 
+				twitterAccount: _twitterAccount];
 		
 		[self.navigationController pushViewController: tweetDetailsController 
 			animated: YES];
