@@ -6,8 +6,7 @@
 @implementation FDTweet
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -47,4 +46,4 @@
 }
 
 
-@end // @implementation FDTweet
+@end

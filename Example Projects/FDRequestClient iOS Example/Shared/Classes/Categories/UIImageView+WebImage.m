@@ -11,8 +11,7 @@ static void * const _imageURLKey;
 static void * const _loadImageOperationKey;
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)loadImageFromURL: (NSURL *)imageURL 
 	placeholderImage: (UIImage *)placeholderImage
@@ -82,4 +81,4 @@ static void * const _loadImageOperationKey;
 }
 
 
-@end // @implementation UIImageView (WebImage)
+@end

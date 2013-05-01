@@ -3,10 +3,9 @@
 @interface NSDictionary (Accessing)
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (id)nonNullObjectForKey: (id)key;
 
 
-@end // @interface NSDictionary (Accessing)
+@end

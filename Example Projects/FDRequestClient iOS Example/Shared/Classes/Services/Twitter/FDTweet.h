@@ -7,8 +7,7 @@
 @interface FDTweet : NSObject
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, copy) NSString *tweetId;
 @property (nonatomic, strong) FDTwitterUser *user;
@@ -20,4 +19,4 @@
 @property (nonatomic, assign) unsigned int retweetCount;
 
 
-@end // @interface FDTweet
+@end

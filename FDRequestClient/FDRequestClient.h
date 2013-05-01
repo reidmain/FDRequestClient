@@ -16,22 +16,19 @@
 @interface FDRequestClient : NSObject
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, weak) id<FDRequestClientDelegate> delegate;
 @property (nonatomic, weak) id<FDRequestClientCache> cache;
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithOperationQueue: (NSOperationQueue *)operationQueue;
 - (id)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (FDURLConnectionOperation *)loadURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType 
@@ -49,4 +46,4 @@
 	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
 
 
-@end // @interface FDRequestClient
+@end

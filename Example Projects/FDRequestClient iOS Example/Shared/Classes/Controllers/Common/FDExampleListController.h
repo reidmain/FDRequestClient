@@ -8,10 +8,9 @@
 	UITableViewDelegate>
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, weak) IBOutlet id<FDExampleListControllerDelegate> delegate;
 
 
-@end // @interface FDExampleListController
+@end

@@ -6,8 +6,7 @@
 @interface FDTwitterList : NSObject
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, copy) NSString *listId;
 @property (nonatomic, copy) NSString *name;
@@ -17,4 +16,4 @@
 @property (nonatomic, strong) FDTwitterUser *creator;
 
 
-@end // @interface FDTwitterList
+@end

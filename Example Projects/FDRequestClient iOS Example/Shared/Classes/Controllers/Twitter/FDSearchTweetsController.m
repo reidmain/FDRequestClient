@@ -13,11 +13,10 @@
 - (void)_initializeSearchTweetsController;
 
 
-@end // @interface FDSearchTweetsController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDSearchTweetsController
 {
@@ -27,8 +26,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithDefaultNibName
 {
@@ -44,7 +42,7 @@
 }
 
 - (id)initWithNibName: (NSString *)nibName 
-    bundle:(NSBundle *)bundle
+    bundle: (NSBundle *)bundle
 {
 	// Abort if base initializer fails.
 	if ((self = [super initWithNibName: nibName 
@@ -76,8 +74,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -86,8 +83,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (void)loadTweets
 {
@@ -114,8 +110,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeSearchTweetsController
 {
@@ -130,8 +125,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UISearchBarDelegate Methods
+#pragma mark - UISearchBarDelegate Methods
 
 - (void)searchBarSearchButtonClicked: (UISearchBar *)searchBar
 {
@@ -146,4 +140,4 @@
 }
 
 
-@end // @implementation FDSearchTweetsController
+@end

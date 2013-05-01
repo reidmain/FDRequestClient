@@ -11,8 +11,7 @@ NSString * const FDHTTPRequestMethodDelete = @"DELETE";
 NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDHTTPRequest
 {
@@ -21,8 +20,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (NSDictionary *)httpHeaderFields
 {
@@ -78,8 +76,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURL: (NSURL *)url
 {
@@ -103,8 +100,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)setValue: (NSString *)value 
     forHTTPHeaderField: (NSString *)field
@@ -127,8 +123,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (NSURLRequest *)rawURLRequest
 {
@@ -187,4 +182,4 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-@end // @implementation FDHTTPRequest
+@end

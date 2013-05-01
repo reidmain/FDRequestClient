@@ -52,4 +52,4 @@
 	return YES;
 }
 
-@end // @implementation AppDelegate
+@end

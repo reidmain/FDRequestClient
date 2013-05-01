@@ -7,10 +7,9 @@
 	UISearchBarDelegate>
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithDefaultNibName;
 
 
-@end // @interface FDSearchTweetsController
+@end

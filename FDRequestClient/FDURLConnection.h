@@ -10,15 +10,13 @@ typedef id (^FDURLConnectionDataParserBlock)(NSData *data);
 typedef id (^FDURLConnectionTransformBlock)(id object);
 
 
-#pragma mark -
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDURLConnection : NSObject<
 	NSURLConnectionDataDelegate>
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType;
@@ -26,8 +24,7 @@ typedef id (^FDURLConnectionTransformBlock)(id object);
 - (id)initWithURLRequest: (FDURLRequest *)urlRequest;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (FDURLResponse *)loadWithAuthorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDURLConnectionProgressBlock)progessBlock 
@@ -44,4 +41,4 @@ typedef id (^FDURLConnectionTransformBlock)(id object);
 - (void)cancel;
 
 
-@end // @interface FDURLConnection
+@end

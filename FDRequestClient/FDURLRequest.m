@@ -9,8 +9,7 @@ NSString * const FDURLRequestTypeImage = @"image";
 NSString * const FDURLRequestTypeJSON = @"json";
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDURLRequest
 {
@@ -19,8 +18,7 @@ NSString * const FDURLRequestTypeJSON = @"json";
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURL: (NSURL *)url 
 	timeoutInterval: (NSTimeInterval)timeoutInterval 
@@ -72,8 +70,7 @@ NSString * const FDURLRequestTypeJSON = @"json";
 	return self;
 }
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (NSURL *)url
 {
@@ -96,8 +93,7 @@ NSString * const FDURLRequestTypeJSON = @"json";
 	return cachePolicy;
 }
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (NSURLRequest *)rawURLRequest;
 {
@@ -105,4 +101,4 @@ NSString * const FDURLRequestTypeJSON = @"json";
 }
 
 
-@end // implementation FDURLRequest
+@end

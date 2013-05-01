@@ -6,8 +6,7 @@
 @implementation NSString (URLEncode)
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (NSString *)urlEncode
 {
@@ -22,4 +21,4 @@
 }
 
 
-@end // @implementation NSString (URLEncode)
+@end

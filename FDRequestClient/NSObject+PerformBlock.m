@@ -6,8 +6,7 @@
 @implementation NSObject (PerformBlock)
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)performBlock: (dispatch_block_t)block 
 	afterDelay: (NSTimeInterval)delay
@@ -41,4 +40,4 @@
 }
 
 
-@end // @implementation NSObject (PerformBlock)
+@end

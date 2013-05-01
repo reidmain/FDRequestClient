@@ -8,4 +8,4 @@
 	FDExampleListControllerDelegate>
 
 
-@end // @interface FDRootViewController_iPad
+@end

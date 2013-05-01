@@ -18,8 +18,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @synthesize name = _name;
 @synthesize owner = _owner;
@@ -33,8 +32,7 @@
 @synthesize lastPushDate = _lastPushDate;
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -61,8 +59,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (NSString *)description
 {
@@ -75,4 +72,4 @@
 }
 
 
-@end // @implementation FDGitHubRepository
+@end

@@ -4,8 +4,7 @@
 	NSCoding>
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *screenName;
@@ -20,4 +19,4 @@
 @property (nonatomic, assign) BOOL followedByAuthenticatedUser;
 
 
-@end // @interface FDTwitterUser
+@end

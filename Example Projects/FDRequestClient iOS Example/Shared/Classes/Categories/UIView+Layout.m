@@ -6,8 +6,7 @@
 @implementation UIView (Layout)
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (CGFloat)xOrigin
 {
@@ -88,8 +87,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)alignHorizontally: (UIViewHorizontalAlignment)horizontalAlignment
 {
@@ -168,4 +166,4 @@
 }
 
 
-@end // @implementation UIView (Layout)
+@end

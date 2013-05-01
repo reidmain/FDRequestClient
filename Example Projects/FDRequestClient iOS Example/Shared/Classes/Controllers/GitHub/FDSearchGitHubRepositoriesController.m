@@ -10,19 +10,17 @@
 static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifier";
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDSearchGitHubRepositoriesController ()
 
 - (void)_initializeSearchGitHubRepositoriesController;
 
 
-@end // @interface FDSearchGitHubRepositoriesController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDSearchGitHubRepositoriesController
 {
@@ -31,8 +29,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithDefaultNibName
 {
@@ -80,8 +77,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (void)performSearchWithQuery: (NSString *)query
 {
@@ -120,8 +116,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeSearchGitHubRepositoriesController
 {
@@ -135,8 +130,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark FDInfiniteTableViewDataSource Methods
+#pragma mark - FDInfiniteTableViewDataSource Methods
 
 - (BOOL)canLoadDataForInfiniteTableView: (FDInfiniteTableView *)infiniteTableView
 {
@@ -155,8 +149,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (UITableViewCell *)tableView: (UITableView *)tableView 
 	cellForRowAtIndexPath: (NSIndexPath *)indexPath
@@ -186,8 +179,7 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
+#pragma mark - UITableViewDelegate Methods
 
 - (void)tableView: (UITableView *)tableView 
 	didSelectRowAtIndexPath: (NSIndexPath *)indexPath
@@ -210,4 +202,4 @@ static NSString * const CellIdentifier = @"SearchGitHubRepositoriesCellIdentifie
 }
 
 
-@end // @implementation FDSearchGitHubRepositoriesController
+@end

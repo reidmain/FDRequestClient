@@ -3,10 +3,9 @@
 @interface NSString (URLEncode)
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (NSString *)urlEncode;
 
 
-@end // @interface NSString (URLEncode)
+@end

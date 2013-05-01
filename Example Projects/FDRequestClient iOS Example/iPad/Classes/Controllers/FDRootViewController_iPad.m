@@ -7,8 +7,7 @@
 @implementation FDRootViewController_iPad
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -42,8 +41,7 @@
 }
 
 
-#pragma mark -
-#pragma mark FDExampleListControllerDelegate Methods
+#pragma mark - FDExampleListControllerDelegate Methods
 
 - (void)exampleListController: (FDExampleListController *)exampleListController 
 	showViewController: (UIViewController *)viewController
@@ -56,4 +54,4 @@
 }
 
 
-@end // @implementation FDRootViewController_iPad
+@end

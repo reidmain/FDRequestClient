@@ -3,14 +3,12 @@
 @class FDRequestClient;
 
 
-#pragma mark -
-#pragma mark Protocol
+#pragma mark - Protocol
 
 @protocol FDRequestClientDelegate<NSObject>
 
 
-#pragma mark -
-#pragma mark Optional Methods
+#pragma mark - Optional Methods
 
 @optional
 
@@ -21,4 +19,4 @@
 	withDataType: (NSString *)type;
 
 
-@end // @protocol FDRequestClientDelegate
+@end

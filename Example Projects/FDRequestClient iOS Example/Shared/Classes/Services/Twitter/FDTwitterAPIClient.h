@@ -9,8 +9,7 @@
 @interface FDTwitterAPIClient : FDRequestClient
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)listsForUserId: (NSString *)userId 
 	cursor: (NSString *)cursor 
@@ -34,4 +33,4 @@
 	completion: (void (^)(FDURLResponseStatus status, NSError *error, NSArray *tweets, NSString *maxTweetId))completion;
 
 
-@end // @interface FDTwitterAPIClient
+@end

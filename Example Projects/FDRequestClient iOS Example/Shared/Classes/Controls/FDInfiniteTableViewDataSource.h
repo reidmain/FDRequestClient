@@ -3,26 +3,22 @@
 @class FDInfiniteTableView;
 
 
-#pragma mark -
-#pragma mark Enumerations
+#pragma mark - Enumerations
 
 
-#pragma mark -
-#pragma mark Protocol
+#pragma mark - Protocol
 
 @protocol FDInfiniteTableViewDataSource<UITableViewDataSource>
 
 
-#pragma mark -
-#pragma mark Required Methods
+#pragma mark - Required Methods
 
 @required
 
 //- (void)didFinish;
 
 
-#pragma mark -
-#pragma mark Optional Methods
+#pragma mark - Optional Methods
 
 @optional
 
@@ -30,4 +26,4 @@
 - (void)loadDataForInfiniteTableView: (FDInfiniteTableView *)infiniteTableView;
 
 
-@end // @protocol FDInfiniteTableViewDataSource
+@end

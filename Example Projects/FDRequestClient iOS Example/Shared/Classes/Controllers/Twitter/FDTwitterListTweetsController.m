@@ -9,7 +9,7 @@
 - (void)_initializeTwitterListTweetsController;
 
 
-@end // @interface FDTwitterListTweetsController ()
+@end
 
 
 #pragma mark -
@@ -21,8 +21,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (void)setTwitterList: (FDTwitterList *)twitterList
 {
@@ -36,8 +35,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithTwitterList: (FDTwitterList *)twitterList
 {
@@ -91,8 +89,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -128,8 +125,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeTwitterListTweetsController
 {
@@ -139,4 +135,4 @@
 }
 
 
-@end // @implementation FDTwitterListTweetsController
+@end

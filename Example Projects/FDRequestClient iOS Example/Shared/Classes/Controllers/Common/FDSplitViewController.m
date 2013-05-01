@@ -7,8 +7,7 @@
 @implementation FDSplitViewController
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 - (UIViewController *)masterViewController
 {
@@ -39,4 +38,4 @@
 }
 
 
-@end // @implementation FDSplitViewController
+@end

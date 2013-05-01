@@ -15,8 +15,7 @@ static NSString * const Row_LastPushDate = @"Last Push";
 static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDGitHubRepositoryDetailController ()
 
@@ -28,11 +27,10 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 - (void)_initializeGitHubRepositoryDetailController;
 
 
-@end // @interface FDGitHubRepositoryDetailController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDGitHubRepositoryDetailController
 {
@@ -40,8 +38,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithDefaultNibName
 {
@@ -89,8 +86,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -100,8 +96,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -124,8 +119,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeGitHubRepositoryDetailController
 {
@@ -148,8 +142,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView: (UITableView *)tableView 
 	numberOfRowsInSection: (NSInteger)section
@@ -228,8 +221,7 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
+#pragma mark - UITableViewDelegate Methods
 
 - (void)tableView: (UITableView *)tableView 
 	didSelectRowAtIndexPath: (NSIndexPath *)indexPath
@@ -243,4 +235,4 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 }
 
 
-@end // @implementation FDGitHubRepositoryDetailController
+@end

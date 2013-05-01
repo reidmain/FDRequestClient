@@ -10,11 +10,10 @@
 - (FDURLConnectionDataParserBlock)_dataParserBlockForDataType: (NSString *)dataType;
 
 
-@end // @protocol FDRequestClient ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDRequestClient
 {
@@ -22,8 +21,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithOperationQueue: (NSOperationQueue *)operationQueue
 {
@@ -91,8 +89,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (FDURLConnectionOperation *)loadURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType 
@@ -190,8 +187,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (FDURLConnectionDataParserBlock)_dataParserBlockForDataType: (NSString *)dataType
 {
@@ -220,4 +216,4 @@
 }
 
 
-@end // @implementation FDRequestClient
+@end

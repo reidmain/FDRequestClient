@@ -9,8 +9,7 @@
 	UISearchBarDelegate>
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, strong) IBOutlet FDInfiniteTableView *infiniteTableView;
 @property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
@@ -18,8 +17,7 @@
 @property (nonatomic, readonly) NSArray *searchResults;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)addSearchResults: (NSArray *)searchResults 
 	withRowAnimation: (UITableViewRowAnimation)rowAnimation;
@@ -28,4 +26,4 @@
 - (void)loadMoreSearchResults;
 
 
-@end // @interface FDSearchController
+@end

@@ -3,8 +3,7 @@
 @interface FDGitHubRepository : NSObject
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *owner;
@@ -18,4 +17,4 @@
 @property (nonatomic, copy) NSDate *lastPushDate;
 
 
-@end // @interface FDGitHubRepository
+@end

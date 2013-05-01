@@ -8,16 +8,14 @@
 	UITableViewDelegate>
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, strong, readonly) FDInfiniteTableView *infiniteTableView;
 
 @property (nonatomic, readonly) NSArray *tweets;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)addTweets: (NSArray *)tweets 
 	withRowAnimation: (UITableViewRowAnimation)rowAnimation;
@@ -25,4 +23,4 @@
 - (void)loadTweets;
 
 
-@end // @interface FDTweetListController
+@end

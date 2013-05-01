@@ -6,8 +6,7 @@
 @implementation FDTwitterList
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -30,8 +29,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (NSString *)description
 {
@@ -44,4 +42,4 @@
 }
 
 
-@end // @implementation FDTwitterList
+@end

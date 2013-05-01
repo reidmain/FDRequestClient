@@ -9,11 +9,10 @@
 - (void)_initializeSearchController;
 
 
-@end // @interface FDSearchController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDSearchController
 {
@@ -21,8 +20,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithNibName: (NSString *)nibName 
     bundle:(NSBundle *)bundle
@@ -57,8 +55,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -69,8 +66,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)addSearchResults: (NSArray *)searchResults 
 	withRowAnimation: (UITableViewRowAnimation)rowAnimation
@@ -142,8 +138,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -188,8 +183,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeSearchController
 {
@@ -199,8 +193,7 @@
 }
 
 
-#pragma mark -
-#pragma mark FDInfiniteTableViewDataSource Methods
+#pragma mark - FDInfiniteTableViewDataSource Methods
 
 - (BOOL)canLoadDataForInfiniteTableView: (FDInfiniteTableView *)infiniteTableView
 {
@@ -226,8 +219,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView: (UITableView *)tableView 
 	numberOfRowsInSection: (NSInteger)section
@@ -250,8 +242,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UISearchBarDelegate Methods
+#pragma mark - UISearchBarDelegate Methods
 
 - (void)searchBarSearchButtonClicked: (UISearchBar *)searchBar
 {
@@ -265,4 +256,4 @@
 }
 
 
-@end // @implementation FDSearchController
+@end

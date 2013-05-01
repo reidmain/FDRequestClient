@@ -6,14 +6,12 @@
 typedef void (^FDURLConnectionOperationCompletionBlock)(FDURLResponse *urlResponse);
 
 
-#pragma mark -
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDURLConnectionOperation : NSOperation
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType 
@@ -31,10 +29,9 @@ typedef void (^FDURLConnectionOperationCompletionBlock)(FDURLResponse *urlRespon
 	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)addCompletionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
 
 
-@end // @interface FDURLConnectionOperation
+@end

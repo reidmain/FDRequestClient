@@ -6,8 +6,7 @@
 @implementation NSDictionary (Accessing)
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (id)nonNullObjectForKey: (id)key
 {
@@ -22,4 +21,4 @@
 }
 
 
-@end // @implementation NSDictionary (Accessing)
+@end

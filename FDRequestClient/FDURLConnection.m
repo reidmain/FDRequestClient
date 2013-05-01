@@ -7,8 +7,7 @@
 #define UnknownDataLength ((long long)-1)
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDURLConnection
 {
@@ -28,8 +27,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType
@@ -76,8 +74,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (FDURLResponse *)loadWithAuthorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDURLConnectionProgressBlock)progessBlock 
@@ -248,8 +245,7 @@
 }
 
 
-#pragma mark -
-#pragma mark NSURLConnectionDataDelegate Methods
+#pragma mark - NSURLConnectionDataDelegate Methods
 
 - (void)connection: (NSURLConnection *)connection 
 	didReceiveResponse: (NSURLResponse *)response
@@ -309,8 +305,7 @@
 }
 
 
-#pragma mark -
-#pragma mark NSURLConnectionDelegate Methods
+#pragma mark - NSURLConnectionDelegate Methods
 
 - (void)connection: (NSURLConnection *)connection 
 	willSendRequestForAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge
@@ -336,4 +331,4 @@
 }
 
 
-@end // @implementation FDURLConnection
+@end

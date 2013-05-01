@@ -16,14 +16,12 @@ static NSString * const CodingKey_ListedCount = @"listedCount";
 static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuthenticatedUser";
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDTwitterUser
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -51,8 +49,7 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (NSString *)description
 {
@@ -63,8 +60,7 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 }
 
 
-#pragma mark -
-#pragma mark NSCoding Methods
+#pragma mark - NSCoding Methods
 
 - (id)initWithCoder: (NSCoder *)coder
 {
@@ -139,4 +135,4 @@ static NSString * const CodingKey_FollowedByAuthenticatedUser = @"followedByAuth
 }
 
 
-@end // @implementation FDTwitterUser
+@end

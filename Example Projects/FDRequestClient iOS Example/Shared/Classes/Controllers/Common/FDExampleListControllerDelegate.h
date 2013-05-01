@@ -3,14 +3,12 @@
 @class FDExampleListController;
 
 
-#pragma mark -
-#pragma mark Protocol
+#pragma mark - Protocol
 
 @protocol FDExampleListControllerDelegate<NSObject>
 
 
-#pragma mark -
-#pragma mark Required Methods
+#pragma mark - Required Methods
 
 @required
 
@@ -18,4 +16,4 @@
 	showViewController: (UIViewController *)viewController;
 
 
-@end // @protocol FDExampleListControllerDelegate
+@end

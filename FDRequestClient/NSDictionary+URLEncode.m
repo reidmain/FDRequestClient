@@ -7,8 +7,7 @@
 @implementation NSDictionary (URLEncode)
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (NSString *)urlEncode
 {
@@ -36,4 +35,4 @@
 }
 
 
-@end // @implementation NSDictionary (URLEncode)
+@end

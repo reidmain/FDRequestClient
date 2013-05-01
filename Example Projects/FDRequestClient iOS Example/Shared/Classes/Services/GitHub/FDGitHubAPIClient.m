@@ -12,23 +12,20 @@
 - (NSArray *)_gitHubRepositoriesFromJSONObject: (NSArray *)jsonObject;
 
 
-@end // @interface FDGitHubAPIClient ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Variables
+#pragma mark - Class Variables
 
 static NSDateFormatter *_dateFormatter;
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDGitHubAPIClient
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 + (void)initialize
 {
@@ -63,8 +60,7 @@ static NSDateFormatter *_dateFormatter;
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)repositoriesForSearchQuery: (NSString *)query 
 	page: (unsigned int)page 
@@ -117,8 +113,7 @@ static NSDateFormatter *_dateFormatter;
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (NSDate *)_dateFromGitHubString: (NSString *)string
 {
@@ -175,4 +170,4 @@ static NSDateFormatter *_dateFormatter;
 }
 
 
-@end // @implementation FDGitHubAPIClient
+@end

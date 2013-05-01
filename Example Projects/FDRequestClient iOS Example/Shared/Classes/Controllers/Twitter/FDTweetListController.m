@@ -10,8 +10,7 @@
 static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDTweetListController ()
 
@@ -21,19 +20,18 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 - (void)_initializeTweetListController;
 
 
-@end // @interface FDTweetListController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDTweetListController
 {
 	@private __strong NSMutableArray *_tweets;
 }
 
-#pragma mark -
-#pragma mark Constructors
+
+#pragma mark - Constructors
 
 - (id)initWithNibName: (NSString *)nibName 
 	bundle: (NSBundle *)bundle
@@ -68,8 +66,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -79,8 +76,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)addTweets: (NSArray *)tweets 
 	withRowAnimation: (UITableViewRowAnimation)rowAnimation
@@ -147,8 +143,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -164,8 +159,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeTweetListController
 {
@@ -175,8 +169,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark FDInfiniteTableViewDataSource Methods
+#pragma mark - FDInfiniteTableViewDataSource Methods
 
 - (BOOL)canLoadDataForInfiniteTableView: (FDInfiniteTableView *)infiniteTableView
 {
@@ -202,8 +195,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView: (UITableView *)tableView 
 	numberOfRowsInSection: (NSInteger)section
@@ -253,8 +245,7 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
+#pragma mark - UITableViewDelegate Methods
 
 - (void)tableView: (UITableView *)tableView 
 	didSelectRowAtIndexPath: (NSIndexPath *)indexPath
@@ -276,4 +267,4 @@ static NSString * const CellIdentifier = @"TweetListCellIdentifier";
 }
 
 
-@end // @implementation FDTweetListController
+@end

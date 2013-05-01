@@ -11,8 +11,7 @@ static NSString * const Row_SearchGitHubRepos = @"Search GitHub Repositories";
 static NSString * const CellIdentifier = @"CellIdentifier";
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDExampleListController ()
 {
@@ -24,17 +23,15 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 - (void)_initializeExampleListController;
 
 
-@end // @interface FDExampleListController ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDExampleListController
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithNibName: (NSString *)nibName 
     bundle:(NSBundle *)bundle
@@ -69,8 +66,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -80,8 +76,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -114,8 +109,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeExampleListController
 {
@@ -131,8 +125,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView: (UITableView *)tableView 
 	numberOfRowsInSection: (NSInteger)section
@@ -167,8 +160,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
+#pragma mark - UITableViewDelegate Methods
 
 - (void)tableView: (UITableView *)tableView 
 	didSelectRowAtIndexPath: (NSIndexPath *)indexPath
@@ -202,4 +194,4 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 }
 
 
-@end // @implementation FDExampleListController
+@end

@@ -4,4 +4,4 @@
 	FDRequestClientCache>
 
 
-@end // @interface FDInMemoryCache
+@end

@@ -7,14 +7,12 @@ extern NSString * const FDURLRequestTypeJSON;
 typedef NSString * FDURLRequestType;
 
 
-#pragma mark -
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDURLRequest : NSObject
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSTimeInterval timeoutInterval;
@@ -22,8 +20,7 @@ typedef NSString * FDURLRequestType;
 @property (nonatomic, copy) FDURLRequestType type;
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithURL: (NSURL *)url 
 	timeoutInterval: (NSTimeInterval)timeoutInterval 
@@ -34,10 +31,9 @@ typedef NSString * FDURLRequestType;
 - (id)initWithURLRequest: (NSURLRequest *)urlRequest;
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (NSURLRequest *)rawURLRequest;
 
 
-@end // interface FDURLRequest
+@end

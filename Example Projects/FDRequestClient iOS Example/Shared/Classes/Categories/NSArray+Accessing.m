@@ -6,8 +6,7 @@
 @implementation NSArray (Accessing)
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (id)firstObject
 {
@@ -48,4 +47,4 @@
 }
 
 
-@end // @implementation NSArray (Accessing)
+@end

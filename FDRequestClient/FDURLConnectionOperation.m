@@ -14,11 +14,10 @@
 	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
 
 
-@end // @interface FDURLConnectionOperation ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDURLConnectionOperation
 {
@@ -31,8 +30,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)_initWithAuthorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDURLConnectionProgressBlock)progessBlock 
@@ -113,8 +111,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)addCompletionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock
 {
@@ -125,8 +122,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (void)main
 {
@@ -158,4 +154,4 @@
 }
 
 
-@end // @implementation FDURLConnectionOperation
+@end

@@ -510,14 +510,14 @@
 		071623B0160AB06F00346A3C /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
-				071623B7160AB06F00346A3C /* FDTwitterListTweetsController.h */,
-				071623B8160AB06F00346A3C /* FDTwitterListTweetsController.m */,
-				071623B1160AB06F00346A3C /* FDSearchTweetsController.h */,
-				071623B2160AB06F00346A3C /* FDSearchTweetsController.m */,
-				071623B3160AB06F00346A3C /* FDTweetDetailsController.h */,
-				071623B4160AB06F00346A3C /* FDTweetDetailsController.m */,
 				071623B5160AB06F00346A3C /* FDTweetListController.h */,
 				071623B6160AB06F00346A3C /* FDTweetListController.m */,
+				071623B1160AB06F00346A3C /* FDSearchTweetsController.h */,
+				071623B2160AB06F00346A3C /* FDSearchTweetsController.m */,
+				071623B7160AB06F00346A3C /* FDTwitterListTweetsController.h */,
+				071623B8160AB06F00346A3C /* FDTwitterListTweetsController.m */,
+				071623B3160AB06F00346A3C /* FDTweetDetailsController.h */,
+				071623B4160AB06F00346A3C /* FDTweetDetailsController.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";

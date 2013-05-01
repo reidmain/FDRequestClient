@@ -6,8 +6,7 @@
 typedef NSData *(^FDHTTPRequestMessageBodyProvider)(void);
 
 
-#pragma mark -
-#pragma mark Constants
+#pragma mark - Constants
 
 extern NSString * const FDHTTPRequestMethodGet;
 extern NSString * const FDHTTPRequestMethodPost;
@@ -16,14 +15,12 @@ extern NSString * const FDHTTPRequestMethodPut;
 typedef NSString * FDHTTPRequestMethod;
 
 
-#pragma mark -
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDHTTPRequest : FDURLRequest
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, copy) FDHTTPRequestMethod method;
 @property (nonatomic, strong) NSDictionary *httpHeaderFields;
@@ -32,8 +29,7 @@ typedef NSString * FDHTTPRequestMethod;
 @property (nonatomic, copy) FDHTTPRequestMessageBodyProvider messageBodyProvider;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)setValue: (NSString *)value 
 	forHTTPHeaderField: (NSString *)field;
@@ -42,4 +38,4 @@ typedef NSString * FDHTTPRequestMethod;
 	forParameter: (NSString *)parameter;
 
 
-@end // @interface FDHTTPRequest
+@end

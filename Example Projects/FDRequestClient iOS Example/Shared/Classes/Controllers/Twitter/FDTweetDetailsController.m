@@ -10,8 +10,7 @@
 static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDTweetDetailsController ()
 
@@ -28,7 +27,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 - (void)_initializeTweetDetailsController;
 
 
-@end // @interface FDTweetDetailsController ()
+@end
 
 
 #pragma mark -
@@ -42,8 +41,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithDefaultNibName
 {
@@ -59,7 +57,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 - (id)initWithNibName: (NSString *)nibName 
-    bundle:(NSBundle *)bundle
+    bundle: (NSBundle *)bundle
 {
 	// Abort if base initializer fails.
 	if ((self = [super initWithNibName: nibName 
@@ -91,8 +89,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Destructor
+#pragma mark - Destructor
 
 - (void)dealloc 
 {
@@ -102,8 +99,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
 {
@@ -183,8 +179,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeTweetDetailsController
 {
@@ -201,8 +196,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource Methods
 
 - (NSInteger)tableView: (UITableView *)tableView 
 	numberOfRowsInSection: (NSInteger)section
@@ -249,8 +243,7 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDelegate Methods
+#pragma mark - UITableViewDelegate Methods
 
 - (void)tableView: (UITableView *)tableView 
 	didSelectRowAtIndexPath: (NSIndexPath *)indexPath
@@ -271,4 +264,4 @@ static NSString * const CellIdentifier = @"TweetDetailsCellIdentifier";
 }
 
 
-@end // @implementation FDTweetDetailsController
+@end

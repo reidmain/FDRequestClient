@@ -5,23 +5,17 @@
 #pragma mark Constants
 
 
-#pragma mark -
-#pragma mark Class Extension
+#pragma mark - Class Extension
 
 @interface FDInfiniteTableView ()
 
 - (void)_initializeInfiniteTableView;
 
 
-@end // @interface FDInfiniteTableView ()
+@end
 
 
-#pragma mark -
-#pragma mark Class Variables
-
-
-#pragma mark -
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDInfiniteTableView
 {
@@ -35,8 +29,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 //-(void)setDataSource: (id<FDInfiniteTableViewDataSource>)dataSource
 //{
@@ -50,8 +43,7 @@
 //}
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)initWithFrame: (CGRect)frame
 {
@@ -84,8 +76,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 - (void)showLoadingView
 {
@@ -119,8 +110,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Overridden Methods
+#pragma mark - Overridden Methods
 
 - (void)layoutSubviews
 {
@@ -155,8 +145,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Private Methods
+#pragma mark - Private Methods
 
 - (void)_initializeInfiniteTableView
 {
@@ -194,4 +183,4 @@
 }
 
 
-@end // @implementation FDInfiniteTableView
+@end

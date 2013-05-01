@@ -6,17 +6,15 @@
 @interface FDInfiniteTableView : UITableView
 
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 @property (nonatomic, weak) IBOutlet id<FDInfiniteTableViewDataSource> dataSource;
 
 
-#pragma mark -
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 - (void)showLoadingView;
 - (void)doneLoading;
 
 
-@end // @interface FDInfiniteTableView
+@end

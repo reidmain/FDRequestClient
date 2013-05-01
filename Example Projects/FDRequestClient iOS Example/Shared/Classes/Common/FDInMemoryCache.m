@@ -10,8 +10,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Constructors
+#pragma mark - Constructors
 
 - (id)init
 {
@@ -30,8 +29,7 @@
 }
 
 
-#pragma mark -
-#pragma mark FDRequestClientCache Methods
+#pragma mark - FDRequestClientCache Methods
 
 - (void)requestClient: (FDRequestClient *)requestClient 
 	cacheURLResponse: (FDURLResponse *)urlResponse
@@ -93,4 +91,4 @@
 }
 
 
-@end // @implementation FDInMemoryCache
+@end
