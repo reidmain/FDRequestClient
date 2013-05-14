@@ -96,7 +96,7 @@
 	
 	[UIView animateWithDuration: 0.33 
 		delay: 0.0  
-		options: UIViewAnimationCurveEaseIn 
+		options: UIViewAnimationOptionCurveEaseInOut 
 		animations: ^
 		{
 			_loadingView.alpha = 0.0f;
