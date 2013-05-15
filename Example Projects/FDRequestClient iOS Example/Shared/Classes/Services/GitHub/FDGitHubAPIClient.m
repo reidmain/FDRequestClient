@@ -82,9 +82,6 @@ static NSDateFormatter *_dateFormatter;
 	[request setValue: [NSString stringWithFormat: @"%d", page] 
 		forParameter: @"start_page"];
 	
-	[request setValue: @"Testing Out Something With Spaces" 
-		forParameter: @"booya"];
-	
 	// Load search request.
 	[self loadURLRequest: request 
 		authorizationBlock: nil 
