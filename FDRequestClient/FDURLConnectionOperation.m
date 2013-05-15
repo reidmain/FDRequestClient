@@ -115,7 +115,7 @@
 
 - (void)addCompletionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock
 {
-	// NOTE: We need to copy the completion block before we add to the the array so it can be moved from the heap to the stack.
+	// NOTE: We need to copy the completion block before we add to the the array so it can be moved from the stack to the heap.
 	FDURLConnectionOperationCompletionBlock copiedCompletionBlock = [completionBlock copy];
 	
 	[_completionBlocks addObject: copiedCompletionBlock];
