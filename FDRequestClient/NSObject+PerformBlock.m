@@ -11,16 +11,10 @@
 - (void)performBlock: (dispatch_block_t)block 
 	afterDelay: (NSTimeInterval)delay
 {
-	dispatch_time_t dispatchTime = dispatch_time(
-		DISPATCH_TIME_NOW, 
-		delay * NSEC_PER_SEC);
-	
-	dispatch_after(
-		dispatchTime, 
-		dispatch_get_current_queue(), 
-		block);
+	[self performSelector: @selector(_callBlock:) 
+		withObject: block 
+		afterDelay: delay];
 }
-
 - (void)performBlockOnMainThread: (dispatch_block_t)block
 {
 	dispatch_sync(
@@ -37,6 +31,14 @@
 	dispatch_async(
 		globalQueue, 
 		block);
+}
+
+
+#pragma mark - Private Methods
+
+- (void)_callBlock: (dispatch_block_t)block
+{
+	block();
 }
 
 
