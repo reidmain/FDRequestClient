@@ -114,6 +114,10 @@ static NSDateFormatter *_dateFormatter;
 
 - (NSDate *)_dateFromGitHubString: (NSString *)string
 {
+	// If the string is empty return nil because no date can be generated from it.
+	if (FDIsEmpty(string) == YES)
+		return nil;
+	
 	NSDate *date = [_dateFormatter dateFromString: string];
 	
 	return date;
