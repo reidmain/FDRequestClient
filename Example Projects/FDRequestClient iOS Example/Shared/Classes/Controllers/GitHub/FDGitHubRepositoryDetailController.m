@@ -110,12 +110,15 @@ static NSString * const CellIdentifier = @"GitHubRepositoryCellIdentifier";
 	
 	_descriptionLabel.text = _gitHubRepository.repoDescription;
 	
-	CGSize desiredSize = [_descriptionLabel.text sizeWithFont: _descriptionLabel.font 
-		constrainedToSize: CGSizeMake(
-			_descriptionLabel.width, 
-			CGFLOAT_MAX)];
+	CGSize size = CGSizeMake(_descriptionLabel.width, CGFLOAT_MAX);
+	NSDictionary *attributes = @{ NSFontAttributeName : _descriptionLabel.font };
 	
-	_tableHeaderView.height += desiredSize.height - _descriptionLabel.height;
+	CGRect boundingRect = [_descriptionLabel.text boundingRectWithSize: size 
+		options: NSStringDrawingUsesLineFragmentOrigin 
+		attributes: attributes 
+		context: nil];
+	
+	_tableHeaderView.height += ceilf(boundingRect.size.height) - _descriptionLabel.height;
 }
 
 

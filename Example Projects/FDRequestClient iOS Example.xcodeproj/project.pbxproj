@@ -15,24 +15,8 @@
 		0716232C160AAD2900346A3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716232B160AAD2900346A3C /* AppDelegate.m */; };
 		07162335160AAD2900346A3C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 07162334160AAD2900346A3C /* iTunesArtwork */; };
 		07162337160AAD2A00346A3C /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 07162336160AAD2A00346A3C /* iTunesArtwork@2x */; };
-		07162348160AAD2A00346A3C /* icon_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162347160AAD2A00346A3C /* icon_iphone.png */; };
-		0716234A160AAD2A00346A3C /* icon_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162349160AAD2A00346A3C /* icon_iphone@2x.png */; };
-		0716234C160AAD2A00346A3C /* icon_iphone_spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716234B160AAD2A00346A3C /* icon_iphone_spotlight.png */; };
-		0716234E160AAD2A00346A3C /* icon_iphone_spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716234D160AAD2A00346A3C /* icon_iphone_spotlight@2x.png */; };
-		07162350160AAD2A00346A3C /* launch_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716234F160AAD2A00346A3C /* launch_iphone.png */; };
-		07162352160AAD2A00346A3C /* launch_iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162351160AAD2A00346A3C /* launch_iphone@2x.png */; };
-		0716235E160AAD2A00346A3C /* icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716235D160AAD2A00346A3C /* icon_ipad.png */; };
-		07162360160AAD2A00346A3C /* icon_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716235F160AAD2A00346A3C /* icon_ipad@2x.png */; };
-		07162362160AAD2A00346A3C /* icon_ipad_spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162361160AAD2A00346A3C /* icon_ipad_spotlight.png */; };
-		07162364160AAD2A00346A3C /* icon_ipad_spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162363160AAD2A00346A3C /* icon_ipad_spotlight@2x.png */; };
-		07162366160AAD2A00346A3C /* launch_ipad-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162365160AAD2A00346A3C /* launch_ipad-Portrait.png */; };
-		07162368160AAD2A00346A3C /* launch_ipad-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162367160AAD2A00346A3C /* launch_ipad-Landscape.png */; };
-		0716236A160AAD2A00346A3C /* launch_ipad-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162369160AAD2A00346A3C /* launch_ipad-Portrait@2x.png */; };
-		0716236C160AAD2B00346A3C /* launch_ipad-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0716236B160AAD2B00346A3C /* launch_ipad-Landscape@2x.png */; };
 		0716237A160AAE0E00346A3C /* FDRootViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162379160AAE0600346A3C /* FDRootViewController_iPad.m */; };
 		0716237D160AAE4E00346A3C /* FDRootViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716237C160AAE4E00346A3C /* FDRootViewController_iPhone.m */; };
-		07162386160AAF8200346A3C /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162384160AAF8200346A3C /* twitter_logo.png */; };
-		07162387160AAF8200346A3C /* twitter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07162385160AAF8200346A3C /* twitter_logo@2x.png */; };
 		0716238F160AAFB400346A3C /* FDGitHubRepositoryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07162389160AAFB400346A3C /* FDGitHubRepositoryDetailView.xib */; };
 		07162390160AAFB400346A3C /* FDSearchGitHubRepositoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238A160AAFB400346A3C /* FDSearchGitHubRepositoriesView.xib */; };
 		07162391160AAFB400346A3C /* FDSearchTweetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238C160AAFB400346A3C /* FDSearchTweetsView.xib */; };
@@ -61,8 +45,8 @@
 		071623DB160AB12200346A3C /* FDTwitterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D3160AB12200346A3C /* FDTwitterURL.m */; };
 		071623DC160AB12200346A3C /* FDTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D5160AB12200346A3C /* FDTwitterUser.m */; };
 		071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07162331160AAD2900346A3C /* InfoPlist.strings */; };
-		07612F61160FEC44006C48B4 /* launch_iphone-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */; };
 		2785D4221730B5AE007B99B1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2785D4211730B5AB007B99B1 /* Accounts.framework */; };
+		27A9972E1816CDB9004A98D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A9972D1816CDB9004A98D8 /* Images.xcassets */; };
 		27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */; };
 		27E3358D17189D1F0089D406 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E3358C17189D1F0089D406 /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -99,26 +83,10 @@
 		07162331160AAD2900346A3C /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		07162334160AAD2900346A3C /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		07162336160AAD2A00346A3C /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
-		07162347160AAD2A00346A3C /* icon_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iphone.png; sourceTree = "<group>"; };
-		07162349160AAD2A00346A3C /* icon_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_iphone@2x.png"; sourceTree = "<group>"; };
-		0716234B160AAD2A00346A3C /* icon_iphone_spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iphone_spotlight.png; sourceTree = "<group>"; };
-		0716234D160AAD2A00346A3C /* icon_iphone_spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_iphone_spotlight@2x.png"; sourceTree = "<group>"; };
-		0716234F160AAD2A00346A3C /* launch_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_iphone.png; sourceTree = "<group>"; };
-		07162351160AAD2A00346A3C /* launch_iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_iphone@2x.png"; sourceTree = "<group>"; };
-		0716235D160AAD2A00346A3C /* icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipad.png; sourceTree = "<group>"; };
-		0716235F160AAD2A00346A3C /* icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ipad@2x.png"; sourceTree = "<group>"; };
-		07162361160AAD2A00346A3C /* icon_ipad_spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipad_spotlight.png; sourceTree = "<group>"; };
-		07162363160AAD2A00346A3C /* icon_ipad_spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ipad_spotlight@2x.png"; sourceTree = "<group>"; };
-		07162365160AAD2A00346A3C /* launch_ipad-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_ipad-Portrait.png"; sourceTree = "<group>"; };
-		07162367160AAD2A00346A3C /* launch_ipad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_ipad-Landscape.png"; sourceTree = "<group>"; };
-		07162369160AAD2A00346A3C /* launch_ipad-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_ipad-Portrait@2x.png"; sourceTree = "<group>"; };
-		0716236B160AAD2B00346A3C /* launch_ipad-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_ipad-Landscape@2x.png"; sourceTree = "<group>"; };
 		07162378160AAE0600346A3C /* FDRootViewController_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDRootViewController_iPad.h; sourceTree = "<group>"; };
 		07162379160AAE0600346A3C /* FDRootViewController_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDRootViewController_iPad.m; sourceTree = "<group>"; };
 		0716237B160AAE4E00346A3C /* FDRootViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRootViewController_iPhone.h; sourceTree = "<group>"; };
 		0716237C160AAE4E00346A3C /* FDRootViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRootViewController_iPhone.m; sourceTree = "<group>"; };
-		07162384160AAF8200346A3C /* twitter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_logo.png; sourceTree = "<group>"; };
-		07162385160AAF8200346A3C /* twitter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_logo@2x.png"; sourceTree = "<group>"; };
 		07162389160AAFB400346A3C /* FDGitHubRepositoryDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDGitHubRepositoryDetailView.xib; sourceTree = "<group>"; };
 		0716238A160AAFB400346A3C /* FDSearchGitHubRepositoriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDSearchGitHubRepositoriesView.xib; sourceTree = "<group>"; };
 		0716238C160AAFB400346A3C /* FDSearchTweetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDSearchTweetsView.xib; sourceTree = "<group>"; };
@@ -170,8 +138,8 @@
 		071623D3160AB12200346A3C /* FDTwitterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterURL.m; sourceTree = "<group>"; };
 		071623D4160AB12200346A3C /* FDTwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTwitterUser.h; sourceTree = "<group>"; };
 		071623D5160AB12200346A3C /* FDTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterUser.m; sourceTree = "<group>"; };
-		07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_iphone-568h@2x.png"; sourceTree = "<group>"; };
 		2785D4211730B5AB007B99B1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		27A9972D1816CDB9004A98D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDRequestClient Static Library.xcodeproj"; path = "../Static Library Project/FDRequestClient Static Library.xcodeproj"; sourceTree = "<group>"; };
 		27E3358C17189D1F0089D406 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -280,20 +248,12 @@
 		07162330160AAD2900346A3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07162333160AAD2900346A3C /* Images */,
+				27A9972D1816CDB9004A98D8 /* Images.xcassets */,
 				07162331160AAD2900346A3C /* InfoPlist.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		07162333160AAD2900346A3C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				07162383160AAF8200346A3C /* Twitter */,
 				07162334160AAD2900346A3C /* iTunesArtwork */,
 				07162336160AAD2A00346A3C /* iTunesArtwork@2x */,
 			);
-			path = Images;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		07162339160AAD2A00346A3C /* Classes */ = {
@@ -365,31 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				07162354160AAD2A00346A3C /* Classes */,
-				07162345160AAD2A00346A3C /* Resources */,
 			);
 			path = iPhone;
-			sourceTree = "<group>";
-		};
-		07162345160AAD2A00346A3C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				07162346160AAD2A00346A3C /* Images */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		07162346160AAD2A00346A3C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				07162347160AAD2A00346A3C /* icon_iphone.png */,
-				07162349160AAD2A00346A3C /* icon_iphone@2x.png */,
-				0716234B160AAD2A00346A3C /* icon_iphone_spotlight.png */,
-				0716234D160AAD2A00346A3C /* icon_iphone_spotlight@2x.png */,
-				0716234F160AAD2A00346A3C /* launch_iphone.png */,
-				07162351160AAD2A00346A3C /* launch_iphone@2x.png */,
-				07612F60160FEC44006C48B4 /* launch_iphone-568h@2x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		07162354160AAD2A00346A3C /* Classes */ = {
@@ -413,32 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				0716236E160AAD2B00346A3C /* Classes */,
-				0716235B160AAD2A00346A3C /* Resources */,
 			);
 			path = iPad;
-			sourceTree = "<group>";
-		};
-		0716235B160AAD2A00346A3C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0716235C160AAD2A00346A3C /* Images */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		0716235C160AAD2A00346A3C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				0716235D160AAD2A00346A3C /* icon_ipad.png */,
-				0716235F160AAD2A00346A3C /* icon_ipad@2x.png */,
-				07162361160AAD2A00346A3C /* icon_ipad_spotlight.png */,
-				07162363160AAD2A00346A3C /* icon_ipad_spotlight@2x.png */,
-				07162365160AAD2A00346A3C /* launch_ipad-Portrait.png */,
-				07162369160AAD2A00346A3C /* launch_ipad-Portrait@2x.png */,
-				07162367160AAD2A00346A3C /* launch_ipad-Landscape.png */,
-				0716236B160AAD2B00346A3C /* launch_ipad-Landscape@2x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		0716236E160AAD2B00346A3C /* Classes */ = {
@@ -456,15 +369,6 @@
 				07162379160AAE0600346A3C /* FDRootViewController_iPad.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		07162383160AAF8200346A3C /* Twitter */ = {
-			isa = PBXGroup;
-			children = (
-				07162384160AAF8200346A3C /* twitter_logo.png */,
-				07162385160AAF8200346A3C /* twitter_logo@2x.png */,
-			);
-			path = Twitter;
 			sourceTree = "<group>";
 		};
 		07162388160AAFB400346A3C /* GitHub */ = {
@@ -640,29 +544,13 @@
 			files = (
 				07162335160AAD2900346A3C /* iTunesArtwork in Resources */,
 				07162337160AAD2A00346A3C /* iTunesArtwork@2x in Resources */,
-				07162348160AAD2A00346A3C /* icon_iphone.png in Resources */,
-				0716234A160AAD2A00346A3C /* icon_iphone@2x.png in Resources */,
-				0716234C160AAD2A00346A3C /* icon_iphone_spotlight.png in Resources */,
-				0716234E160AAD2A00346A3C /* icon_iphone_spotlight@2x.png in Resources */,
-				07162350160AAD2A00346A3C /* launch_iphone.png in Resources */,
-				07162352160AAD2A00346A3C /* launch_iphone@2x.png in Resources */,
-				0716235E160AAD2A00346A3C /* icon_ipad.png in Resources */,
-				07162360160AAD2A00346A3C /* icon_ipad@2x.png in Resources */,
-				07162362160AAD2A00346A3C /* icon_ipad_spotlight.png in Resources */,
-				07162364160AAD2A00346A3C /* icon_ipad_spotlight@2x.png in Resources */,
-				07162366160AAD2A00346A3C /* launch_ipad-Portrait.png in Resources */,
-				07162368160AAD2A00346A3C /* launch_ipad-Landscape.png in Resources */,
-				0716236A160AAD2A00346A3C /* launch_ipad-Portrait@2x.png in Resources */,
-				0716236C160AAD2B00346A3C /* launch_ipad-Landscape@2x.png in Resources */,
-				07162386160AAF8200346A3C /* twitter_logo.png in Resources */,
-				07162387160AAF8200346A3C /* twitter_logo@2x.png in Resources */,
+				27A9972E1816CDB9004A98D8 /* Images.xcassets in Resources */,
 				0716238F160AAFB400346A3C /* FDGitHubRepositoryDetailView.xib in Resources */,
 				07162390160AAFB400346A3C /* FDSearchGitHubRepositoriesView.xib in Resources */,
 				07162391160AAFB400346A3C /* FDSearchTweetsView.xib in Resources */,
 				07162392160AAFB400346A3C /* FDTweetDetailsView.xib in Resources */,
 				07162393160AAFB400346A3C /* FDTwitterListTweetsView.xib in Resources */,
 				071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */,
-				07612F61160FEC44006C48B4 /* launch_iphone-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,10 +605,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "FDRequestClient iOS Example/Supporting Files/Entitlements.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -730,14 +626,16 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -747,27 +645,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "FDRequestClient iOS Example/Supporting Files/Entitlements.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = AD_HOC;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
-				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad Hoc";
@@ -776,26 +684,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "FDRequestClient iOS Example/Supporting Files/Entitlements.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = APP_STORE;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "App Store";
@@ -803,6 +723,8 @@
 		07162375160AAD2B00346A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
@@ -814,6 +736,8 @@
 		07162376160AAD2B00346A3C /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
@@ -825,6 +749,8 @@
 		07162377160AAD2B00346A3C /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
