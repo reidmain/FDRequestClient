@@ -502,7 +502,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FD;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 07162310160AAD2900346A3C /* Build configuration list for PBXProject "FDRequestClient iOS Example" */;
 			compatibilityVersion = "Xcode 3.2";
