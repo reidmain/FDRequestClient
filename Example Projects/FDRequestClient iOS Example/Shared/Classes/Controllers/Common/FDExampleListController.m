@@ -1,5 +1,5 @@
 #import "FDExampleListController.h"
-#import <Social/Social.h>
+@import Social;
 #import "FDSearchTweetsController.h"
 #import "FDSearchGitHubRepositoriesController.h"
 #import "UIView+Layout.h"

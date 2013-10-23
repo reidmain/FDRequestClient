@@ -1,4 +1,4 @@
-#import <Accounts/Accounts.h>
+@import Accounts;
 #import "FDTwitterUser.h"
 #import "FDTweet.h"
 #import "FDTwitterList.h"

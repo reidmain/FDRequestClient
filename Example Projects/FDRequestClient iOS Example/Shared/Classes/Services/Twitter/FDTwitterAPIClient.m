@@ -1,6 +1,5 @@
 #import "FDTwitterAPIClient.h"
-#import <Twitter/Twitter.h>
-#import <Social/Social.h>
+@import Social;
 #import "NSDictionary+Accessing.h"
 #import <FDRequestClient/FDNullOrEmpty.h>
 

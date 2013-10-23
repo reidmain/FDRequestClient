@@ -1,5 +1,5 @@
 #import "FDInfiniteTableView.h"
-#import <Accounts/Accounts.h>
+@import Accounts;
 
 
 #pragma mark Class Interface

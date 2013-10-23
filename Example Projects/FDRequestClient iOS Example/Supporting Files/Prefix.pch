@@ -3,8 +3,8 @@
 //
 
 #ifdef __OBJC__
-	#import <Foundation/Foundation.h>
-	#import <QuartzCore/QuartzCore.h>
-	#import <UIKIt/UIKit.h>
+	@import Foundation;
+	@import QuartzCore;
+	@import UIKit;
 	#import <FDRequestClient/FDRequestClient.h>
 #endif
