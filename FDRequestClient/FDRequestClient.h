@@ -4,8 +4,7 @@
 #import "NSString+URLEncode.h"
 #import "FDURLRequest.h"
 #import "FDHTTPRequest.h"
-#import "FDURLConnection.h"
-#import "FDURLConnectionOperation.h"
+#import "FDRequestClientTask.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientDelegate.h"
 #import "FDRequestClientCache.h"
@@ -13,7 +12,7 @@
 
 #pragma mark Class Interface
 
-@interface FDRequestClient : NSObject
+@interface FDRequestClient : NSObject<NSURLSessionDataDelegate>
 
 
 #pragma mark - Properties
@@ -24,26 +23,28 @@
 
 #pragma mark - Constructors
 
-- (id)initWithOperationQueue: (NSOperationQueue *)operationQueue;
-- (id)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue;
+- (id)initWithOperationQueue: (NSOperationQueue *)operationQueue 
+	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration;
+- (id)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue 
+	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration;
 
 
 #pragma mark - Instance Methods
 
-- (FDURLConnectionOperation *)loadURLRequest: (NSURLRequest *)urlRequest 
+- (FDRequestClientTask *)loadURLRequest: (NSURLRequest *)urlRequest 
 	urlRequestType: (FDURLRequestType)urlRequestType 
-	authorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 
-	progressBlock: (FDURLConnectionProgressBlock)progressBlock 
-	dataParserBlock: (FDURLConnectionDataParserBlock)dataParserBlock 
-	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
-	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
+	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
+	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
+	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
+	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
+	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
 
-- (FDURLConnectionOperation *)loadURLRequest: (FDURLRequest *)urlRequest 
-	authorizationBlock: (FDURLConnectionAuthorizationBlock)authorizationBlock 
-	progressBlock: (FDURLConnectionProgressBlock)progressBlock 
-	dataParserBlock: (FDURLConnectionDataParserBlock)dataParserBlock 
-	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
-	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
+- (FDRequestClientTask *)loadURLRequest: (FDURLRequest *)urlRequest 
+	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
+	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
+	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
+	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
+	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
 
 
 @end

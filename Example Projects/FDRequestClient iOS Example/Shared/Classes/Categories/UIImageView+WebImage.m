@@ -8,7 +8,7 @@
 @implementation UIImageView (WebImage)
 
 static void * const _imageURLKey;
-static void * const _loadImageOperationKey;
+static void * const _loadImageTaskKey;
 
 
 #pragma mark - Public Methods
@@ -23,7 +23,8 @@ static void * const _loadImageOperationKey;
 	dispatch_once(&onceToken, 
 		^{
 			requestClient = [[FDRequestClient alloc] 
-				initWithSharedOperationQueue: NO];
+				initWithSharedOperationQueue: NO
+					 urlSessionConfiguration: nil];
 			
 			inMemoryCache = [[FDInMemoryCache alloc] 
 				init];
@@ -38,16 +39,16 @@ static void * const _loadImageOperationKey;
 	{
 		self.image = placeholderImage;
 		
-		FDURLConnectionOperation *currentLoadImageOperation = objc_getAssociatedObject(self, 
-			&_loadImageOperationKey);
+		FDRequestClientTask *currentLoadImageTask = objc_getAssociatedObject(self, 
+			&_loadImageTaskKey);
 		
-		[currentLoadImageOperation cancel];
+		[currentLoadImageTask cancel];
 		
 		FDHTTPRequest *httpRequest = [[FDHTTPRequest alloc] 
 			initWithURL: imageURL];
 		httpRequest.type = FDURLRequestTypeImage;
 		
-		FDURLConnectionOperation *loadImageOperation = [requestClient loadURLRequest: httpRequest 
+		FDRequestClientTask *loadImageOperation = [requestClient loadURLRequest: httpRequest 
 			authorizationBlock: nil 
 			progressBlock: nil 
 			dataParserBlock: nil 
@@ -62,7 +63,7 @@ static void * const _loadImageOperationKey;
 					self.image = urlResponse.content;
 					
 					objc_setAssociatedObject(self, 
-						&_loadImageOperationKey, 
+						&_loadImageTaskKey, 
 						nil, 
 						OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 				}
@@ -74,7 +75,7 @@ static void * const _loadImageOperationKey;
 			OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 		
 		objc_setAssociatedObject(self, 
-			&_loadImageOperationKey, 
+			&_loadImageTaskKey, 
 			loadImageOperation, 
 			OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 	}

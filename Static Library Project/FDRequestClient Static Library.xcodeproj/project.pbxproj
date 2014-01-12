@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2778AD0D16ADD0B5006C247E /* FDURLResponse+Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5B16AD975F001F5771 /* FDURLResponse+Private.h */; };
 		27AE0F3A16AD966A001F5771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F3916AD966A001F5771 /* Foundation.framework */; };
 		27AE0F4C16AD9720001F5771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F4B16AD9720001F5771 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		27AE0F6416AD975F001F5771 /* FDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F4F16AD975F001F5771 /* FDHTTPRequest.m */; };
 		27AE0F6516AD975F001F5771 /* FDRequestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5216AD975F001F5771 /* FDRequestClient.m */; };
-		27AE0F6616AD975F001F5771 /* FDURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5616AD975F001F5771 /* FDURLConnection.m */; };
-		27AE0F6716AD975F001F5771 /* FDURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5816AD975F001F5771 /* FDURLConnectionOperation.m */; };
 		27AE0F6816AD975F001F5771 /* FDURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5A16AD975F001F5771 /* FDURLRequest.m */; };
 		27AE0F6916AD975F001F5771 /* FDURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5D16AD975F001F5771 /* FDURLResponse.m */; };
 		27AE0F6A16AD975F001F5771 /* NSDictionary+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5F16AD975F001F5771 /* NSDictionary+URLEncode.m */; };
@@ -25,12 +22,12 @@
 		27AE0F9716ADC02B001F5771 /* NSString+URLEncode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F6216AD975F001F5771 /* NSString+URLEncode.h */; };
 		27AE0F9816ADC02B001F5771 /* FDURLRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5916AD975F001F5771 /* FDURLRequest.h */; };
 		27AE0F9916ADC02B001F5771 /* FDHTTPRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F4E16AD975F001F5771 /* FDHTTPRequest.h */; };
-		27AE0F9A16ADC02B001F5771 /* FDURLConnection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5516AD975F001F5771 /* FDURLConnection.h */; };
-		27AE0F9B16ADC02B001F5771 /* FDURLConnectionOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5716AD975F001F5771 /* FDURLConnectionOperation.h */; };
 		27AE0F9C16ADC02B001F5771 /* FDURLResponse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5C16AD975F001F5771 /* FDURLResponse.h */; };
 		27AE0F9D16ADC02B001F5771 /* FDRequestClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5116AD975F001F5771 /* FDRequestClient.h */; };
 		27AE0F9E16ADC02B001F5771 /* FDRequestClientDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */; };
 		27AE0F9F16ADC02B001F5771 /* FDRequestClientCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5316AD975F001F5771 /* FDRequestClientCache.h */; };
+		27D2BA871821A5E700EBED26 /* FDRequestClientTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */; };
+		27E0A19E18242C2C0060445E /* FDRequestClientTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27D2BA851821A5E700EBED26 /* FDRequestClientTask.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,15 +37,13 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				2778AD0D16ADD0B5006C247E /* FDURLResponse+Private.h in CopyFiles */,
+				27E0A19E18242C2C0060445E /* FDRequestClientTask.h in CopyFiles */,
 				27AE0F9416ADC02B001F5771 /* FDNullOrEmpty.h in CopyFiles */,
 				27AE0F9516ADC02B001F5771 /* NSDictionary+URLEncode.h in CopyFiles */,
 				27AE0F9616ADC02B001F5771 /* NSObject+PerformBlock.h in CopyFiles */,
 				27AE0F9716ADC02B001F5771 /* NSString+URLEncode.h in CopyFiles */,
 				27AE0F9816ADC02B001F5771 /* FDURLRequest.h in CopyFiles */,
 				27AE0F9916ADC02B001F5771 /* FDHTTPRequest.h in CopyFiles */,
-				27AE0F9A16ADC02B001F5771 /* FDURLConnection.h in CopyFiles */,
-				27AE0F9B16ADC02B001F5771 /* FDURLConnectionOperation.h in CopyFiles */,
 				27AE0F9C16ADC02B001F5771 /* FDURLResponse.h in CopyFiles */,
 				27AE0F9D16ADC02B001F5771 /* FDRequestClient.h in CopyFiles */,
 				27AE0F9E16ADC02B001F5771 /* FDRequestClientDelegate.h in CopyFiles */,
@@ -85,6 +80,9 @@
 		27AE0F6116AD975F001F5771 /* NSObject+PerformBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlock.m"; sourceTree = "<group>"; };
 		27AE0F6216AD975F001F5771 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		27AE0F6316AD975F001F5771 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		27D2BA851821A5E700EBED26 /* FDRequestClientTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientTask.h; sourceTree = "<group>"; };
+		27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClientTask.m; sourceTree = "<group>"; };
+		27D2BA881821A9BD00EBED26 /* FDRequestClientTask+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDRequestClientTask+Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +162,9 @@
 				27AE0F5C16AD975F001F5771 /* FDURLResponse.h */,
 				27AE0F5D16AD975F001F5771 /* FDURLResponse.m */,
 				27AE0F5B16AD975F001F5771 /* FDURLResponse+Private.h */,
+				27D2BA851821A5E700EBED26 /* FDRequestClientTask.h */,
+				27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */,
+				27D2BA881821A9BD00EBED26 /* FDRequestClientTask+Private.h */,
 				27AE0F5116AD975F001F5771 /* FDRequestClient.h */,
 				27AE0F5216AD975F001F5771 /* FDRequestClient.m */,
 				27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */,
@@ -225,9 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AE0F6416AD975F001F5771 /* FDHTTPRequest.m in Sources */,
+				27D2BA871821A5E700EBED26 /* FDRequestClientTask.m in Sources */,
 				27AE0F6516AD975F001F5771 /* FDRequestClient.m in Sources */,
-				27AE0F6616AD975F001F5771 /* FDURLConnection.m in Sources */,
-				27AE0F6716AD975F001F5771 /* FDURLConnectionOperation.m in Sources */,
 				27AE0F6816AD975F001F5771 /* FDURLRequest.m in Sources */,
 				27AE0F6916AD975F001F5771 /* FDURLResponse.m in Sources */,
 				27AE0F6A16AD975F001F5771 /* NSDictionary+URLEncode.m in Sources */,

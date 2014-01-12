@@ -1,5 +1,5 @@
 #import "FDInMemoryCache.h"
-#import <FDRequestClient/FDURLResponse+Private.h>
+//#import <FDRequestClient/FDURLResponse+Private.h>
 
 
 #pragma mark Class Definition
@@ -60,11 +60,11 @@
 			
 			if (cachedResponseContent != nil)
 			{
-				cachedResponse = [[FDURLResponse alloc] 
-					initWithStatus: FDURLResponseStatusSucceed 
-						content: cachedResponseContent 
-						error: nil 
-						rawURLResponse: nil];
+//				cachedResponse = [[FDURLResponse alloc] 
+//					initWithStatus: FDURLResponseStatusSucceed 
+//						content: cachedResponseContent 
+//						error: nil 
+//						rawURLResponse: nil];
 			}
 		}
 	}
@@ -85,11 +85,11 @@
 		
 		if (cachedResponseContent != nil)
 		{
-			cachedResponse = [[FDURLResponse alloc] 
-				initWithStatus: FDURLResponseStatusSucceed 
-					content: cachedResponseContent 
-					error: nil 
-					rawURLResponse: nil];
+//			cachedResponse = [[FDURLResponse alloc] 
+//				initWithStatus: FDURLResponseStatusSucceed 
+//					content: cachedResponseContent 
+//					error: nil 
+//					rawURLResponse: nil];
 		}
 	}
 	

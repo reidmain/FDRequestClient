@@ -1,7 +1,7 @@
 #import "FDTwitterAPIClient.h"
-@import Social;
 #import "NSDictionary+Accessing.h"
 #import <FDRequestClient/FDNullOrEmpty.h>
+@import Social;
 
 
 #pragma mark Class Extension
@@ -14,8 +14,8 @@
 	forParameters: (NSMutableDictionary *)parameters;
 
 - (void)_loadRequest: (SLRequest *)request 
-	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
-	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock;
+	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
+	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
 
 - (FDTwitterUser *)_twitterUserFromJSONObject: (NSDictionary *)jsonObject;
 - (FDTweet *)_tweetFromJSONObject: (NSDictionary *)jsonObject;
@@ -243,8 +243,8 @@ static NSDateFormatter *_apiDateFormatter;
 }
 
 - (void)_loadRequest: (SLRequest *)request 
-	transformBlock: (FDURLConnectionTransformBlock)transformBlock 
-	completionBlock: (FDURLConnectionOperationCompletionBlock)completionBlock
+	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
+	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
 {
 	[self loadURLRequest: [request preparedURLRequest] 
 		urlRequestType: FDURLRequestTypeJSON 
