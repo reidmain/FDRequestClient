@@ -101,4 +101,18 @@ NSString * const FDURLRequestTypeJSON = @"json";
 }
 
 
+#pragma mark - Overridden Methods
+
+- (NSString *)description
+{
+	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; type = %@>", 
+		[self class], 
+		self, 
+		[self url], 
+		_type];
+	
+	return description;
+}
+
+
 @end

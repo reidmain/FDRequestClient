@@ -125,6 +125,19 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 #pragma mark - Overridden Methods
 
+- (NSString *)description
+{
+	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@; type = %@; headers = %@>", 
+		[self class], 
+		self, 
+		[self url], 
+		_method, 
+		[self type], 
+		_httpHeaderFields];
+	
+	return description;
+}
+
 - (NSURLRequest *)rawURLRequest
 {
 	// If any query parameters exist, add them to the string of the URL.
