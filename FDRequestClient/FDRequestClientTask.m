@@ -45,7 +45,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 #pragma mark - Constructors
 
-- (id)initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
+- (id)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
 	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
@@ -217,6 +217,8 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 			error: error 
 			rawURLResponse: _urlSessionTask.response];
 	
+	NSLog(@"%s\t%@", __PRETTY_FUNCTION__, [NSThread currentThread]);
+	
 	if (_callCompletionBlockOnMainThread == YES)
 	{
 		[self performBlockOnMainThread: ^
@@ -229,7 +231,6 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	}
 	else
 	{
-		//TODO: Copy the array before we enumerate through it because this object is not thread safe.
 		for (FDRequestClientTaskCompletionBlock completionBlock in _completionBlocks)
 		{
 			completionBlock(urlResponse);

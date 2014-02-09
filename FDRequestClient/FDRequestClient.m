@@ -110,7 +110,7 @@
 	NSURLSessionDataTask *dataTask = [_urlSession dataTaskWithRequest: urlRequest];
 	
 	FDRequestClientTask *requestClientTask = [[FDRequestClientTask alloc] 
-		initWithURLSessionTask: dataTask 
+		_initWithURLSessionTask: dataTask 
 			urlRequestType: urlRequestType 
 			authorizationBlock: authorizationBlock 
 			progressBlock: progressBlock 

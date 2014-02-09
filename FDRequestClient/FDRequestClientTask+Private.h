@@ -8,21 +8,13 @@
 
 #pragma mark - Constructors
 
-- (id)initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
+- (id)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
 	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
 	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
 	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
-
-
-#pragma mark - Properties
-
-//@property (nonatomic, strong) FDRequestClientTaskAuthorizationBlock authorizationBlock;
-//@property (nonatomic, strong) FDRequestClientTaskProgressBlock progressBlock;
-//@property (nonatomic, strong) FDRequestClientTaskDataParserBlock dataParserBlock;
-//@property (nonatomic, strong) FDRequestClientTaskTransformBlock transformBlock;
 
 
 #pragma mark - Instance Methods
