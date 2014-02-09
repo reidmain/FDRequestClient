@@ -36,7 +36,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 #pragma mark - Instance Methods
 
-- (void)addCompletionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
+- (BOOL)addCompletionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
 
 - (void)suspend;
 - (void)resume;

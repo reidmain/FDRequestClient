@@ -37,6 +37,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	@private __strong NSMutableArray *_completionBlocks;
 	@private long long _expectedDataLength;
 	@private __strong NSMutableData *_receivedData;
+	@private __strong NSLock *_completionLock;
 }
 
 
@@ -70,6 +71,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	_completionBlocks = [NSMutableArray array];
 	_expectedDataLength = UnknownDataLength;
 	_receivedData = nil;
+	_completionLock = [NSLock new];
 	
 	[self addCompletionBlock: completionBlock];
 	
@@ -80,9 +82,20 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 #pragma mark - Public Methods
 
-- (void)addCompletionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
+- (BOOL)addCompletionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
 {
+	// If the completion lock is already activated that means the completion blocks are being iterated over and there is no way to add this completion block. The user should be notified that their attempt to add a completion block has failed.
+	if ([_completionLock tryLock] == NO)
+	{
+		return NO;
+	}
+	
 	[_completionBlocks addObject: completionBlock];
+	
+	// Once the completion block has been successfully added the completion lock can be unlocked.
+	[_completionLock unlock];
+	
+	return YES;
 }
 
 - (void)suspend
@@ -217,7 +230,8 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 			error: error 
 			rawURLResponse: _urlSessionTask.response];
 	
-	NSLog(@"%s\t%@", __PRETTY_FUNCTION__, [NSThread currentThread]);
+	// Because the completion blocks are about to iterated over this code needs to be locked so no new completion blocks can be added.
+	[_completionLock lock];
 	
 	if (_callCompletionBlockOnMainThread == YES)
 	{
@@ -239,6 +253,9 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	
 	// Release all completion blocks to prevent possible circular retains on the operation.
 	_completionBlocks = nil;
+	
+	// Once all the completion blocks have been iterated over and released the completion lock can be unlocked.
+	[_completionLock unlock];
 }
 
 
