@@ -65,10 +65,6 @@
 		27AE0F5216AD975F001F5771 /* FDRequestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClient.m; sourceTree = "<group>"; };
 		27AE0F5316AD975F001F5771 /* FDRequestClientCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientCache.h; sourceTree = "<group>"; };
 		27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientDelegate.h; sourceTree = "<group>"; };
-		27AE0F5516AD975F001F5771 /* FDURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLConnection.h; sourceTree = "<group>"; };
-		27AE0F5616AD975F001F5771 /* FDURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLConnection.m; sourceTree = "<group>"; };
-		27AE0F5716AD975F001F5771 /* FDURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLConnectionOperation.h; sourceTree = "<group>"; };
-		27AE0F5816AD975F001F5771 /* FDURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLConnectionOperation.m; sourceTree = "<group>"; };
 		27AE0F5916AD975F001F5771 /* FDURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLRequest.h; sourceTree = "<group>"; };
 		27AE0F5A16AD975F001F5771 /* FDURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLRequest.m; sourceTree = "<group>"; };
 		27AE0F5B16AD975F001F5771 /* FDURLResponse+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FDURLResponse+Private.h"; sourceTree = "<group>"; };
@@ -155,16 +151,12 @@
 				27AE0F5A16AD975F001F5771 /* FDURLRequest.m */,
 				27AE0F4E16AD975F001F5771 /* FDHTTPRequest.h */,
 				27AE0F4F16AD975F001F5771 /* FDHTTPRequest.m */,
-				27AE0F5516AD975F001F5771 /* FDURLConnection.h */,
-				27AE0F5616AD975F001F5771 /* FDURLConnection.m */,
-				27AE0F5716AD975F001F5771 /* FDURLConnectionOperation.h */,
-				27AE0F5816AD975F001F5771 /* FDURLConnectionOperation.m */,
 				27AE0F5C16AD975F001F5771 /* FDURLResponse.h */,
 				27AE0F5D16AD975F001F5771 /* FDURLResponse.m */,
 				27AE0F5B16AD975F001F5771 /* FDURLResponse+Private.h */,
 				27D2BA851821A5E700EBED26 /* FDRequestClientTask.h */,
-				27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */,
 				27D2BA881821A9BD00EBED26 /* FDRequestClientTask+Private.h */,
+				27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */,
 				27AE0F5116AD975F001F5771 /* FDRequestClient.h */,
 				27AE0F5216AD975F001F5771 /* FDRequestClient.m */,
 				27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */,

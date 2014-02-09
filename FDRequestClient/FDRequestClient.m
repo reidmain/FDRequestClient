@@ -124,45 +124,6 @@
 	[dataTask resume];
 	
 	return requestClientTask;
-//	FDURLConnectionOperation *urlConnectionOperation = nil;
-//	
-//	FDURLResponse *cachedResponse = [_cache requestClient: self 
-//		cachedURLResponseForURLRequest: urlRequest 
-//		withRequestType: urlRequestType];
-//	
-//	if (cachedResponse != nil)
-//	{
-//		completionBlock(cachedResponse);
-//	}
-//	else
-//	{
-//		if (dataParserBlock == nil)
-//		{
-//			dataParserBlock = [self _dataParserBlockForDataType: urlRequestType];
-//		}
-//		
-//		urlConnectionOperation = [[FDURLConnectionOperation alloc] 
-//			initWithURLRequest: urlRequest 
-//				urlRequestType: urlRequestType 
-//				authorizationBlock: authorizationBlock 
-//				progressBlock: progressBlock 
-//				dataParserBlock: dataParserBlock 
-//				transformBlock: transformBlock 
-//				completionBlock: completionBlock];
-//		
-//		[urlConnectionOperation addCompletionBlock: ^(FDURLResponse *urlResponse)
-//			{
-//				if (urlResponse.status == FDURLResponseStatusSucceed)
-//				{
-//					[_cache requestClient: self 
-//						cacheURLResponse: urlResponse];
-//				}
-//			}];
-//		
-//		[_operationQueue addOperation: urlConnectionOperation];
-//	}
-//	
-//	return urlConnectionOperation;
 }
 
 - (FDRequestClientTask *)loadURLRequest: (FDURLRequest *)urlRequest 
@@ -181,44 +142,6 @@
 		completionBlock: completionBlock];
 	
 	return requestClientTask;
-	
-//	FDURLConnectionOperation *urlConnectionOperation = nil;
-//	
-//	FDURLResponse *cachedResponse = [_cache requestClient: self 
-//		cachedURLResponseForURLRequest: urlRequest];
-//	
-//	if (cachedResponse != nil)
-//	{
-//		completionBlock(cachedResponse);
-//	}
-//	else
-//	{
-//		if (dataParserBlock == nil)
-//		{
-//			dataParserBlock = [self _dataParserBlockForDataType: urlRequest.type];
-//		}
-//		
-//		urlConnectionOperation = [[FDURLConnectionOperation alloc] 
-//			initWithURLRequest: urlRequest 
-//				authorizationBlock: authorizationBlock 
-//				progressBlock: progressBlock 
-//				dataParserBlock: dataParserBlock 
-//				transformBlock: transformBlock 
-//				completionBlock: completionBlock];
-//		
-//		[urlConnectionOperation addCompletionBlock: ^(FDURLResponse *urlResponse)
-//			{
-//				if (urlResponse.status == FDURLResponseStatusSucceed)
-//				{
-//					[_cache requestClient: self 
-//						cacheURLResponse: urlResponse];
-//				}
-//			}];
-//		
-//		[_operationQueue addOperation: urlConnectionOperation];
-//	}
-//	
-//	return urlConnectionOperation;
 }
 
 

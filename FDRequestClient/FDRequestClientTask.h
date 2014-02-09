@@ -7,6 +7,7 @@
 
 #pragma mark - Enumerations
 
+
 #pragma mark - Type Definitions
 
 typedef NSURLSessionAuthChallengeDisposition (^FDRequestClientTaskAuthorizationBlock)(NSURLAuthenticationChallenge *urlAuthenticationChallenge, NSURLCredential **urlCredential);
