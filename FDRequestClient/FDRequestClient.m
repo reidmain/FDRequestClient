@@ -224,6 +224,8 @@
 {
 	FDRequestClientTask *requestClientTask = [_activeTasks objectForKey: @(task.taskIdentifier)];
 	[requestClientTask _didCompleteWithError: error];
+	
+	[_activeTasks removeObjectForKey: @(requestClientTask.urlSessionTask.taskIdentifier)];
 }
 
 
