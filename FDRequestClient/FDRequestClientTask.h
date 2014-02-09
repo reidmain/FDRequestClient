@@ -24,6 +24,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 #pragma mark - Properties
 
 @property (nonatomic, readonly) NSURLSessionTask *urlSessionTask;
+@property (nonatomic, assign) BOOL callCompletionBlockOnMainThread;
 
 
 #pragma mark - Constructors

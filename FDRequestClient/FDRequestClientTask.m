@@ -1,5 +1,6 @@
 #import "FDRequestClientTask.h"
 #import "FDURLResponse+Private.h"
+#import "NSObject+PerformBlock.h"
 @import UIKit.UIImage;
 
 
@@ -60,6 +61,7 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	
 	// Initialize instance variables.
 	_urlSessionTask = urlSessionTask;
+	_callCompletionBlockOnMainThread = YES;
 	_urlRequestType = [urlRequestType copy];
 	_authorizationBlock = authorizationBlock;
 	_progressBlock = progressBlock;
@@ -215,14 +217,27 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 			error: error 
 			rawURLResponse: _urlSessionTask.response];
 	
-	//TODO: Copy the array before we enumerate through it because this object is not thread safe.
-	for (FDRequestClientTaskCompletionBlock completionBlock in _completionBlocks)
+	if (_callCompletionBlockOnMainThread == YES)
 	{
-		completionBlock(urlResponse);
+		[self performBlockOnMainThread: ^
+		{
+			for (FDRequestClientTaskCompletionBlock completionBlock in _completionBlocks)
+			{
+				completionBlock(urlResponse);
+			}
+		}];
+	}
+	else
+	{
+		//TODO: Copy the array before we enumerate through it because this object is not thread safe.
+		for (FDRequestClientTaskCompletionBlock completionBlock in _completionBlocks)
+		{
+			completionBlock(urlResponse);
+		}
 	}
 	
 	// Release all completion blocks to prevent possible circular retains on the operation.
-	[_completionBlocks removeAllObjects];
+	_completionBlocks = nil;
 }
 
 
