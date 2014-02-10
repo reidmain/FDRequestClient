@@ -1,5 +1,6 @@
 #import "FDRequestClient.h"
 #import "FDRequestClientTask+Private.h"
+#import "FDThreadSafeMutableDictionary.h"
 
 
 #pragma mark Class Extension
@@ -17,7 +18,7 @@
 @implementation FDRequestClient
 {
 	@private __strong NSURLSession *_urlSession;
-	@private __strong NSMutableDictionary *_activeTasks;
+	@private __strong FDThreadSafeMutableDictionary *_activeTasks;
 }
 
 
@@ -36,7 +37,7 @@
 	_urlSession = [NSURLSession sessionWithConfiguration: urlSessionConfiguration 
 		delegate: self 
 		delegateQueue: operationQueue];
-	_activeTasks = [NSMutableDictionary dictionary];
+	_activeTasks = [FDThreadSafeMutableDictionary dictionary];
 	
 	_delegate = nil;
 	_cache = nil;
