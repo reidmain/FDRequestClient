@@ -30,6 +30,7 @@
 		27D87C7218A84EE80007EF9B /* FDThreadSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D87C7118A84EE80007EF9B /* FDThreadSafeMutableDictionary.m */; };
 		27D87C7318A84F100007EF9B /* FDThreadSafeMutableDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27D87C7018A84EE80007EF9B /* FDThreadSafeMutableDictionary.h */; };
 		27E0A19E18242C2C0060445E /* FDRequestClientTask.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27D2BA851821A5E700EBED26 /* FDRequestClientTask.h */; };
+		27F17C0B18AE692C001A940A /* FDLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27F17C0A18AE6917001A940A /* FDLogger.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27F17C0B18AE692C001A940A /* FDLogger.h in CopyFiles */,
 				27D87C7318A84F100007EF9B /* FDThreadSafeMutableDictionary.h in CopyFiles */,
 				27E0A19E18242C2C0060445E /* FDRequestClientTask.h in CopyFiles */,
 				27AE0F9416ADC02B001F5771 /* FDNullOrEmpty.h in CopyFiles */,
@@ -84,6 +86,7 @@
 		27D2BA881821A9BD00EBED26 /* FDRequestClientTask+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDRequestClientTask+Private.h"; sourceTree = "<group>"; };
 		27D87C7018A84EE80007EF9B /* FDThreadSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDThreadSafeMutableDictionary.h; sourceTree = "<group>"; };
 		27D87C7118A84EE80007EF9B /* FDThreadSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDThreadSafeMutableDictionary.m; sourceTree = "<group>"; };
+		27F17C0A18AE6917001A940A /* FDLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDLogger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 		27AE0F4D16AD975F001F5771 /* FDRequestClient */ = {
 			isa = PBXGroup;
 			children = (
+				27F17C0A18AE6917001A940A /* FDLogger.h */,
 				27AE0F5016AD975F001F5771 /* FDNullOrEmpty.h */,
 				27D87C7018A84EE80007EF9B /* FDThreadSafeMutableDictionary.h */,
 				27D87C7118A84EE80007EF9B /* FDThreadSafeMutableDictionary.m */,

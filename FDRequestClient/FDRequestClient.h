@@ -1,3 +1,4 @@
+#import "FDLogger.h"
 #import "FDNullOrEmpty.h"
 #import "NSDictionary+URLEncode.h"
 #import "NSObject+PerformBlock.h"
@@ -19,6 +20,7 @@
 
 @property (nonatomic, weak) id<FDRequestClientDelegate> delegate;
 @property (nonatomic, weak) id<FDRequestClientCache> cache;
+@property (nonatomic, copy) NSArray *headerFieldsToLog;
 
 
 #pragma mark - Constructors

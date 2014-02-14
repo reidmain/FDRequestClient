@@ -41,6 +41,7 @@
 	
 	_delegate = nil;
 	_cache = nil;
+	_headerFieldsToLog = @[ @"Authorization" ];
 	
 	// Return initialized instance.
 	return self;
@@ -123,6 +124,22 @@
 		forKey: @(dataTask.taskIdentifier)];
 	
 	[dataTask resume];
+	
+	// Log a curl command so it is easy to see what requests are being made.
+	NSMutableString *headerOptions = [NSMutableString string];
+	
+	// Add header options that have been requested to be logged to the curl command.
+	NSDictionary *headerFields = [urlRequest allHTTPHeaderFields];
+	[_headerFieldsToLog enumerateObjectsUsingBlock: ^(NSString *headerField, NSUInteger index, BOOL *stop)
+		{
+			NSString *value = [headerFields objectForKey: headerField];
+			if (FDIsEmpty(value) == NO)
+			{
+				[headerOptions appendFormat: @" -H \"%@: %@\"", headerField, value];
+			}
+		}];
+	
+	FDLog(FDLogLevelInfo, @"curl%@ \"%@\"", headerOptions, [urlRequest URL]);
 	
 	return requestClientTask;
 }
