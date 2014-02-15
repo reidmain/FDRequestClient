@@ -1,5 +1,6 @@
 #import "FDLogger.h"
 #import "FDNullOrEmpty.h"
+#import "FDThreadSafeMutableDictionary.h"
 #import "NSDictionary+URLEncode.h"
 #import "NSObject+PerformBlock.h"
 #import "NSString+URLEncode.h"
