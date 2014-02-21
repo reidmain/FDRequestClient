@@ -197,10 +197,13 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 		}
 		else if ([_urlRequestType isEqualToString: FDURLRequestTypeJSON] == YES)
 		{
-			// TODO: can't call this if data is nil. Happened when connection failed.
-			responseContent = [NSJSONSerialization JSONObjectWithData: _receivedData 
-				options: NSJSONReadingAllowFragments 
-				error: nil];
+			// Ensure the received data is not nil before attempting to parse it.
+			if (_receivedData != nil)
+			{
+				responseContent = [NSJSONSerialization JSONObjectWithData: _receivedData 
+					options: NSJSONReadingAllowFragments 
+					error: nil];
+			}
 		}
 		else
 		{
