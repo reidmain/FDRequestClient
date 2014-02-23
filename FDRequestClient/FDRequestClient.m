@@ -135,11 +135,11 @@
 			NSString *value = [headerFields objectForKey: headerField];
 			if (FDIsEmpty(value) == NO)
 			{
-				[headerOptions appendFormat: @" -H \"%@: %@\"", headerField, value];
+				[headerOptions appendFormat: @"-H \"%@: %@\" ", headerField, value];
 			}
 		}];
 	
-	FDLog(FDLogLevelInfo, @"curl%@ \"%@\"", headerOptions, [urlRequest URL]);
+	FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [urlRequest URL]);
 	
 	return requestClientTask;
 }
