@@ -22,8 +22,6 @@
 		07162391160AAFB400346A3C /* FDSearchTweetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238C160AAFB400346A3C /* FDSearchTweetsView.xib */; };
 		07162392160AAFB400346A3C /* FDTweetDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238D160AAFB400346A3C /* FDTweetDetailsView.xib */; };
 		07162393160AAFB400346A3C /* FDTwitterListTweetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238E160AAFB400346A3C /* FDTwitterListTweetsView.xib */; };
-		0716239C160AB02500346A3C /* NSArray+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162395160AB02500346A3C /* NSArray+Accessing.m */; };
-		0716239D160AB02500346A3C /* NSDictionary+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162397160AB02500346A3C /* NSDictionary+Accessing.m */; };
 		0716239E160AB02500346A3C /* UIImageView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162399160AB02500346A3C /* UIImageView+WebImage.m */; };
 		0716239F160AB02500346A3C /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716239B160AB02500346A3C /* UIView+Layout.m */; };
 		071623A2160AB04D00346A3C /* FDInMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623A1160AB04D00346A3C /* FDInMemoryCache.m */; };
@@ -92,10 +90,6 @@
 		0716238C160AAFB400346A3C /* FDSearchTweetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDSearchTweetsView.xib; sourceTree = "<group>"; };
 		0716238D160AAFB400346A3C /* FDTweetDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDTweetDetailsView.xib; sourceTree = "<group>"; };
 		0716238E160AAFB400346A3C /* FDTwitterListTweetsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDTwitterListTweetsView.xib; sourceTree = "<group>"; };
-		07162394160AB02500346A3C /* NSArray+Accessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Accessing.h"; sourceTree = "<group>"; };
-		07162395160AB02500346A3C /* NSArray+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessing.m"; sourceTree = "<group>"; };
-		07162396160AB02500346A3C /* NSDictionary+Accessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Accessing.h"; sourceTree = "<group>"; };
-		07162397160AB02500346A3C /* NSDictionary+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Accessing.m"; sourceTree = "<group>"; };
 		07162398160AB02500346A3C /* UIImageView+WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebImage.h"; sourceTree = "<group>"; };
 		07162399160AB02500346A3C /* UIImageView+WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImage.m"; sourceTree = "<group>"; };
 		0716239A160AB02500346A3C /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
@@ -280,10 +274,6 @@
 		0716233C160AAD2A00346A3C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				07162394160AB02500346A3C /* NSArray+Accessing.h */,
-				07162395160AB02500346A3C /* NSArray+Accessing.m */,
-				07162396160AB02500346A3C /* NSDictionary+Accessing.h */,
-				07162397160AB02500346A3C /* NSDictionary+Accessing.m */,
 				07162398160AB02500346A3C /* UIImageView+WebImage.h */,
 				07162399160AB02500346A3C /* UIImageView+WebImage.m */,
 				0716239A160AB02500346A3C /* UIView+Layout.h */,
@@ -565,8 +555,6 @@
 				0716232C160AAD2900346A3C /* AppDelegate.m in Sources */,
 				0716237A160AAE0E00346A3C /* FDRootViewController_iPad.m in Sources */,
 				0716237D160AAE4E00346A3C /* FDRootViewController_iPhone.m in Sources */,
-				0716239C160AB02500346A3C /* NSArray+Accessing.m in Sources */,
-				0716239D160AB02500346A3C /* NSDictionary+Accessing.m in Sources */,
 				0716239E160AB02500346A3C /* UIImageView+WebImage.m in Sources */,
 				0716239F160AB02500346A3C /* UIView+Layout.m in Sources */,
 				071623A2160AB04D00346A3C /* FDInMemoryCache.m in Sources */,

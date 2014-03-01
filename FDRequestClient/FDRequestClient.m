@@ -1,6 +1,6 @@
 #import "FDRequestClient.h"
 #import "FDRequestClientTask+Private.h"
-#import "FDThreadSafeMutableDictionary.h"
+#import <FDFoundationKit/FDThreadSafeMutableDictionary.h>
 
 
 #pragma mark Class Extension

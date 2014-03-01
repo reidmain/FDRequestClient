@@ -1,6 +1,6 @@
 #import "FDHTTPRequest.h"
-#import "FDNullOrEmpty.h"
-#import "NSDictionary+URLEncode.h"
+#import <FDFoundationKit/FDNullOrEmpty.h>
+#import <FDFoundationKit/NSDictionary+URLEncode.h>
 
 
 #pragma mark Constants
