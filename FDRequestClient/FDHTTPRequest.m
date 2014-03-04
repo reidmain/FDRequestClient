@@ -175,6 +175,8 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 			cachePolicy: self.cachePolicy 
 			timeoutInterval: self.timeoutInterval];
 	
+	[rawURLRequest setHTTPMethod: _method];
+	
 	[rawURLRequest setAllHTTPHeaderFields: _httpHeaderFields];
 	
 	// Load the message body (if necessary) and add it to the URL request.
