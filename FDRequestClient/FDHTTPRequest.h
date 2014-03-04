@@ -1,12 +1,7 @@
 #import "FDURLRequest.h"
 
 
-#pragma mark Type Definitions
-
-typedef NSData *(^FDHTTPRequestMessageBodyProvider)(void);
-
-
-#pragma mark - Constants
+#pragma mark Constants
 
 extern NSString * const FDHTTPRequestMethodGet;
 extern NSString * const FDHTTPRequestMethodPost;
@@ -26,7 +21,6 @@ typedef NSString * FDHTTPRequestMethod;
 @property (nonatomic, strong) NSDictionary *httpHeaderFields;
 @property (nonatomic, strong) NSDictionary *parameters;
 @property (nonatomic, strong) NSData *messageBody;
-@property (nonatomic, copy) FDHTTPRequestMessageBodyProvider messageBodyProvider;
 
 
 #pragma mark - Instance Methods
