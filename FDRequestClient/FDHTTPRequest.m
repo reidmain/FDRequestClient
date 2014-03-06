@@ -52,26 +52,11 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 {
 	if (_messageBody != messageBody)
 	{
-		// Clear message body provider. It and message body are mutually exclusive.
-		_messageBodyProvider = nil;
-		
 		// Release old value.
 		_messageBody = nil;
 		
 		// Retain new value.
 		_messageBody = messageBody;
-	}
-}
-
--(void)setMessageBodyProvider: (FDHTTPRequestMessageBodyProvider)messageBodyProvider
-{
-	if (_messageBodyProvider != messageBodyProvider)
-	{
-		// Clear message body. It and message body provider are mutually exclusive.
-		_messageBody = nil;
-		
-		// Update message body provider.
-		_messageBodyProvider = [messageBodyProvider copy];
 	}
 }
 
@@ -93,7 +78,6 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	_parameters = [[NSMutableDictionary alloc] 
 		init];
 	_messageBody = nil;
-	_messageBodyProvider = nil;
 	
 	// Return initialized instance.
 	return self;
@@ -179,19 +163,8 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	
 	[rawURLRequest setAllHTTPHeaderFields: _httpHeaderFields];
 	
-	// Load the message body (if necessary) and add it to the URL request.
-	NSData *messageBody = nil;
-	
-	if (_messageBodyProvider != nil)
-	{
-		messageBody = _messageBodyProvider();
-	}
-	else
-	{
-		messageBody = _messageBody;
-	}
-	
-	[rawURLRequest setHTTPBody: messageBody];
+	// Set the message body of the URL request.
+	[rawURLRequest setHTTPBody: _messageBody];
 	
 	return rawURLRequest;
 }
