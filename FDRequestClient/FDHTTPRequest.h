@@ -31,5 +31,6 @@ typedef NSString * FDHTTPRequestMethod;
 - (void)setValue: (NSString *)value 
 	forParameter: (NSString *)parameter;
 
+- (void)setMessageBodyWithJSONObject: (id)object;
 
 @end

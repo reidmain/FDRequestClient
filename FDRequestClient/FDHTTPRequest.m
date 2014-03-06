@@ -169,5 +169,41 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	return rawURLRequest;
 }
 
+- (void)setMessageBodyWithJSONObject: (id)object
+{
+	// Verify the object can be converted to JSON.
+	if ([NSJSONSerialization isValidJSONObject: object] == NO)
+	{
+		[NSException raise: NSInternalInconsistencyException 
+			format: @"%@ is not a valid JSON object: \n%s", 
+				object, 
+				__PRETTY_FUNCTION__];
+		
+		return;
+	}
+	
+	// Attempt to serialize the object into the message body.
+	NSError *error = nil;
+	_messageBody = [NSJSONSerialization dataWithJSONObject: object 
+		options: 0 
+		error: &error];
+	
+	// If an error occured during serialization raise an exception.
+	if (error != nil)
+	{
+		[NSException raise: NSInternalInconsistencyException 
+			format: @"Error occured while attempting to serial JSON object %@: %@\n%s", 
+				object, 
+				error,
+				__PRETTY_FUNCTION__];
+	}
+	// If the object was serialized property set the Content-Type header to JSON.
+	else
+	{
+		[self setValue: @"application/json" 
+			forHTTPHeaderField: @"Content-Type"];
+	}
+}
+
 
 @end
