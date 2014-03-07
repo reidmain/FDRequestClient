@@ -29,7 +29,6 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 @implementation FDRequestClientTask
 {
-	@private __strong FDURLRequestType _urlRequestType;
 	@private __strong FDRequestClientTaskAuthorizationBlock _authorizationBlock;
 	@private __strong FDRequestClientTaskProgressBlock _progressBlock;
 	@private __strong FDRequestClientTaskDataParserBlock _dataParserBlock;
@@ -47,7 +46,6 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 #pragma mark - Constructors
 
 - (id)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
-	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
@@ -63,7 +61,6 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	// Initialize instance variables.
 	_urlSessionTask = urlSessionTask;
 	_callCompletionBlockOnMainThread = YES;
-	_urlRequestType = [urlRequestType copy];
 	_authorizationBlock = authorizationBlock;
 	_progressBlock = progressBlock;
 	_dataParserBlock = dataParserBlock;
@@ -179,11 +176,11 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	// Otherwise, parse the received data into the specified format.
 	else
 	{
-		if ([_urlRequestType isEqualToString: FDURLRequestTypeRaw] == YES)
+		NSString *mimeType = _urlSessionTask.response.MIMEType;
+		if (mimeType == nil)
 		{
-			responseContent = _receivedData;
 		}
-		else if ([_urlRequestType isEqualToString: FDURLRequestTypeString] == YES)
+		else if ([mimeType rangeOfString: @"text/"].location != NSNotFound)
 		{
 			NSString *receivedDataAsString = [[NSString alloc] 
 				initWithData: _receivedData 
@@ -191,11 +188,11 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 			
 			responseContent = receivedDataAsString;
 		}
-		else if ([_urlRequestType isEqualToString: FDURLRequestTypeImage] == YES)
+		else if ([mimeType rangeOfString: @"image/"].location != NSNotFound)
 		{
 			responseContent = [UIImage imageWithData: _receivedData];
 		}
-		else if ([_urlRequestType isEqualToString: FDURLRequestTypeJSON] == YES)
+		else if ([mimeType isEqualToString: @"application/json"] == YES)
 		{
 			// Ensure the received data is not nil before attempting to parse it.
 			if (_receivedData != nil)
@@ -208,8 +205,8 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 		else
 		{
 			[NSException raise: NSInternalInconsistencyException 
-				format: @"Unsupported request type: %@\n%s", 
-					_urlRequestType, 
+				format: @"Unsupported MIME type: %@\n%s", 
+					mimeType, 
 					__PRETTY_FUNCTION__];
 		}
 	}

@@ -102,7 +102,6 @@
 #pragma mark - Public Methods
 
 - (FDRequestClientTask *)loadURLRequest: (NSURLRequest *)urlRequest 
-	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
@@ -113,7 +112,6 @@
 	
 	FDRequestClientTask *requestClientTask = [[FDRequestClientTask alloc] 
 		_initWithURLSessionTask: dataTask 
-			urlRequestType: urlRequestType 
 			authorizationBlock: authorizationBlock 
 			progressBlock: progressBlock 
 			dataParserBlock: dataParserBlock 
@@ -144,15 +142,14 @@
 	return requestClientTask;
 }
 
-- (FDRequestClientTask *)loadURLRequest: (FDURLRequest *)urlRequest 
+- (FDRequestClientTask *)loadHTTPRequest: (FDHTTPRequest *)httpRequest 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
 	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
 	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
 {
-	FDRequestClientTask *requestClientTask = [self loadURLRequest: urlRequest.rawURLRequest 
-		urlRequestType: urlRequest.type 
+	FDRequestClientTask *requestClientTask = [self loadURLRequest: [httpRequest urlRequest] 
 		authorizationBlock: authorizationBlock 
 		progressBlock: progressBlock 
 		dataParserBlock: dataParserBlock 

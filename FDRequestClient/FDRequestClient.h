@@ -1,5 +1,4 @@
 #import <FDFoundationKit/FDFoundationKit.h>
-#import "FDURLRequest.h"
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
@@ -30,14 +29,13 @@
 #pragma mark - Instance Methods
 
 - (FDRequestClientTask *)loadURLRequest: (NSURLRequest *)urlRequest 
-	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
 	transformBlock: (FDRequestClientTaskTransformBlock)transformBlock 
 	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock;
 
-- (FDRequestClientTask *)loadURLRequest: (FDURLRequest *)urlRequest 
+- (FDRequestClientTask *)loadHTTPRequest: (FDHTTPRequest *)httpRequest 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 

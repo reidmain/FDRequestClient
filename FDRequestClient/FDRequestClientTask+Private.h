@@ -9,7 +9,6 @@
 #pragma mark - Constructors
 
 - (id)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
-	urlRequestType: (FDURLRequestType)urlRequestType 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 

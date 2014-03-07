@@ -1,4 +1,3 @@
-#import "FDURLRequest.h"
 #import "FDURLResponse.h"
 
 
@@ -21,11 +20,10 @@
 	cacheURLResponse: (FDURLResponse *)urlResponse;
 
 - (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
-	cachedURLResponseForURLRequest: (FDURLRequest *)urlRequest;
+	cachedURLResponseForHTTPRequest: (FDHTTPRequest *)httpRequest;
 
 - (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
-	cachedURLResponseForURLRequest: (NSURLRequest *)urlRequest 
-	withRequestType: (FDURLRequestType)requestType;
+	cachedURLResponseForURLRequest: (NSURLRequest *)urlRequest;
 
 
 @end

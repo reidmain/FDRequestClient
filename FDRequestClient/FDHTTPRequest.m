@@ -20,6 +20,48 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
+#pragma mark - Constructors
+
+- (id)initWithURL: (NSURL *)url 
+	timeoutInterval: (NSTimeInterval)timeoutInterval 
+	cachePolicy: (NSURLRequestCachePolicy)cachePolicy
+{
+	// Abort if base initializer fails.
+	if ((self = [super init]) == nil)
+	{
+		return nil;
+	}
+	
+	// Initialize instance variables.
+	_url = [url copy];
+	_timeoutInterval = timeoutInterval;
+	_cachePolicy = cachePolicy;
+	_method = [FDHTTPRequestMethodGet copy];
+	_httpHeaderFields = [[NSMutableDictionary alloc] 
+		init];
+	_parameters = [[NSMutableDictionary alloc] 
+		init];
+	_messageBody = nil;
+	
+	// Return initialized instance.
+	return self;
+}
+
+- (id)initWithURL: (NSURL *)url
+{
+	// Abort if base initializer fails.
+	if ((self = [self initWithURL: url 
+		timeoutInterval: 30.0 
+		cachePolicy: NSURLRequestUseProtocolCachePolicy]) == nil)
+	{
+		return nil;
+	}
+	
+	// Return initialized instance.
+	return self;
+}
+
+
 #pragma mark - Properties
 
 - (NSDictionary *)httpHeaderFields
@@ -48,43 +90,57 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	[_parameters addEntriesFromDictionary: parameters];
 }
 
--(void)setMessageBody: (NSData *)messageBody
-{
-	if (_messageBody != messageBody)
-	{
-		// Release old value.
-		_messageBody = nil;
-		
-		// Retain new value.
-		_messageBody = messageBody;
-	}
-}
-
-
-#pragma mark - Constructors
-
-- (id)initWithURL: (NSURL *)url
-{
-	// Abort if base initializer fails.
-	if ((self = [super initWithURL: url]) == nil)
-	{
-		return nil;
-	}
-	
-	// Initialize instance variables.
-	_method = [FDHTTPRequestMethodGet copy];
-	_httpHeaderFields = [[NSMutableDictionary alloc] 
-		init];
-	_parameters = [[NSMutableDictionary alloc] 
-		init];
-	_messageBody = nil;
-	
-	// Return initialized instance.
-	return self;
-}
-
 
 #pragma mark - Public Methods
+
+- (NSURLRequest *)urlRequest
+{
+	// If any query parameters exist, add them to the string of the URL.
+	NSURL *url = nil;
+	if (FDIsEmpty(_parameters) == NO)
+	{
+		NSString *queryString = [_parameters urlEncode];
+		
+		NSString *urlAsString = nil;
+		
+		if (FDIsEmpty([_url query]) == YES)
+		{
+			urlAsString = [NSString stringWithFormat: @"%@?%@", 
+				_url, 
+				queryString];
+		}
+		else
+		{
+			urlAsString = [NSString stringWithFormat: @"%@?%@", 
+				_url, 
+				queryString];
+		}
+		
+		url = [[NSURL alloc] 
+			initWithString: urlAsString];
+	}
+	else
+	{
+		url = _url;
+	}
+	
+	// Create a mutable URL request for the URL.
+	NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] 
+		initWithURL: url 
+			cachePolicy: _cachePolicy 
+			timeoutInterval: _timeoutInterval];
+	
+	// Set the HTTP method of the URL request.
+	[urlRequest setHTTPMethod: _method];
+	
+	// Set the header fields of the URL request.
+	[urlRequest setAllHTTPHeaderFields: _httpHeaderFields];
+	
+	// Set the message body of the URL request.
+	[urlRequest setHTTPBody: _messageBody];
+	
+	return urlRequest;
+}
 
 - (void)setValue: (NSString *)value 
     forHTTPHeaderField: (NSString *)field
@@ -104,69 +160,6 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 		[_parameters setValue: value 
 			forKey: parameter];
 	}
-}
-
-
-#pragma mark - Overridden Methods
-
-- (NSString *)description
-{
-	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@; type = %@; headers = %@>", 
-		[self class], 
-		self, 
-		[self url], 
-		_method, 
-		[self type], 
-		_httpHeaderFields];
-	
-	return description;
-}
-
-- (NSURLRequest *)rawURLRequest
-{
-	// If any query parameters exist, add them to the string of the URL.
-	NSURL *url = nil;
-	if (FDIsEmpty(_parameters) == NO)
-	{
-		NSString *queryString = [_parameters urlEncode];
-		
-		NSString *urlAsString = nil;
-		
-		if (FDIsEmpty([self.url query]) == YES)
-		{
-			urlAsString = [NSString stringWithFormat: @"%@?%@", 
-				self.url, 
-				queryString];
-		}
-		else
-		{
-			urlAsString = [NSString stringWithFormat: @"%@?%@", 
-				self.url, 
-				queryString];
-		}
-		
-		url = [[NSURL alloc] 
-			initWithString: urlAsString];
-	}
-	else
-	{
-		url = self.url;
-	}
-	
-	// Create a mutable URL request for the URL and add the HTTP header fields to it.
-	NSMutableURLRequest *rawURLRequest = [[NSMutableURLRequest alloc] 
-		initWithURL: url 
-			cachePolicy: self.cachePolicy 
-			timeoutInterval: self.timeoutInterval];
-	
-	[rawURLRequest setHTTPMethod: _method];
-	
-	[rawURLRequest setAllHTTPHeaderFields: _httpHeaderFields];
-	
-	// Set the message body of the URL request.
-	[rawURLRequest setHTTPBody: _messageBody];
-	
-	return rawURLRequest;
 }
 
 - (void)setMessageBodyWithJSONObject: (id)object
@@ -203,6 +196,22 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 		[self setValue: @"application/json" 
 			forHTTPHeaderField: @"Content-Type"];
 	}
+}
+
+
+#pragma mark - Overridden Methods
+
+- (NSString *)description
+{
+	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@; headers = %@; parameters = %@>", 
+		[self class], 
+		self, 
+		_url, 
+		_method, 
+		_httpHeaderFields, 
+		_parameters];
+	
+	return description;
 }
 
 
