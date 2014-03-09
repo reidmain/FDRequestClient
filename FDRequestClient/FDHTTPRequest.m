@@ -145,21 +145,15 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 - (void)setValue: (NSString *)value 
     forHTTPHeaderField: (NSString *)field
 {
-	if (FDIsEmpty(field) == NO)
-	{
-		[_httpHeaderFields setValue: value 
-			forKey: field];
-	}
+	[_httpHeaderFields setValue: value 
+		forKey: field];
 }
 
 - (void)setValue: (NSString *)value 
 	forParameter: (NSString *)parameter
 {
-	if (FDIsEmpty(parameter) == NO)
-	{
-		[_parameters setValue: value 
-			forKey: parameter];
-	}
+	[_parameters setValue: value 
+		forKey: parameter];
 }
 
 - (void)setMessageBodyWithJSONObject: (id)object
