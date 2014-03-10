@@ -245,7 +245,6 @@ static NSDateFormatter *_apiDateFormatter;
 	completionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
 {
 	[self loadURLRequest: [request preparedURLRequest] 
-		urlRequestType: FDURLRequestTypeJSON 
 		authorizationBlock: nil 
 		progressBlock: nil 
 		dataParserBlock: nil 

@@ -75,7 +75,6 @@ static NSDateFormatter *_dateFormatter;
 	// Create search request.
 	FDHTTPRequest *request = [[FDHTTPRequest alloc] 
 		initWithURL: resourceURL];
-	request.type = FDURLRequestTypeJSON;
 	request.method = FDHTTPRequestMethodGet;
 	
 	// Add parameters to search request.

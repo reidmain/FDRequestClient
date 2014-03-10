@@ -46,7 +46,6 @@ static void * const _loadImageTaskKey;
 		
 		FDHTTPRequest *httpRequest = [[FDHTTPRequest alloc] 
 			initWithURL: imageURL];
-		httpRequest.type = FDURLRequestTypeImage;
 		
 		FDRequestClientTask *loadImageOperation = [requestClient loadURLRequest: httpRequest 
 			authorizationBlock: nil 

@@ -31,70 +31,70 @@
 
 #pragma mark - FDRequestClientCache Methods
 
-- (void)requestClient: (FDRequestClient *)requestClient 
-	cacheURLResponse: (FDURLResponse *)urlResponse
-{
-	if (FDIsEmpty(urlResponse.content) == YES 
-		|| FDIsEmpty([urlResponse.rawURLResponse URL]) == YES)
-	{
-		return;
-	}
-	
-	[_cache setObject: urlResponse.content 
-		forKey: [urlResponse.rawURLResponse URL]];
-}
+//- (void)requestClient: (FDRequestClient *)requestClient 
+//	cacheURLResponse: (FDURLResponse *)urlResponse
+//{
+//	if (FDIsEmpty(urlResponse.content) == YES 
+//		|| FDIsEmpty([urlResponse.rawURLResponse URL]) == YES)
+//	{
+//		return;
+//	}
+//	
+//	[_cache setObject: urlResponse.content 
+//		forKey: [urlResponse.rawURLResponse URL]];
+//}
 
-- (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
-	cachedURLResponseForURLRequest: (FDURLRequest *)urlRequest
-{
-	FDURLResponse *cachedResponse = nil;
-	
-	// Only get cached results for HTTP GET requests.
-	if ([urlRequest isKindOfClass: [FDHTTPRequest class]])
-	{
-		FDHTTPRequest *httpRequest = (FDHTTPRequest *)urlRequest;
-		
-		if ([httpRequest.method caseInsensitiveCompare: FDHTTPRequestMethodGet] == NSOrderedSame)
-		{
-			id cachedResponseContent = [_cache objectForKey: [httpRequest url]];
-			
-			if (cachedResponseContent != nil)
-			{
+//- (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
+//	cachedURLResponseForURLRequest: (FDURLRequest *)urlRequest
+//{
+//	FDURLResponse *cachedResponse = nil;
+//	
+//	// Only get cached results for HTTP GET requests.
+//	if ([urlRequest isKindOfClass: [FDHTTPRequest class]])
+//	{
+//		FDHTTPRequest *httpRequest = (FDHTTPRequest *)urlRequest;
+//		
+//		if ([httpRequest.method caseInsensitiveCompare: FDHTTPRequestMethodGet] == NSOrderedSame)
+//		{
+//			id cachedResponseContent = [_cache objectForKey: [httpRequest url]];
+//			
+//			if (cachedResponseContent != nil)
+//			{
 //				cachedResponse = [[FDURLResponse alloc] 
 //					initWithStatus: FDURLResponseStatusSucceed 
 //						content: cachedResponseContent 
 //						error: nil 
 //						rawURLResponse: nil];
-			}
-		}
-	}
-	
-	return cachedResponse;
-}
+//			}
+//		}
+//	}
+//	
+//	return cachedResponse;
+//}
 
-- (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
-	cachedURLResponseForURLRequest: (NSURLRequest *)urlRequest 
-	withRequestType: (FDURLRequestType)requestType
-{
-	FDURLResponse *cachedResponse = nil;
-	
-	// Only get cached results for HTTP GET requests.
-	if ([[urlRequest HTTPMethod] caseInsensitiveCompare: FDHTTPRequestMethodGet] == NSOrderedSame)
-	{
-		id cachedResponseContent = [_cache objectForKey: [urlRequest URL]];
-		
-		if (cachedResponseContent != nil)
-		{
+//- (FDURLResponse *)requestClient: (FDRequestClient *)requestClient 
+//	cachedURLResponseForURLRequest: (NSURLRequest *)urlRequest 
+//	withRequestType: (FDURLRequestType)requestType
+//{
+//	FDURLResponse *cachedResponse = nil;
+//	
+//	// Only get cached results for HTTP GET requests.
+//	if ([[urlRequest HTTPMethod] caseInsensitiveCompare: FDHTTPRequestMethodGet] == NSOrderedSame)
+//	{
+//		id cachedResponseContent = [_cache objectForKey: [urlRequest URL]];
+//		
+//		if (cachedResponseContent != nil)
+//		{
 //			cachedResponse = [[FDURLResponse alloc] 
 //				initWithStatus: FDURLResponseStatusSucceed 
 //					content: cachedResponseContent 
 //					error: nil 
 //					rawURLResponse: nil];
-		}
-	}
-	
-	return cachedResponse;
-}
+//		}
+//	}
+//	
+//	return cachedResponse;
+//}
 
 
 @end
