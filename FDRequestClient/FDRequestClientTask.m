@@ -217,11 +217,21 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 		responseContent = _transformBlock(responseContent);
 	}
 	
+	// If an error was returned or the status code is not 2XX or 3XX assume the task failed.
+	// TODO: Check if the task was cancelled.
 	FDURLResponseStatus status = FDURLResponseStatusSucceed;
-	
 	if (error != nil)
 	{
 		status = FDURLResponseStatusFailed;
+	}
+	else if ([_urlSessionTask.response isKindOfClass: [NSHTTPURLResponse class]] == YES)
+	{
+		NSInteger statusCode = [(NSHTTPURLResponse *)_urlSessionTask.response statusCode];
+		if (statusCode < 200 
+			|| statusCode >= 400)
+		{
+			status = FDURLResponseStatusFailed;
+		}
 	}
 	
 	FDURLResponse *urlResponse = [[FDURLResponse alloc] 
