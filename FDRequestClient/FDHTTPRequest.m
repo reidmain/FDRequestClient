@@ -149,7 +149,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 		forKey: field];
 }
 
-- (void)setValue: (NSString *)value 
+- (void)setValue: (id)value 
 	forParameter: (NSString *)parameter
 {
 	[_parameters setValue: value 

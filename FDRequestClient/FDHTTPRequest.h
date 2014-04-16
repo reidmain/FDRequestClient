@@ -39,7 +39,7 @@ typedef NSString * FDHTTPRequestMethod;
 - (void)setValue: (NSString *)value 
 	forHTTPHeaderField: (NSString *)field;
 
-- (void)setValue: (NSString *)value 
+- (void)setValue: (id)value 
 	forParameter: (NSString *)parameter;
 
 - (void)setMessageBodyWithJSONObject: (id)object;
