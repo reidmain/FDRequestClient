@@ -106,13 +106,13 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 		if (FDIsEmpty([_url query]) == YES)
 		{
 			urlAsString = [NSString stringWithFormat: @"%@?%@", 
-				_url, 
+				[_url absoluteString], 
 				queryString];
 		}
 		else
 		{
-			urlAsString = [NSString stringWithFormat: @"%@?%@", 
-				_url, 
+			urlAsString = [NSString stringWithFormat: @"%@&%@", 
+				[_url absoluteString], 
 				queryString];
 		}
 		
