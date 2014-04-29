@@ -32,4 +32,44 @@
 }
 
 
+#pragma mark - Overridden Methods
+
+- (NSString *)description
+{
+	NSString *statusString = nil;
+	switch (_status)
+	{
+		case FDURLResponseStatusSucceed:
+		{
+			statusString = @"Succeed";
+			
+			break;
+		}
+		
+		case FDURLResponseStatusFailed:
+		{
+			statusString = @"Failed";
+			
+			break;
+		}
+		
+		case FDURLResponseStatusCancelled:
+		{
+			statusString = @"Cancelled";
+			
+			break;
+		}
+	}
+	
+	NSString *description = [NSString stringWithFormat: @"<%@: %p; status = %@; URL = %@; content = %@;>", 
+		[self class], 
+		self, 
+		statusString, 
+		[_rawURLResponse URL], 
+		_content];
+	
+	return description;
+}
+
+
 @end
