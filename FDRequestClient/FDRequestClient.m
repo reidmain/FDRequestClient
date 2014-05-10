@@ -7,8 +7,6 @@
 
 @interface FDRequestClient ()
 
-//- (FDURLConnectionDataParserBlock)_dataParserBlockForDataType: (NSString *)dataType;
-
 
 @end
 
@@ -162,49 +160,16 @@
 
 #pragma mark - Private Methods
 
-//- (FDURLConnectionDataParserBlock)_dataParserBlockForDataType: (NSString *)dataType
-//{
-//	FDURLConnectionDataParserBlock dataParserBlock = nil;
-//	
-//	if ([_delegate respondsToSelector: @selector(requestClient:canParseDataType:)])
-//	{
-//		BOOL canParseDataType = [_delegate requestClient: self 
-//			canParseDataType: dataType];
-//		
-//		if (canParseDataType == YES 
-//			&& [_delegate respondsToSelector: @selector(requestClient:parseData:withDataType:)])
-//		{
-//			dataParserBlock = ^id(NSData *data)
-//			{
-//				id parsedData = [_delegate requestClient: self 
-//					parseData: data 
-//					withDataType: dataType];
-//				
-//				return parsedData;
-//			};
-//		}
-//	}
-//	
-//	return dataParserBlock;
-//}
-
 
 #pragma mark - NSURLSessionDelegate Methods
 
 - (void)URLSession: (NSURLSession *)session 
 	didBecomeInvalidWithError: (NSError *)error
 {
-	// TODO: Implemenent this.
-	NSLog(@"Implement %s", __PRETTY_FUNCTION__);
+	FDLogger(FDLogLevelTrace, 
+		@"The URL session has somehow become invalid. The FDRequestClient should be updated to account for this scenario.\n%@", 
+		session);
 }
-
-//- (void)URLSession: (NSURLSession *)session 
-//	didReceiveChallenge: (NSURLAuthenticationChallenge *)challenge 
-//	completionHandler: (void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
-//{
-//	// TODO: Implement this.
-//	NSLog(@"Implement %s", __PRETTY_FUNCTION__);
-//}
 
 
 #pragma mark - NSURLSessionTaskDelegate Methods
@@ -230,7 +195,6 @@
 	totalBytesSent: (int64_t)totalBytesSent 
 	totalBytesExpectedToSend: (int64_t)totalBytesExpectedToSend
 {
-	NSLog(@"WTF? %s", __PRETTY_FUNCTION__);
 }
 
 - (void)URLSession: (NSURLSession *)session 
@@ -264,10 +228,6 @@
 	FDRequestClientTask *requestClientTask = [_activeTasks objectForKey: @(dataTask.taskIdentifier)];
 	[requestClientTask _didReceiveData: data];
 }
-
-//- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-//                                  willCacheResponse:(NSCachedURLResponse *)proposedResponse 
-//                                  completionHandler:(void (^)(NSCachedURLResponse *cachedResponse))completionHandler;
 
 
 @end
