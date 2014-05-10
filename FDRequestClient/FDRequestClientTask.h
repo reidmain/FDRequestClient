@@ -10,7 +10,7 @@
 #pragma mark - Type Definitions
 
 typedef NSURLSessionAuthChallengeDisposition (^FDRequestClientTaskAuthorizationBlock)(NSURLAuthenticationChallenge *urlAuthenticationChallenge, NSURLCredential **urlCredential);
-typedef void (^FDRequestClientTaskProgressBlock)(float progress);
+typedef void (^FDRequestClientTaskProgressBlock)(float uploadProgress, float dowloadProgress);
 typedef id (^FDRequestClientTaskDataParserBlock)(NSData *data);
 typedef id (^FDRequestClientTaskTransformBlock)(id object);
 typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);

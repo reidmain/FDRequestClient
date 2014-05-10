@@ -13,11 +13,6 @@
 
 @interface FDRequestClientTask ()
 
-typedef NSURLSessionAuthChallengeDisposition (^FDRequestClientTaskAuthorizationBlock)(NSURLAuthenticationChallenge *urlAuthenticationChallenge, NSURLCredential **urlCredential);
-typedef void (^FDRequestClientTaskProgressBlock)(float progress);
-typedef id (^FDRequestClientTaskDataParserBlock)(NSData *data);
-typedef id (^FDRequestClientTaskTransformBlock)(id object);
-typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 @end
 
@@ -34,6 +29,8 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	@private __strong FDRequestClientTaskDataParserBlock _dataParserBlock;
 	@private __strong FDRequestClientTaskTransformBlock _transformBlock;
 	@private __strong NSMutableArray *_completionBlocks;
+	@private float _uploadProgress;
+	@private float _downloadProgress;
 	@private long long _expectedDataLength;
 	@private __strong NSMutableData *_receivedData;
 	@private __strong NSLock *_completionLock;
@@ -66,6 +63,8 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	_dataParserBlock = dataParserBlock;
 	_transformBlock = transformBlock;
 	_completionBlocks = [NSMutableArray array];
+	_uploadProgress = 0.0f;
+	_downloadProgress = 0.0f;
 	_expectedDataLength = UnknownDataLength;
 	_receivedData = nil;
 	_completionLock = [NSLock new];
@@ -130,6 +129,19 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 	return disposition;
 }
 
+- (void)_didSendBodyData: (int64_t)bytesSent 
+	totalBytesSent: (int64_t)totalBytesSent 
+	totalBytesExpectedToSend: (int64_t)totalBytesExpectedToSend
+{
+	// Calculate the progress of the upload.
+	if (_progressBlock != nil)
+	{
+		_uploadProgress = totalBytesSent / (float)totalBytesExpectedToSend;
+		
+		_progressBlock(_uploadProgress, _downloadProgress);
+	}
+}
+
 - (void)_didReceiveResponse: (NSURLResponse *)response
 {
 	// Store the expected data length, if it is known.
@@ -151,16 +163,16 @@ typedef void (^FDRequestClientTaskCompletionBlock)(FDURLResponse *urlResponse);
 
 - (void)_didReceiveData: (NSData *)data
 {
-	// Append received 
+	// Append received data.
 	[_receivedData appendData: data];
 	
 	// If the expected data length is known, calculate the current progress of the download.
 	if (_expectedDataLength != UnknownDataLength 
 		&& _progressBlock != nil)
 	{
-		float progress = [_receivedData length] / (float)_expectedDataLength;
+		_downloadProgress = [_receivedData length] / (float)_expectedDataLength;
 		
-		_progressBlock(progress);
+		_progressBlock(_uploadProgress, _downloadProgress);
 	}
 }
 

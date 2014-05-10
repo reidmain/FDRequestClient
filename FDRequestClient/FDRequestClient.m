@@ -195,6 +195,10 @@
 	totalBytesSent: (int64_t)totalBytesSent 
 	totalBytesExpectedToSend: (int64_t)totalBytesExpectedToSend
 {
+	FDRequestClientTask *requestClientTask = [_activeTasks objectForKey: @(task.taskIdentifier)];
+	[requestClientTask _didSendBodyData: bytesSent 
+		totalBytesSent: totalBytesSent 
+		totalBytesExpectedToSend: totalBytesExpectedToSend];
 }
 
 - (void)URLSession: (NSURLSession *)session 

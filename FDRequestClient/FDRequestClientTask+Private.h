@@ -20,6 +20,9 @@
 
 - (NSURLSessionAuthChallengeDisposition)_dispositionForChallenge: (NSURLAuthenticationChallenge *)challenge 
 	credential: (NSURLCredential **)credential;
+- (void)_didSendBodyData: (int64_t)bytesSent 
+	totalBytesSent: (int64_t)totalBytesSent 
+	totalBytesExpectedToSend: (int64_t)totalBytesExpectedToSend;
 - (void)_didReceiveResponse: (NSURLResponse *)response;
 - (void)_didReceiveData: (NSData *)data;
 - (void)_didCompleteWithError: (NSError *)error;
