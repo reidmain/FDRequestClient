@@ -3,6 +3,8 @@
 
 #pragma mark Constants
 
+extern NSString * const FDRequestClientTaskErrorDomain;
+
 
 #pragma mark - Enumerations
 
