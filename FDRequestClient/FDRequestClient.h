@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) id<FDRequestClientDelegate> delegate;
 @property (nonatomic, weak) id<FDRequestClientCache> cache;
+@property (nonatomic, assign) BOOL logCurlCommandsToConsole;
 @property (nonatomic, copy) NSArray *headerFieldsToLog;
 
 

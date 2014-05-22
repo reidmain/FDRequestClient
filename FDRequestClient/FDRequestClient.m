@@ -39,6 +39,7 @@
 	
 	_delegate = nil;
 	_cache = nil;
+	_logCurlCommandsToConsole = YES;
 	_headerFieldsToLog = @[ @"Authorization" ];
 	
 	// Return initialized instance.
@@ -121,21 +122,24 @@
 	
 	[dataTask resume];
 	
-	// Log a curl command so it is easy to see what requests are being made.
-	NSMutableString *headerOptions = [NSMutableString string];
-	
-	// Add header options that have been requested to be logged to the curl command.
-	NSDictionary *headerFields = [urlRequest allHTTPHeaderFields];
-	[_headerFieldsToLog enumerateObjectsUsingBlock: ^(NSString *headerField, NSUInteger index, BOOL *stop)
-		{
-			NSString *value = [headerFields objectForKey: headerField];
-			if (FDIsEmpty(value) == NO)
+	if (_logCurlCommandsToConsole == YES)
+	{
+		// Log a curl command so it is easy to see what requests are being made.
+		NSMutableString *headerOptions = [NSMutableString string];
+		
+		// Add requested header fields to the curl command being logged.
+		NSDictionary *headerFields = [urlRequest allHTTPHeaderFields];
+		[_headerFieldsToLog enumerateObjectsUsingBlock: ^(NSString *headerField, NSUInteger index, BOOL *stop)
 			{
-				[headerOptions appendFormat: @"-H \"%@: %@\" ", headerField, value];
-			}
-		}];
-	
-	FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [urlRequest URL]);
+				NSString *value = [headerFields objectForKey: headerField];
+				if (FDIsEmpty(value) == NO)
+				{
+					[headerOptions appendFormat: @"-H \"%@: %@\" ", headerField, value];
+				}
+			}];
+		
+		FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [urlRequest URL]);
+	}
 	
 	return requestClientTask;
 }
