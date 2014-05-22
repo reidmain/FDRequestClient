@@ -180,82 +180,91 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 
 - (void)_didCompleteWithError: (NSError *)error
 {
+	FDURLResponseStatus status = FDURLResponseStatusSucceed;
 	id responseContent = nil;
 	
-	// Pass the received data into the data parser block, if it exists.
-	if (_dataParserBlock != nil)
+	// Check if the task was cancelled by looking for a specific error.
+	if ([[error domain] isEqualToString: NSURLErrorDomain] == YES 
+		&& [error code] == NSURLErrorCancelled)
 	{
-		responseContent = _dataParserBlock(_receivedData);
+		status = FDURLResponseStatusCancelled;
 	}
-	// Otherwise, parse the received data into the specified format.
+	// If the task was not cancelled attempt to parse the response and handle any errors.
 	else
 	{
-		NSString *mimeType = _urlSessionTask.response.MIMEType;
-		if (mimeType == nil)
+		// Pass the received data into the data parser block, if it exists.
+		if (_dataParserBlock != nil)
 		{
+			responseContent = _dataParserBlock(_receivedData);
 		}
-		else if ([mimeType rangeOfString: @"text/"].location != NSNotFound)
-		{
-			NSString *receivedDataAsString = [[NSString alloc] 
-				initWithData: _receivedData 
-					encoding: NSUTF8StringEncoding];
-			
-			responseContent = receivedDataAsString;
-		}
-		else if ([mimeType rangeOfString: @"image/"].location != NSNotFound)
-		{
-			responseContent = [UIImage imageWithData: _receivedData];
-		}
-		else if ([mimeType isEqualToString: @"application/json"] == YES)
-		{
-			// Ensure the received data is not nil before attempting to parse it.
-			if (_receivedData != nil)
-			{
-				responseContent = [NSJSONSerialization JSONObjectWithData: _receivedData 
-					options: NSJSONReadingAllowFragments 
-					error: nil];
-			}
-		}
+		// Otherwise, parse the received data into the specified format.
 		else
 		{
-			[NSException raise: NSInternalInconsistencyException 
-				format: @"Unsupported MIME type: %@\n%s", 
-					mimeType, 
-					__PRETTY_FUNCTION__];
+			NSString *mimeType = _urlSessionTask.response.MIMEType;
+			if (mimeType == nil)
+			{
+			}
+			else if ([mimeType rangeOfString: @"text/"].location != NSNotFound)
+			{
+				NSString *receivedDataAsString = [[NSString alloc] 
+					initWithData: _receivedData 
+						encoding: NSUTF8StringEncoding];
+				
+				responseContent = receivedDataAsString;
+			}
+			else if ([mimeType rangeOfString: @"image/"].location != NSNotFound)
+			{
+				responseContent = [UIImage imageWithData: _receivedData];
+			}
+			else if ([mimeType isEqualToString: @"application/json"] == YES)
+			{
+				// Ensure the received data is not nil before attempting to parse it.
+				if (_receivedData != nil)
+				{
+					responseContent = [NSJSONSerialization JSONObjectWithData: _receivedData 
+						options: NSJSONReadingAllowFragments 
+						error: nil];
+				}
+			}
+			else
+			{
+				[NSException raise: NSInternalInconsistencyException 
+					format: @"Unsupported MIME type: %@\n%s", 
+						mimeType, 
+						__PRETTY_FUNCTION__];
+			}
 		}
-	}
-	
-	// If it exists, call the transform block on the parsed content.
-	if (_transformBlock != nil)
-	{
-		responseContent = _transformBlock(responseContent);
-	}
-	
-	// If an error was returned the task has failed.
-	// TODO: Check if the task was cancelled.
-	FDURLResponseStatus status = FDURLResponseStatusSucceed;
-	if (error != nil)
-	{
-		status = FDURLResponseStatusFailed;
-	}
-	// If the the status code is not 2XX or 3XX assume the task failed and create a error object from the status code.
-	else if ([_urlSessionTask.response isKindOfClass: [NSHTTPURLResponse class]] == YES)
-	{
-		NSInteger statusCode = [(NSHTTPURLResponse *)_urlSessionTask.response statusCode];
-		if (statusCode < 200 
-			|| statusCode >= 400)
+		
+		// If it exists, call the transform block on the parsed content.
+		if (_transformBlock != nil)
+		{
+			responseContent = _transformBlock(responseContent);
+		}
+		
+		// If an error was returned the task has failed.
+		if (error != nil)
 		{
 			status = FDURLResponseStatusFailed;
-			
-			NSString *statusCodeString = [NSHTTPURLResponse localizedStringForStatusCode: statusCode];
-			
-			NSDictionary *userInfo = @{ 
-				NSLocalizedFailureReasonErrorKey : statusCodeString 
-				};
-			
-			error = [NSError errorWithDomain: FDRequestClientTaskErrorDomain 
-				code: statusCode 
-				userInfo: userInfo];
+		}
+		// If the the status code is not 2XX or 3XX assume the task failed and create a error object from the status code.
+		else if ([_urlSessionTask.response isKindOfClass: [NSHTTPURLResponse class]] == YES)
+		{
+			NSInteger statusCode = [(NSHTTPURLResponse *)_urlSessionTask.response statusCode];
+			if (statusCode < 200 
+				|| statusCode >= 400)
+			{
+				status = FDURLResponseStatusFailed;
+				
+				NSString *statusCodeString = [NSHTTPURLResponse localizedStringForStatusCode: statusCode];
+				
+				NSDictionary *userInfo = @{ 
+					NSLocalizedFailureReasonErrorKey : statusCodeString 
+					};
+				
+				error = [NSError errorWithDomain: FDRequestClientTaskErrorDomain 
+					code: statusCode 
+					userInfo: userInfo];
+			}
 		}
 	}
 	
