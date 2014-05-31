@@ -122,6 +122,8 @@
 	
 	[dataTask resume];
 	
+	[UIApplication showNetworkActivityIndicator];
+	
 	if (_logCurlCommandsToConsole == YES)
 	{
 		// Log a curl command so it is easy to see what requests are being made.
@@ -213,6 +215,8 @@
 	[requestClientTask _didCompleteWithError: error];
 	
 	[_activeTasks removeObjectForKey: @(requestClientTask.urlSessionTask.taskIdentifier)];
+	
+	[UIApplication hideNetworkActivityIndicator];
 }
 
 

@@ -279,13 +279,16 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 	
 	if (_callCompletionBlockOnMainThread == YES)
 	{
+		// Create a reference to the completion blocks to ensure they will always exist whenever the call on the main thread occurs.
+		NSArray *completionBlocks = _completionBlocks;
+		
 		[self performBlockOnMainThread: ^
-		{
-			for (FDRequestClientTaskCompletionBlock completionBlock in _completionBlocks)
 			{
-				completionBlock(urlResponse);
-			}
-		}];
+				for (FDRequestClientTaskCompletionBlock completionBlock in completionBlocks)
+				{
+					completionBlock(urlResponse);
+				}
+			}];
 	}
 	else
 	{

@@ -1,4 +1,5 @@
 #import <FDFoundationKit/FDFoundationKit.h>
+#import "UIApplication+NetworkActivityIndicator.h"
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
