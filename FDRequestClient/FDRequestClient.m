@@ -37,8 +37,6 @@
 		delegateQueue: operationQueue];
 	_activeTasks = [FDThreadSafeMutableDictionary dictionary];
 	
-	_delegate = nil;
-	_cache = nil;
 	_logCurlCommandsToConsole = YES;
 	_headerFieldsToLog = @[ @"Authorization" ];
 	

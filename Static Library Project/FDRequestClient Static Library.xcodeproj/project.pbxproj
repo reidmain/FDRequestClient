@@ -16,8 +16,6 @@
 		27AE0F9916ADC02B001F5771 /* FDHTTPRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F4E16AD975F001F5771 /* FDHTTPRequest.h */; };
 		27AE0F9C16ADC02B001F5771 /* FDURLResponse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5C16AD975F001F5771 /* FDURLResponse.h */; };
 		27AE0F9D16ADC02B001F5771 /* FDRequestClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5116AD975F001F5771 /* FDRequestClient.h */; };
-		27AE0F9E16ADC02B001F5771 /* FDRequestClientDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */; };
-		27AE0F9F16ADC02B001F5771 /* FDRequestClientCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AE0F5316AD975F001F5771 /* FDRequestClientCache.h */; };
 		27CB13A319395EC1000CFA70 /* UIApplication+NetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CB13A219395EC1000CFA70 /* UIApplication+NetworkActivityIndicator.m */; };
 		27CB13A419395ECA000CFA70 /* UIApplication+NetworkActivityIndicator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27CB13A119395EC1000CFA70 /* UIApplication+NetworkActivityIndicator.h */; };
 		27D2BA871821A5E700EBED26 /* FDRequestClientTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */; };
@@ -53,8 +51,6 @@
 				27AE0F9916ADC02B001F5771 /* FDHTTPRequest.h in CopyFiles */,
 				27AE0F9C16ADC02B001F5771 /* FDURLResponse.h in CopyFiles */,
 				27AE0F9D16ADC02B001F5771 /* FDRequestClient.h in CopyFiles */,
-				27AE0F9E16ADC02B001F5771 /* FDRequestClientDelegate.h in CopyFiles */,
-				27AE0F9F16ADC02B001F5771 /* FDRequestClientCache.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +66,6 @@
 		27AE0F4F16AD975F001F5771 /* FDHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHTTPRequest.m; sourceTree = "<group>"; };
 		27AE0F5116AD975F001F5771 /* FDRequestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClient.h; sourceTree = "<group>"; };
 		27AE0F5216AD975F001F5771 /* FDRequestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClient.m; sourceTree = "<group>"; };
-		27AE0F5316AD975F001F5771 /* FDRequestClientCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientCache.h; sourceTree = "<group>"; };
-		27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientDelegate.h; sourceTree = "<group>"; };
 		27AE0F5B16AD975F001F5771 /* FDURLResponse+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FDURLResponse+Private.h"; sourceTree = "<group>"; };
 		27AE0F5C16AD975F001F5771 /* FDURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDURLResponse.h; sourceTree = "<group>"; };
 		27AE0F5D16AD975F001F5771 /* FDURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDURLResponse.m; sourceTree = "<group>"; };
@@ -172,8 +166,6 @@
 				27D2BA861821A5E700EBED26 /* FDRequestClientTask.m */,
 				27AE0F5116AD975F001F5771 /* FDRequestClient.h */,
 				27AE0F5216AD975F001F5771 /* FDRequestClient.m */,
-				27AE0F5416AD975F001F5771 /* FDRequestClientDelegate.h */,
-				27AE0F5316AD975F001F5771 /* FDRequestClientCache.h */,
 			);
 			name = FDRequestClient;
 			path = ../../FDRequestClient;

@@ -3,8 +3,6 @@
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
-#import "FDRequestClientDelegate.h"
-#import "FDRequestClientCache.h"
 
 
 #pragma mark Class Interface
@@ -14,8 +12,6 @@
 
 #pragma mark - Properties
 
-@property (nonatomic, weak) id<FDRequestClientDelegate> delegate;
-@property (nonatomic, weak) id<FDRequestClientCache> cache;
 @property (nonatomic, assign) BOOL logCurlCommandsToConsole;
 @property (nonatomic, copy) NSArray *headerFieldsToLog;
 
