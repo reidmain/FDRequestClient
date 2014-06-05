@@ -197,10 +197,10 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 - (NSString *)description
 {
-	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@; headers = %@; parameters = %@>", 
+	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@;\nheaders = %@;\nparameters = %@>", 
 		[self class], 
 		self, 
-		_url, 
+		[_url absoluteString], 
 		_method, 
 		_httpHeaderFields, 
 		_parameters];
