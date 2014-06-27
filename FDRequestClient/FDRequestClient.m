@@ -1,6 +1,5 @@
 #import "FDRequestClient.h"
 #import "FDRequestClientTask+Private.h"
-#import <FDFoundationKit/FDThreadSafeMutableDictionary.h>
 
 
 #pragma mark Class Extension
@@ -138,7 +137,7 @@
 				}
 			}];
 		
-		FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [urlRequest URL]);
+		FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [[[urlRequest URL] absoluteString] urlDecode]);
 	}
 	
 	return requestClientTask;
