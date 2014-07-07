@@ -1,3 +1,6 @@
+@import Foundation;
+
+
 #pragma mark Constants
 
 extern NSString * const FDHTTPRequestMethodGet;
@@ -43,5 +46,6 @@ typedef NSString * FDHTTPRequestMethod;
 	forParameter: (NSString *)parameter;
 
 - (void)setMessageBodyWithJSONObject: (id)object;
+
 
 @end

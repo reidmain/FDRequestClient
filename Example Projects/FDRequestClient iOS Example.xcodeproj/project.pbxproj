@@ -250,7 +250,6 @@
 		07162339160AAD2A00346A3C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0716233F160AAD2A00346A3C /* Common */,
 				0716233C160AAD2A00346A3C /* Categories */,
 				0716233E160AAD2A00346A3C /* Controllers */,
 				0716233D160AAD2A00346A3C /* Controls */,
@@ -297,13 +296,6 @@
 				071623AB160AB06F00346A3C /* GitHub */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0716233F160AAD2A00346A3C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		07162341160AAD2A00346A3C /* iPhone */ = {

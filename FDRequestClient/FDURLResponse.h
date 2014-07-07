@@ -1,3 +1,6 @@
+@import Foundation;
+
+
 #pragma mark Enumerations
 
 typedef enum

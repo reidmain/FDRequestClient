@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		272081C418C273AB00BE290D /* libFDFoundationKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 272081C118C2738600BE290D /* libFDFoundationKit.a */; };
-		27AE0F3A16AD966A001F5771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F3916AD966A001F5771 /* Foundation.framework */; };
-		27AE0F4C16AD9720001F5771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F4B16AD9720001F5771 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		27AE0F6416AD975F001F5771 /* FDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F4F16AD975F001F5771 /* FDHTTPRequest.m */; };
 		27AE0F6516AD975F001F5771 /* FDRequestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5216AD975F001F5771 /* FDRequestClient.m */; };
 		27AE0F6916AD975F001F5771 /* FDURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AE0F5D16AD975F001F5771 /* FDURLResponse.m */; };
@@ -59,9 +57,6 @@
 /* Begin PBXFileReference section */
 		272081BC18C2738600BE290D /* FDFoundationKit Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDFoundationKit Static Library.xcodeproj"; path = "FDFoundationKit/Static Library Project/FDFoundationKit Static Library.xcodeproj"; sourceTree = "<group>"; };
 		27AE0F3616AD966A001F5771 /* libFDRequestClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFDRequestClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		27AE0F3916AD966A001F5771 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		27AE0F3D16AD966A001F5771 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		27AE0F4B16AD9720001F5771 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27AE0F4E16AD975F001F5771 /* FDHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDHTTPRequest.h; sourceTree = "<group>"; };
 		27AE0F4F16AD975F001F5771 /* FDHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHTTPRequest.m; sourceTree = "<group>"; };
 		27AE0F5116AD975F001F5771 /* FDRequestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClient.h; sourceTree = "<group>"; };
@@ -81,8 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AE0F3A16AD966A001F5771 /* Foundation.framework in Frameworks */,
-				27AE0F4C16AD9720001F5771 /* UIKit.framework in Frameworks */,
 				272081C418C273AB00BE290D /* libFDFoundationKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				27AE0F3B16AD966A001F5771 /* FDRequestClient Static Library */,
-				27AE0F3816AD966A001F5771 /* Frameworks */,
 				27AE0F3716AD966A001F5771 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,31 +116,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27AE0F3816AD966A001F5771 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27AE0F3916AD966A001F5771 /* Foundation.framework */,
-				27AE0F4B16AD9720001F5771 /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		27AE0F3B16AD966A001F5771 /* FDRequestClient Static Library */ = {
 			isa = PBXGroup;
 			children = (
 				27AE0F4D16AD975F001F5771 /* FDRequestClient */,
 				2720819218C2737300BE290D /* Vendors */,
-				27AE0F3C16AD966A001F5771 /* Supporting Files */,
 			);
 			path = "FDRequestClient Static Library";
-			sourceTree = "<group>";
-		};
-		27AE0F3C16AD966A001F5771 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				27AE0F3D16AD966A001F5771 /* Prefix.pch */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		27AE0F4D16AD975F001F5771 /* FDRequestClient */ = {
@@ -329,8 +303,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/FDRequestClient_Static_Library.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FDRequestClient Static Library/Supporting Files/Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -341,8 +313,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/FDRequestClient_Static_Library.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FDRequestClient Static Library/Supporting Files/Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
