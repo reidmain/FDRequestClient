@@ -1,5 +1,4 @@
 #import "UIImageView+WebImage.h"
-#import "FDInMemoryCache.h"
 #import <objc/runtime.h>
 
 
@@ -17,7 +16,6 @@ static void * const _loadImageTaskKey;
 	placeholderImage: (UIImage *)placeholderImage
 {
 	static FDRequestClient *requestClient = nil;
-	static FDInMemoryCache *inMemoryCache = nil;
 	
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, 
@@ -25,11 +23,6 @@ static void * const _loadImageTaskKey;
 			requestClient = [[FDRequestClient alloc] 
 				initWithSharedOperationQueue: NO
 					 urlSessionConfiguration: nil];
-			
-			inMemoryCache = [[FDInMemoryCache alloc] 
-				init];
-			
-			requestClient.cache = inMemoryCache;
 		});
 	
 	NSURL *currentImageURL = objc_getAssociatedObject(self, 
@@ -47,7 +40,7 @@ static void * const _loadImageTaskKey;
 		FDHTTPRequest *httpRequest = [[FDHTTPRequest alloc] 
 			initWithURL: imageURL];
 		
-		FDRequestClientTask *loadImageOperation = [requestClient loadURLRequest: httpRequest 
+		FDRequestClientTask *loadImageOperation = [requestClient loadHTTPRequest: httpRequest 
 			authorizationBlock: nil 
 			progressBlock: nil 
 			dataParserBlock: nil 

@@ -24,7 +24,6 @@
 		07162393160AAFB400346A3C /* FDTwitterListTweetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0716238E160AAFB400346A3C /* FDTwitterListTweetsView.xib */; };
 		0716239E160AB02500346A3C /* UIImageView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162399160AB02500346A3C /* UIImageView+WebImage.m */; };
 		0716239F160AB02500346A3C /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716239B160AB02500346A3C /* UIView+Layout.m */; };
-		071623A2160AB04D00346A3C /* FDInMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623A1160AB04D00346A3C /* FDInMemoryCache.m */; };
 		071623B9160AB06F00346A3C /* FDExampleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623A5160AB06F00346A3C /* FDExampleListController.m */; };
 		071623BA160AB06F00346A3C /* FDSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623A8160AB06F00346A3C /* FDSearchController.m */; };
 		071623BB160AB06F00346A3C /* FDSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623AA160AB06F00346A3C /* FDSplitViewController.m */; };
@@ -94,8 +93,6 @@
 		07162399160AB02500346A3C /* UIImageView+WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImage.m"; sourceTree = "<group>"; };
 		0716239A160AB02500346A3C /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		0716239B160AB02500346A3C /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
-		071623A0160AB04D00346A3C /* FDInMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDInMemoryCache.h; sourceTree = "<group>"; };
-		071623A1160AB04D00346A3C /* FDInMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDInMemoryCache.m; sourceTree = "<group>"; };
 		071623A4160AB06F00346A3C /* FDExampleListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDExampleListController.h; sourceTree = "<group>"; };
 		071623A5160AB06F00346A3C /* FDExampleListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDExampleListController.m; sourceTree = "<group>"; };
 		071623A6160AB06F00346A3C /* FDExampleListControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDExampleListControllerDelegate.h; sourceTree = "<group>"; };
@@ -305,8 +302,6 @@
 		0716233F160AAD2A00346A3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				071623A0160AB04D00346A3C /* FDInMemoryCache.h */,
-				071623A1160AB04D00346A3C /* FDInMemoryCache.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -557,7 +552,6 @@
 				0716237D160AAE4E00346A3C /* FDRootViewController_iPhone.m in Sources */,
 				0716239E160AB02500346A3C /* UIImageView+WebImage.m in Sources */,
 				0716239F160AB02500346A3C /* UIView+Layout.m in Sources */,
-				071623A2160AB04D00346A3C /* FDInMemoryCache.m in Sources */,
 				071623B9160AB06F00346A3C /* FDExampleListController.m in Sources */,
 				071623BA160AB06F00346A3C /* FDSearchController.m in Sources */,
 				071623BB160AB06F00346A3C /* FDSplitViewController.m in Sources */,

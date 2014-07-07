@@ -82,7 +82,7 @@ static NSDateFormatter *_dateFormatter;
 		forParameter: @"start_page"];
 	
 	// Load search request.
-	[self loadURLRequest: request 
+	[self loadHTTPRequest: request 
 		authorizationBlock: nil 
 		progressBlock: nil 
 		dataParserBlock: nil 
