@@ -18,6 +18,8 @@
 		279FAB35196AF6050050BA4D /* FDURLResponse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 279FAB27196AF5F80050BA4D /* FDURLResponse.h */; };
 		279FAB36196AF6050050BA4D /* UIApplication+NetworkActivityIndicator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 279FAB29196AF5F80050BA4D /* UIApplication+NetworkActivityIndicator.h */; };
 		279FAB70196AF63C0050BA4D /* libFDFoundationKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 279FAB6D196AF6350050BA4D /* libFDFoundationKit.a */; };
+		27B2AA7B1987EB7400148A7D /* FDRequestClientTaskGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2AA7A1987EB7400148A7D /* FDRequestClientTaskGroup.m */; };
+		27B2AA8B1987EF9300148A7D /* FDRequestClientTaskGroup.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27B2AA791987EB7400148A7D /* FDRequestClientTaskGroup.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27B2AA8B1987EF9300148A7D /* FDRequestClientTaskGroup.h in CopyFiles */,
 				279FAB30196AF6050050BA4D /* FDHTTPRequest.h in CopyFiles */,
 				279FAB31196AF6050050BA4D /* FDRequestClient.h in CopyFiles */,
 				279FAB33196AF6050050BA4D /* FDRequestClientTask.h in CopyFiles */,
@@ -69,6 +72,8 @@
 		279FAB2A196AF5F80050BA4D /* UIApplication+NetworkActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NetworkActivityIndicator.m"; sourceTree = "<group>"; };
 		279FAB68196AF6350050BA4D /* FDFoundationKit Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDFoundationKit Static Library.xcodeproj"; path = "FDFoundationKit/Static Library Project/FDFoundationKit Static Library.xcodeproj"; sourceTree = "<group>"; };
 		27AE0F3616AD966A001F5771 /* libFDRequestClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFDRequestClient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B2AA791987EB7400148A7D /* FDRequestClientTaskGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRequestClientTaskGroup.h; sourceTree = "<group>"; };
+		27B2AA7A1987EB7400148A7D /* FDRequestClientTaskGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClientTaskGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +98,8 @@
 				279FAB23196AF5F80050BA4D /* FDRequestClientTask+Private.h */,
 				279FAB24196AF5F80050BA4D /* FDRequestClientTask.h */,
 				279FAB25196AF5F80050BA4D /* FDRequestClientTask.m */,
+				27B2AA791987EB7400148A7D /* FDRequestClientTaskGroup.h */,
+				27B2AA7A1987EB7400148A7D /* FDRequestClientTaskGroup.m */,
 				279FAB26196AF5F80050BA4D /* FDURLResponse+Private.h */,
 				279FAB27196AF5F80050BA4D /* FDURLResponse.h */,
 				279FAB28196AF5F80050BA4D /* FDURLResponse.m */,
@@ -214,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				279FAB2C196AF5F80050BA4D /* FDRequestClient.m in Sources */,
+				27B2AA7B1987EB7400148A7D /* FDRequestClientTaskGroup.m in Sources */,
 				279FAB2D196AF5F80050BA4D /* FDRequestClientTask.m in Sources */,
 				279FAB2E196AF5F80050BA4D /* FDURLResponse.m in Sources */,
 				279FAB2F196AF5F80050BA4D /* UIApplication+NetworkActivityIndicator.m in Sources */,

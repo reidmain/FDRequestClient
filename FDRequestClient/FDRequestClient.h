@@ -3,6 +3,7 @@
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
+#import "FDRequestClientTaskGroup.h"
 
 
 #pragma mark Class Interface
