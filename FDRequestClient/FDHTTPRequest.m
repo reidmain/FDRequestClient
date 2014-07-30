@@ -96,32 +96,30 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 - (NSURLRequest *)urlRequest
 {
 	// If any query parameters exist, add them to the string of the URL.
-	NSURL *url = nil;
+	NSURL *url = _url;
 	if (FDIsEmpty(_parameters) == NO)
 	{
 		NSString *queryString = [_parameters urlEncode];
-		
-		NSString *urlAsString = nil;
-		
-		if (FDIsEmpty([_url query]) == YES)
+		if (FDIsEmpty(queryString) == NO)
 		{
-			urlAsString = [NSString stringWithFormat: @"%@?%@", 
-				[_url absoluteString], 
-				queryString];
+			NSString *urlAsString = nil;
+			
+			if (FDIsEmpty([_url query]) == YES)
+			{
+				urlAsString = [NSString stringWithFormat: @"%@?%@", 
+					[_url absoluteString], 
+					queryString];
+			}
+			else
+			{
+				urlAsString = [NSString stringWithFormat: @"%@&%@", 
+					[_url absoluteString], 
+					queryString];
+			}
+			
+			url = [[NSURL alloc] 
+				initWithString: urlAsString];
 		}
-		else
-		{
-			urlAsString = [NSString stringWithFormat: @"%@&%@", 
-				[_url absoluteString], 
-				queryString];
-		}
-		
-		url = [[NSURL alloc] 
-			initWithString: urlAsString];
-	}
-	else
-	{
-		url = _url;
 	}
 	
 	// Create a mutable URL request for the URL.
