@@ -34,7 +34,7 @@
 
 #pragma mark - Overridden Methods
 
-- (NSString *)description
+- (NSString *)debugDescription
 {
 	NSString *statusString = nil;
 	switch (_status)

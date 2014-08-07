@@ -193,7 +193,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 #pragma mark - Overridden Methods
 
-- (NSString *)description
+- (NSString *)debugDescription
 {
 	NSString *description = [NSString stringWithFormat: @"<%@: %p; URL = %@; method = %@;\nheaders = %@;\nparameters = %@>", 
 		[self class], 
