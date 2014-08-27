@@ -1,6 +1,8 @@
 #import "FDRequestClientTask.h"
+#import "FDRequestClientTask+Private.h"
 #import "FDURLResponse+Private.h"
 #import <FDFoundationKit/NSObject+PerformBlock.h>
+#import <FDFoundationKit/FDNullOrEmpty.h>
 @import UIKit.UIImage;
 
 
@@ -82,6 +84,12 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 
 - (BOOL)addCompletionBlock: (FDRequestClientTaskCompletionBlock)completionBlock
 {
+	// If the completion block is nil there is nothing to add.
+	if (FDIsEmpty(completionBlock) == YES)
+	{
+		return NO;
+	}
+	
 	// If the completion lock is already activated that means the completion blocks are being iterated over and there is no way to add this completion block. The user should be notified that their attempt to add a completion block has failed.
 	if ([_completionLock tryLock] == NO)
 	{

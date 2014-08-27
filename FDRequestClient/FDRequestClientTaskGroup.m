@@ -1,4 +1,5 @@
 #import "FDRequestClientTaskGroup.h"
+#import <FDFoundationKit/FDNullOrEmpty.h>
 
 
 #pragma mark Class Definition
@@ -50,6 +51,12 @@
 
 - (void)addCompletionBlock: (FDRequestClientTaskGroupCompletionBlock)completionBlock
 {
+	// If the completion block is nil there is nothing to add.
+	if (FDIsEmpty(completionBlock) == YES)
+	{
+		return;
+	}
+	
 	// Track the completion block so it can be added as a notification block when the group is started.
 	[_completionBlocks addObject: completionBlock];
 }

@@ -169,7 +169,7 @@
 - (void)URLSession: (NSURLSession *)session 
 	didBecomeInvalidWithError: (NSError *)error
 {
-	FDLogger(FDLogLevelTrace, 
+	FDLog(FDLogLevelTrace, 
 		@"The URL session has somehow become invalid. The FDRequestClient should be updated to account for this scenario.\n%@", 
 		session);
 }
