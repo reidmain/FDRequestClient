@@ -119,7 +119,9 @@
 	
 	[dataTask resume];
 	
+#if TARGET_OS_IPHONE
 	[UIApplication showNetworkActivityIndicator];
+#endif
 	
 	if (_logCurlCommandsToConsole == YES)
 	{
@@ -213,7 +215,9 @@
 	
 	[_activeTasks removeObjectForKey: @(requestClientTask.urlSessionTask.taskIdentifier)];
 	
+#if TARGET_OS_IPHONE
 	[UIApplication hideNetworkActivityIndicator];
+#endif
 }
 
 

@@ -1,9 +1,11 @@
 #import <FDFoundationKit/FDFoundationKit.h>
-#import "UIApplication+NetworkActivityIndicator.h"
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
 #import "FDRequestClientTaskGroup.h"
+#if TARGET_OS_IPHONE
+#import "UIApplication+NetworkActivityIndicator.h"
+#endif
 
 
 #pragma mark Class Interface

@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0716231B160AAD2900346A3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716231A160AAD2900346A3C /* Foundation.framework */; };
-		0716231D160AAD2900346A3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716231C160AAD2900346A3C /* CoreGraphics.framework */; };
-		0716231F160AAD2900346A3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716231E160AAD2900346A3C /* QuartzCore.framework */; };
-		07162321160AAD2900346A3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07162320160AAD2900346A3C /* UIKit.framework */; };
 		07162327160AAD2900346A3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07162326160AAD2900346A3C /* main.m */; };
 		0716232C160AAD2900346A3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716232B160AAD2900346A3C /* AppDelegate.m */; };
 		07162335160AAD2900346A3C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 07162334160AAD2900346A3C /* iTunesArtwork */; };
@@ -42,35 +38,36 @@
 		071623DB160AB12200346A3C /* FDTwitterURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D3160AB12200346A3C /* FDTwitterURL.m */; };
 		071623DC160AB12200346A3C /* FDTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 071623D5160AB12200346A3C /* FDTwitterUser.m */; };
 		071624D2160ABB3B00346A3C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07162331160AAD2900346A3C /* InfoPlist.strings */; };
-		2785D4221730B5AE007B99B1 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2785D4211730B5AB007B99B1 /* Accounts.framework */; };
+		276A0E4919B79329008CC291 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B86D9119B79269007B5F5E /* libFDRequestClient.a */; };
 		27A9972E1816CDB9004A98D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A9972D1816CDB9004A98D8 /* Images.xcassets */; };
-		27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */; };
-		27E3358D17189D1F0089D406 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E3358C17189D1F0089D406 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27AE0F8816AD9D07001F5771 /* PBXContainerItemProxy */ = {
+		27B86D9019B79269007B5F5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+			containerPortal = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 27AE0F3616AD966A001F5771;
-			remoteInfo = "FDRequestClient Static Library";
+			remoteInfo = "FDRequestClient iOS";
 		};
-		27AE0F8F16AD9FD4001F5771 /* PBXContainerItemProxy */ = {
+		27B86D9219B79269007B5F5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+			containerPortal = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27F79D8919B7881A00E118DB;
+			remoteInfo = "FDRequestClient OS X";
+		};
+		27B86D9419B792C8007B5F5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 27AE0F3516AD966A001F5771;
-			remoteInfo = FDRequestClient;
+			remoteInfo = "FDRequestClient iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		07162316160AAD2900346A3C /* FDRequestClient iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FDRequestClient iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0716231A160AAD2900346A3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0716231C160AAD2900346A3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0716231E160AAD2900346A3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		07162320160AAD2900346A3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07162324160AAD2900346A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07162325160AAD2900346A3C /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		07162326160AAD2900346A3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,10 +126,8 @@
 		071623D3160AB12200346A3C /* FDTwitterURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterURL.m; sourceTree = "<group>"; };
 		071623D4160AB12200346A3C /* FDTwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTwitterUser.h; sourceTree = "<group>"; };
 		071623D5160AB12200346A3C /* FDTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTwitterUser.m; sourceTree = "<group>"; };
-		2785D4211730B5AB007B99B1 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		27A9972D1816CDB9004A98D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "FDRequestClient Static Library.xcodeproj"; path = "../Static Library Project/FDRequestClient Static Library.xcodeproj"; sourceTree = "<group>"; };
-		27E3358C17189D1F0089D406 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FDRequestClient.xcodeproj; path = "../Framework Project/FDRequestClient.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,13 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0716231B160AAD2900346A3C /* Foundation.framework in Frameworks */,
-				0716231D160AAD2900346A3C /* CoreGraphics.framework in Frameworks */,
-				0716231F160AAD2900346A3C /* QuartzCore.framework in Frameworks */,
-				07162321160AAD2900346A3C /* UIKit.framework in Frameworks */,
-				2785D4221730B5AE007B99B1 /* Accounts.framework in Frameworks */,
-				27E3358D17189D1F0089D406 /* Social.framework in Frameworks */,
-				27AE0F9116AD9FDB001F5771 /* libFDRequestClient.a in Frameworks */,
+				276A0E4919B79329008CC291 /* libFDRequestClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +147,6 @@
 			children = (
 				07162322160AAD2900346A3C /* FDRequestClient iOS Example */,
 				0796014D160FE7500041B80D /* Vendors */,
-				07162319160AAD2900346A3C /* Frameworks */,
 				07162317160AAD2900346A3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,19 +158,6 @@
 				07162316160AAD2900346A3C /* FDRequestClient iOS Example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		07162319160AAD2900346A3C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0716231A160AAD2900346A3C /* Foundation.framework */,
-				0716231C160AAD2900346A3C /* CoreGraphics.framework */,
-				0716231E160AAD2900346A3C /* QuartzCore.framework */,
-				07162320160AAD2900346A3C /* UIKit.framework */,
-				2785D4211730B5AB007B99B1 /* Accounts.framework */,
-				27E3358C17189D1F0089D406 /* Social.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		07162322160AAD2900346A3C /* FDRequestClient iOS Example */ = {
@@ -438,15 +413,16 @@
 		0796014D160FE7500041B80D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */,
+				27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */,
 			);
 			name = Vendors;
 			sourceTree = "<group>";
 		};
-		27AE0F8216AD9D07001F5771 /* Products */ = {
+		27B86D8B19B79269007B5F5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */,
+				27B86D9119B79269007B5F5E /* libFDRequestClient.a */,
+				27B86D9319B79269007B5F5E /* FDRequestClient.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -465,7 +441,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				27AE0F9016AD9FD4001F5771 /* PBXTargetDependency */,
+				27B86D9519B792C8007B5F5E /* PBXTargetDependency */,
 			);
 			name = "FDRequestClient iOS Example";
 			productName = "FDRequestClient iOS Example";
@@ -493,8 +469,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 27AE0F8216AD9D07001F5771 /* Products */;
-					ProjectRef = 27AE0F8116AD9D07001F5771 /* FDRequestClient Static Library.xcodeproj */;
+					ProductGroup = 27B86D8B19B79269007B5F5E /* Products */;
+					ProjectRef = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -505,11 +481,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		27AE0F8916AD9D07001F5771 /* libFDRequestClient.a */ = {
+		27B86D9119B79269007B5F5E /* libFDRequestClient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libFDRequestClient.a;
-			remoteRef = 27AE0F8816AD9D07001F5771 /* PBXContainerItemProxy */;
+			remoteRef = 27B86D9019B79269007B5F5E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		27B86D9319B79269007B5F5E /* FDRequestClient.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDRequestClient.framework;
+			remoteRef = 27B86D9219B79269007B5F5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -567,10 +550,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27AE0F9016AD9FD4001F5771 /* PBXTargetDependency */ = {
+		27B86D9519B792C8007B5F5E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = FDRequestClient;
-			targetProxy = 27AE0F8F16AD9FD4001F5771 /* PBXContainerItemProxy */;
+			name = "FDRequestClient iOS";
+			targetProxy = 27B86D9419B792C8007B5F5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

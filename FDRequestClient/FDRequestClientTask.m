@@ -3,7 +3,11 @@
 #import "FDURLResponse+Private.h"
 #import <FDFoundationKit/NSObject+PerformBlock.h>
 #import <FDFoundationKit/FDNullOrEmpty.h>
+#if TARGET_OS_IPHONE
 @import UIKit.UIImage;
+#else
+@import AppKit.NSImage;
+#endif
 
 
 #pragma mark Constants
@@ -222,7 +226,12 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 			}
 			else if ([mimeType rangeOfString: @"image/"].location != NSNotFound)
 			{
+			#if TARGET_OS_IPHONE
 				responseContent = [UIImage imageWithData: _receivedData];
+			#else
+				responseContent = [[NSImage alloc] 
+					initWithData: _receivedData];
+			#endif
 			}
 			else if ([mimeType isEqualToString: @"application/json"] == YES)
 			{
