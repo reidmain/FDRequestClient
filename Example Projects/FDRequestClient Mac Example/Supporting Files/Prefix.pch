@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files in the 'FDRequestClient Mac Example' project
+//
+
+#ifdef __OBJC__
+	@import Foundation;
+	@import QuartzCore;
+	@import AppKit;
+	
+	#import <FDRequestClient/FDRequestClient.h>
+#endif

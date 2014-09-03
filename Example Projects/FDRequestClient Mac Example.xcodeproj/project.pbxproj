@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		271AC42A19B797BE00CC5209 /* FDCulture.m in Sources */ = {isa = PBXBuildFile; fileRef = 271AC42919B797BE00CC5209 /* FDCulture.m */; };
+		2722DAC919B7956D0096221F /* FDRequestClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2722DAC519B795580096221F /* FDRequestClient.framework */; };
+		27EDC1BD19B7944D00C0F68D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDC1BC19B7944D00C0F68D /* main.m */; };
+		27EDC1C219B7944D00C0F68D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EDC1C119B7944D00C0F68D /* Images.xcassets */; };
+		27EDC1C419B7944D00C0F68D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27EDC1C319B7944D00C0F68D /* InfoPlist.strings */; };
+		27EDC1C619B7944D00C0F68D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDC1C519B7944D00C0F68D /* Credits.rtf */; };
+		27EDC1C919B7944D00C0F68D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EDC1C819B7944D00C0F68D /* MainMenu.xib */; };
+		27EDC1D719B7944D00C0F68D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EDC1D619B7944D00C0F68D /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2722DAC219B795580096221F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2722DABC19B795580096221F /* FDRequestClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27AE0F3616AD966A001F5771;
+			remoteInfo = "FDRequestClient iOS";
+		};
+		2722DAC419B795580096221F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2722DABC19B795580096221F /* FDRequestClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 27F79D8919B7881A00E118DB;
+			remoteInfo = "FDRequestClient OS X";
+		};
+		2722DAC719B7956A0096221F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2722DABC19B795580096221F /* FDRequestClient.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F79D8819B7881A00E118DB;
+			remoteInfo = "FDRequestClient OS X";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		271AC42819B797BE00CC5209 /* FDCulture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCulture.h; sourceTree = "<group>"; };
+		271AC42919B797BE00CC5209 /* FDCulture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCulture.m; sourceTree = "<group>"; };
+		2722DABC19B795580096221F /* FDRequestClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FDRequestClient.xcodeproj; path = "../../Framework Project/FDRequestClient.xcodeproj"; sourceTree = "<group>"; };
+		27EDC1B619B7944D00C0F68D /* FDRequestClient Mac Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FDRequestClient Mac Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EDC1BA19B7944D00C0F68D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27EDC1BB19B7944D00C0F68D /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		27EDC1BC19B7944D00C0F68D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27EDC1BE19B7944D00C0F68D /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		27EDC1C119B7944D00C0F68D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27EDC1C319B7944D00C0F68D /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		27EDC1C519B7944D00C0F68D /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		27EDC1C819B7944D00C0F68D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		27EDC1D519B7944D00C0F68D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27EDC1D619B7944D00C0F68D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27EDC1B319B7944D00C0F68D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2722DAC919B7956D0096221F /* FDRequestClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2722DABD19B795580096221F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2722DAC319B795580096221F /* libFDRequestClient.a */,
+				2722DAC519B795580096221F /* FDRequestClient.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27EDC1AD19B7944D00C0F68D = {
+			isa = PBXGroup;
+			children = (
+				27EDC1B819B7944D00C0F68D /* FDRequestClient Mac Example */,
+				27EDC1BF19B7944D00C0F68D /* Vendors */,
+				27EDC1B719B7944D00C0F68D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27EDC1B719B7944D00C0F68D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1B619B7944D00C0F68D /* FDRequestClient Mac Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27EDC1B819B7944D00C0F68D /* FDRequestClient Mac Example */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1CC19B7944D00C0F68D /* Classes */,
+				27EDC1C719B7944D00C0F68D /* Views */,
+				27EDC1C019B7944D00C0F68D /* Resources */,
+				27EDC1B919B7944D00C0F68D /* Supporting Files */,
+			);
+			path = "FDRequestClient Mac Example";
+			sourceTree = "<group>";
+		};
+		27EDC1B919B7944D00C0F68D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1BA19B7944D00C0F68D /* Info.plist */,
+				27EDC1BB19B7944D00C0F68D /* Prefix.pch */,
+				27EDC1BC19B7944D00C0F68D /* main.m */,
+				27EDC1BE19B7944D00C0F68D /* Entitlements.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27EDC1BF19B7944D00C0F68D /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				2722DABC19B795580096221F /* FDRequestClient.xcodeproj */,
+			);
+			name = Vendors;
+			path = "FDRequestClient Mac Example";
+			sourceTree = "<group>";
+		};
+		27EDC1C019B7944D00C0F68D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1C119B7944D00C0F68D /* Images.xcassets */,
+				27EDC1C319B7944D00C0F68D /* InfoPlist.strings */,
+				27EDC1C519B7944D00C0F68D /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27EDC1C719B7944D00C0F68D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1C819B7944D00C0F68D /* MainMenu.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27EDC1CC19B7944D00C0F68D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27EDC1D519B7944D00C0F68D /* AppDelegate.h */,
+				27EDC1D619B7944D00C0F68D /* AppDelegate.m */,
+				271AC42819B797BE00CC5209 /* FDCulture.h */,
+				271AC42919B797BE00CC5209 /* FDCulture.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27EDC1B519B7944D00C0F68D /* FDRequestClient Mac Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EDC1DB19B7944D00C0F68D /* Build configuration list for PBXNativeTarget "FDRequestClient Mac Example" */;
+			buildPhases = (
+				27EDC1B219B7944D00C0F68D /* Sources */,
+				27EDC1B319B7944D00C0F68D /* Frameworks */,
+				27EDC1B419B7944D00C0F68D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2722DAC819B7956A0096221F /* PBXTargetDependency */,
+			);
+			name = "FDRequestClient Mac Example";
+			productName = "FDRequestClient Mac Example";
+			productReference = 27EDC1B619B7944D00C0F68D /* FDRequestClient Mac Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27EDC1AE19B7944D00C0F68D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FD;
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 27EDC1B119B7944D00C0F68D /* Build configuration list for PBXProject "FDRequestClient Mac Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27EDC1AD19B7944D00C0F68D;
+			productRefGroup = 27EDC1B719B7944D00C0F68D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2722DABD19B795580096221F /* Products */;
+					ProjectRef = 2722DABC19B795580096221F /* FDRequestClient.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				27EDC1B519B7944D00C0F68D /* FDRequestClient Mac Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2722DAC319B795580096221F /* libFDRequestClient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFDRequestClient.a;
+			remoteRef = 2722DAC219B795580096221F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2722DAC519B795580096221F /* FDRequestClient.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDRequestClient.framework;
+			remoteRef = 2722DAC419B795580096221F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27EDC1B419B7944D00C0F68D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EDC1C219B7944D00C0F68D /* Images.xcassets in Resources */,
+				27EDC1C619B7944D00C0F68D /* Credits.rtf in Resources */,
+				27EDC1C419B7944D00C0F68D /* InfoPlist.strings in Resources */,
+				27EDC1C919B7944D00C0F68D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27EDC1B219B7944D00C0F68D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EDC1D719B7944D00C0F68D /* AppDelegate.m in Sources */,
+				271AC42A19B797BE00CC5209 /* FDCulture.m in Sources */,
+				27EDC1BD19B7944D00C0F68D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2722DAC819B7956A0096221F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FDRequestClient OS X";
+			targetProxy = 2722DAC719B7956A0096221F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27EDC1D819B7944D00C0F68D /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_IDENTIFIER = "com.1414degrees.FDRequestClient-Mac-Example.adhoc";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDRequestClient Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Distribution";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = AD_HOC;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc";
+		};
+		27EDC1D919B7944D00C0F68D /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_IDENTIFIER = "com.1414degrees.FDRequestClient-Mac-Example";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDRequestClient Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Distribution";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = APP_STORE;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)\"/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "App Store";
+		};
+		27EDC1DA19B7944D00C0F68D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_IDENTIFIER = "com.1414degrees.FDRequestClient-Mac-Example.debug";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "FDRequestClient Mac Example/Supporting Files/Entitlements.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27EDC1DC19B7944D00C0F68D /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDRequestClient Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDRequestClient Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Ad Hoc";
+		};
+		27EDC1DD19B7944D00C0F68D /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDRequestClient Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDRequestClient Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "App Store";
+		};
+		27EDC1DE19B7944D00C0F68D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FDRequestClient Mac Example/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "FDRequestClient Mac Example/Supporting Files/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27EDC1B119B7944D00C0F68D /* Build configuration list for PBXProject "FDRequestClient Mac Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EDC1D819B7944D00C0F68D /* Ad Hoc */,
+				27EDC1D919B7944D00C0F68D /* App Store */,
+				27EDC1DA19B7944D00C0F68D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+		27EDC1DB19B7944D00C0F68D /* Build configuration list for PBXNativeTarget "FDRequestClient Mac Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EDC1DC19B7944D00C0F68D /* Ad Hoc */,
+				27EDC1DD19B7944D00C0F68D /* App Store */,
+				27EDC1DE19B7944D00C0F68D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27EDC1AE19B7944D00C0F68D /* Project object */;
+}
