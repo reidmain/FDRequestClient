@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "FDRequestClient"
-  s.version = "0.2.0"
+  s.version = "0.2.1"
   s.summary = "1414 Degrees' networking layer."
   s.license = { :type => "MIT", :file => "LICENSE.md" }
 
@@ -14,7 +14,9 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/reidmain/FDRequestClient.git", :tag => s.version }
   s.source_files = "FDRequestClient/**/*.{h,m}"
   s.private_header_files = "FDRequestClient/**/*+Private.h"
-  s.frameworks  = "Foundation", "UIKit"
+  s.osx.exclude_files = "FDRequestClient/**/UI*.{h,m}"
+  s.frameworks  = "Foundation"
+  s.ios.frameworks = "UIKit"
   s.requires_arc = true
   s.dependency "FDFoundationKit"
 end
