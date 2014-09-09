@@ -6,5 +6,6 @@
 	@import Foundation;
 	@import QuartzCore;
 	@import UIKit;
-	#import <FDRequestClient/FDRequestClient.h>
+	
+	@import FDRequestClient;
 #endif
