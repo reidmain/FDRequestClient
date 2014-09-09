@@ -34,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2733DD5119BFB1FB00D8455E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2737BE4419B7828F0057209A /* FDFoundationKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2751AD8F19BFA84E00844BC5;
+			remoteInfo = "FDFoundationKit iOS";
+		};
 		2737BE4819B7828F0057209A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2737BE4419B7828F0057209A /* FDFoundationKit.xcodeproj */;
@@ -126,8 +133,9 @@
 		2737BE4519B7828F0057209A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2737BE4919B7828F0057209A /* libFDFoundationKit.a */,
+				2733DD5219BFB1FB00D8455E /* FDFoundationKit.framework */,
 				27F79DB419B7881A00E118DB /* FDFoundationKit.framework */,
+				2737BE4919B7828F0057209A /* libFDFoundationKit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,9 +224,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		27AE0F3516AD966A001F5771 /* FDRequestClient iOS */ = {
+		27AE0F3516AD966A001F5771 /* FDRequestClient iOS (Static) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27AE0F4416AD966A001F5771 /* Build configuration list for PBXNativeTarget "FDRequestClient iOS" */;
+			buildConfigurationList = 27AE0F4416AD966A001F5771 /* Build configuration list for PBXNativeTarget "FDRequestClient iOS (Static)" */;
 			buildPhases = (
 				27AE0F3216AD966A001F5771 /* Sources */,
 				27AE0F3316AD966A001F5771 /* Frameworks */,
@@ -229,7 +237,7 @@
 			dependencies = (
 				2737BE4B19B782B20057209A /* PBXTargetDependency */,
 			);
-			name = "FDRequestClient iOS";
+			name = "FDRequestClient iOS (Static)";
 			productName = "FDRequestClient Static Library";
 			productReference = 27AE0F3616AD966A001F5771 /* libFDRequestClient.a */;
 			productType = "com.apple.product-type.library.static";
@@ -259,7 +267,7 @@
 		27AE0F2D16AD966A001F5771 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "1414 Degrees";
 			};
 			buildConfigurationList = 27AE0F3016AD966A001F5771 /* Build configuration list for PBXProject "FDRequestClient" */;
@@ -280,13 +288,20 @@
 			);
 			projectRoot = "";
 			targets = (
-				27AE0F3516AD966A001F5771 /* FDRequestClient iOS */,
 				27F79D8819B7881A00E118DB /* FDRequestClient OS X */,
+				27AE0F3516AD966A001F5771 /* FDRequestClient iOS (Static) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2733DD5219BFB1FB00D8455E /* FDFoundationKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FDFoundationKit.framework;
+			remoteRef = 2733DD5119BFB1FB00D8455E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		2737BE4919B7828F0057209A /* libFDFoundationKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -480,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27AE0F4416AD966A001F5771 /* Build configuration list for PBXNativeTarget "FDRequestClient iOS" */ = {
+		27AE0F4416AD966A001F5771 /* Build configuration list for PBXNativeTarget "FDRequestClient iOS (Static)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27AE0F4516AD966A001F5771 /* Debug */,
