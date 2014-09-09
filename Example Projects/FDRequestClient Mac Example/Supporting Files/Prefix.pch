@@ -7,5 +7,5 @@
 	@import QuartzCore;
 	@import AppKit;
 	
-	#import <FDRequestClient/FDRequestClient.h>
+	@import FDRequestClient;
 #endif
