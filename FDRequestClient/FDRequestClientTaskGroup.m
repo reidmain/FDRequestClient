@@ -14,7 +14,7 @@
 
 #pragma mark - Constructors
 
-- (id)init
+- (instancetype)init
 {
 	// Abort if base initializer fails.
 	if ((self = [super init]) == nil)
