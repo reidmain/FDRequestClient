@@ -3,12 +3,12 @@
 
 #pragma mark Enumerations
 
-typedef enum
+typedef NS_ENUM(NSUInteger, FDURLResponseStatus)
 {
-	FDURLResponseStatusSucceed,
-	FDURLResponseStatusFailed,
-	FDURLResponseStatusCancelled
-} FDURLResponseStatus;
+    FDURLResponseStatusSucceed,
+    FDURLResponseStatusFailed,
+    FDURLResponseStatusCancelled,
+};
 
 
 #pragma mark - Class Interface
