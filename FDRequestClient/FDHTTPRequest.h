@@ -67,6 +67,11 @@ Ensure you set the proper "Content-Type" header value.
 #pragma mark - Constructors
 
 /**
+Creates a request with the specfied url and the default timeout interval and cache policy.
+*/
++ (instancetype)requestWithURL: (NSURL *)url;
+
+/**
 Returns an initialized request with the specfied url, timeout interval and cache policy.
  
 This is the designated initializer for this class.
@@ -75,14 +80,14 @@ This is the designated initializer for this class.
 @param timeoutInterval The timeout interval for the request, in seconds.
 @param cachePolicy The cache policy for the request.
 */
-- (id)initWithURL: (NSURL *)url 
+- (instancetype)initWithURL: (NSURL *)url 
 	timeoutInterval: (NSTimeInterval)timeoutInterval 
 	cachePolicy: (NSURLRequestCachePolicy)cachePolicy;
 
 /**
 Returns an initialized request with the specfied url and the default timeout interval and cache policy.
 */
-- (id)initWithURL: (NSURL *)url;
+- (instancetype)initWithURL: (NSURL *)url;
 
 
 #pragma mark - Instance Methods

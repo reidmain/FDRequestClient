@@ -22,7 +22,15 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 
 #pragma mark - Constructors
 
-- (id)initWithURL: (NSURL *)url 
++ (instancetype)requestWithURL: (NSURL *)url
+{
+	FDHTTPRequest *httpRequest = [[self alloc] 
+		initWithURL: url];
+	
+	return httpRequest;
+}
+
+- (instancetype)initWithURL: (NSURL *)url 
 	timeoutInterval: (NSTimeInterval)timeoutInterval 
 	cachePolicy: (NSURLRequestCachePolicy)cachePolicy
 {
@@ -47,7 +55,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	return self;
 }
 
-- (id)initWithURL: (NSURL *)url
+- (instancetype)initWithURL: (NSURL *)url
 {
 	// Abort if base initializer fails.
 	if ((self = [self initWithURL: url 
