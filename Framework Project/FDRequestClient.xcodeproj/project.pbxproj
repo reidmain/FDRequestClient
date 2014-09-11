@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		270FB02D19BFB5FC00202217 /* FDFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2733DD5219BFB1FB00D8455E /* FDFoundationKit.framework */; };
 		2762727119BFB39E00625CA4 /* FDHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB1F196AF5F80050BA4D /* FDHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2762727219BFB39E00625CA4 /* FDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 279FAB20196AF5F80050BA4D /* FDHTTPRequest.m */; };
 		2762727319BFB39E00625CA4 /* FDRequestClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB21196AF5F80050BA4D /* FDRequestClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,7 +41,6 @@
 		27F79DE619B788FA00E118DB /* FDRequestClientTaskGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2AA7A1987EB7400148A7D /* FDRequestClientTaskGroup.m */; };
 		27F79DE819B788FA00E118DB /* FDURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB27196AF5F80050BA4D /* FDURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27F79DE919B788FA00E118DB /* FDURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 279FAB28196AF5F80050BA4D /* FDURLResponse.m */; };
-		27F79DEE19B78E2400E118DB /* FDFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F79DB419B7881A00E118DB /* FDFoundationKit.framework */; };
 		27F79DEF19B78E9800E118DB /* UIApplication+NetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 279FAB2A196AF5F80050BA4D /* UIApplication+NetworkActivityIndicator.m */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +135,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270FB02D19BFB5FC00202217 /* FDFoundationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27F79DEE19B78E2400E118DB /* FDFoundationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
