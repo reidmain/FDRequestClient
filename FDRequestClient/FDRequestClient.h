@@ -45,7 +45,7 @@ This is the designated initializer for this class.
 @param operationQueue The operation queue that all callback blocks will be executed on.
 @param urlSessionConfiguration The configuration object that the backing NSURLSession will use.
 */
-- (id)initWithOperationQueue: (NSOperationQueue *)operationQueue 
+- (instancetype)initWithOperationQueue: (NSOperationQueue *)operationQueue 
 	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration;
 
 /**
@@ -54,7 +54,7 @@ Returns an initialized request client with either a shared or unique operation q
 @param useSharedOperationQueue If YES a library-provided operation queue will be used otherwise a operation queue will be created specifically for this instance of the request client.
 @param urlSessionConfiguration The configuration object that the backing NSURLSession will use.
 */
-- (id)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue 
+- (instancetype)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue 
 	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration;
 
 

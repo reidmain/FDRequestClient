@@ -2,15 +2,7 @@
 #import "FDRequestClientTask+Private.h"
 
 
-#pragma mark Class Extension
-
-@interface FDRequestClient ()
-
-
-@end
-
-
-#pragma mark - Class Definition
+#pragma mark Class Definition
 
 @implementation FDRequestClient
 {
@@ -21,7 +13,7 @@
 
 #pragma mark - Constructors
 
-- (id)initWithOperationQueue: (NSOperationQueue *)operationQueue 
+- (instancetype)initWithOperationQueue: (NSOperationQueue *)operationQueue 
 	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration
 {
 	// Abort if base initializer fails.
@@ -43,7 +35,7 @@
 	return self;
 }
 
-- (id)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue 
+- (instancetype)initWithSharedOperationQueue: (BOOL)useSharedOperationQueue 
 	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration
 {
 	NSOperationQueue *operationQueue = nil;
@@ -81,7 +73,7 @@
 }
 
 
-- (id)init
+- (instancetype)init
 {
 	// Abort if base initializer fails.
 	if ((self = [self initWithSharedOperationQueue: NO 
@@ -161,9 +153,6 @@
 	
 	return requestClientTask;
 }
-
-
-#pragma mark - Private Methods
 
 
 #pragma mark - NSURLSessionDelegate Methods
