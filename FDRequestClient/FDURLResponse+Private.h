@@ -8,7 +8,7 @@
 
 #pragma mark - Constructors
 
-- (id)initWithStatus: (FDURLResponseStatus)status 
+- (instancetype)initWithStatus: (FDURLResponseStatus)status 
 	content: (id)content 
 	error: (NSError *)error 
 	rawURLResponse: (NSURLResponse *)rawURLResponse;
