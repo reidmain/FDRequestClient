@@ -17,17 +17,6 @@
 NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclienttask";
 
 
-#pragma mark - Class Extension
-
-@interface FDRequestClientTask ()
-
-
-@end
-
-
-#pragma mark - Class Variables
-
-
 #pragma mark - Class Definition
 
 @implementation FDRequestClientTask
@@ -45,12 +34,9 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 }
 
 
-#pragma mark - Properties
-
-
 #pragma mark - Constructors
 
-- (id)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
+- (instancetype)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
 	progressBlock: (FDRequestClientTaskProgressBlock)progressBlock 
 	dataParserBlock: (FDRequestClientTaskDataParserBlock)dataParserBlock 
@@ -122,9 +108,6 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 {
 	[_urlSessionTask cancel];
 }
-
-
-#pragma mark - Overridden Methods
 
 
 #pragma mark - Private Methods
