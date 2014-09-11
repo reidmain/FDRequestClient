@@ -3,18 +3,19 @@ Anyone who has worked with RESTful services in Objective-C knows that there is a
 
 This project is an attempt to distill all that boilerplate code down into a single class that allows you to package all of the information for a network request into a single object and load it using a block-based API.
 
-The main classes this project is compromised of are:
-1. FDHTTPRequest
-2. FDRequestClient
-3. FDRequestClientTask
-4. FDURLResponse
+# Architecture
+The four main classes of this project are FDHTTPRequest, FDRequestClient, FDRequestClientTask and FDURLResponse.
 
+### FDHTTPRequest
 FDHTTPRequest is a simple wrapper object around NSURLRequest. It handles a lot of the common code you have to write when attempting to create a HTTP NSURLRequest such as setting header fields, setting query parameters, setting the message body, converting the message body to JSON and then setting the appropriate header field, etc.
 
+### FDRequestClient
 FDRequestClient is the main workhorse of this project. It takes in either a FDHTTPRequest or NSURLRequest and provides a series of blocks for all the callbacks that can possibly occur while the request is being loaded.
 
+### FDRequestClientTask
 FDRequestClientTask is a wrapper class around NSURLSessionTask. It handles all the processing of data that is received during the loading process and has a interface to start, stop and pause the loading of the request. It also has a block-based API for notifying you when the task finishes loading.
 
+### FDURLResponse
 FDURLResponse is a wrapper class around NSURLResponse. It simplifies access to some of the more common information you typically care about when a request finishes loading.
 
 # Installation
