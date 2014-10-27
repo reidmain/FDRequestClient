@@ -335,7 +335,7 @@
 		27AE0F2D16AD966A001F5771 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "1414 Degrees";
 				TargetAttributes = {
 					2762725719BFB36600625CA4 = {
@@ -537,6 +537,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = FDRequestClient;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
