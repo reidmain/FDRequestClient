@@ -443,6 +443,7 @@
 				07162312160AAD2900346A3C /* Sources */,
 				07162313160AAD2900346A3C /* Frameworks */,
 				07162314160AAD2900346A3C /* Resources */,
+				270482541A00B83A00158413 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -528,6 +529,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		270482541A00B83A00158413 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "frameworksDirectory=${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Frameworks\nmkdir -p \"${frameworksDirectory}\"\ncp -r ${CONFIGURATION_BUILD_DIR}/*.framework \"${frameworksDirectory}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07162312160AAD2900346A3C /* Sources */ = {
@@ -695,8 +712,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "${TARGETNAME}";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -708,8 +725,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "${TARGETNAME}";
-				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";
 		};
@@ -721,8 +738,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "${TARGETNAME}";
-				WRAPPER_EXTENSION = app;
 			};
 			name = "App Store";
 		};
