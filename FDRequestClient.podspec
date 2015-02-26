@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   s.frameworks  = "Foundation"
   s.ios.frameworks = "UIKit"
   s.requires_arc = true
-  s.dependency "FDFoundationKit"
+  s.dependency "FDFoundationKit", "~> 1.0"
 end
