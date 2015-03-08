@@ -235,12 +235,6 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 			}
 		}
 		
-		// If it exists, call the transform block on the parsed content.
-		if (_transformBlock != nil)
-		{
-			responseContent = _transformBlock(responseContent);
-		}
-		
 		// If an error was returned the task has failed.
 		if (error != nil)
 		{
@@ -264,6 +258,11 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 				error = [NSError errorWithDomain: FDRequestClientTaskErrorDomain 
 					code: statusCode 
 					userInfo: userInfo];
+			}
+			// If no error, and if the transform block exists, call the transform block on the parsed content.
+			else if (_transformBlock != nil)
+			{
+				responseContent = _transformBlock(responseContent);
 			}
 		}
 	}
