@@ -241,6 +241,7 @@
 			children = (
 				27AE0F3B16AD966A001F5771 /* FDRequestClient Framework */,
 				27B348811BA3DB3D0064276F /* FDRequestClient Tests */,
+				279FAB37196AF6150050BA4D /* Vendors */,
 				27AE0F3716AD966A001F5771 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -264,7 +265,6 @@
 				2762726F19BFB38B00625CA4 /* iOS Supporting Files */,
 				27B348691BA3D9FE0064276F /* watchOS Supporting Files */,
 				27F79DB819B7887D00E118DB /* OS X Supporting Files */,
-				279FAB37196AF6150050BA4D /* Vendors */,
 			);
 			name = "FDRequestClient Framework";
 			sourceTree = "<group>";
@@ -924,6 +924,7 @@
 				27B3487B1BA3DB360064276F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27B348971BA3DB470064276F /* Build configuration list for PBXNativeTarget "FDRequestClient OS X Tests" */ = {
 			isa = XCConfigurationList;
@@ -932,6 +933,7 @@
 				27B348991BA3DB470064276F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27F79DB519B7881A00E118DB /* Build configuration list for PBXNativeTarget "FDRequestClient OS X" */ = {
 			isa = XCConfigurationList;
