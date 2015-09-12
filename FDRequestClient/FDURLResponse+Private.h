@@ -1,12 +1,12 @@
 #import "FDURLResponse.h"
 
 
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDURLResponse ()
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)initWithStatus: (FDURLResponseStatus)status 
 	content: (id)content 

@@ -1,12 +1,12 @@
 #import "FDRequestClientTask.h"
 
 
-#pragma mark Class Interface
+#pragma mark - Class Interface
 
 @interface FDRequestClientTask ()
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 

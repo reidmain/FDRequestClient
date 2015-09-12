@@ -31,6 +31,8 @@
 
 #pragma mark - Properties
 
+@dynamic dataSource;
+
 //-(void)setDataSource: (id<FDInfiniteTableViewDataSource>)dataSource
 //{
 //	super.dataSource = dataSource;

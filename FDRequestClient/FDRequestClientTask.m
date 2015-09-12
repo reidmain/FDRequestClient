@@ -1,8 +1,10 @@
 #import "FDRequestClientTask.h"
+
 #import "FDRequestClientTask+Private.h"
 #import "FDURLResponse+Private.h"
-#import <FDFoundationKit/NSObject+PerformBlock.h>
-#import <FDFoundationKit/FDNullOrEmpty.h>
+
+@import FDFoundationKit;
+
 #if TARGET_OS_IPHONE
 @import UIKit.UIImage;
 #else
@@ -10,7 +12,7 @@
 #endif
 
 
-#pragma mark Constants
+#pragma mark - Constants
 
 #define UnknownDataLength ((long long)-1)
 
@@ -34,7 +36,7 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 }
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)_initWithURLSessionTask: (NSURLSessionTask *)urlSessionTask 
 	authorizationBlock: (FDRequestClientTaskAuthorizationBlock)authorizationBlock 
@@ -282,7 +284,7 @@ NSString * const FDRequestClientTaskErrorDomain = @"com.1414degrees.requestclien
 		// Create a reference to the completion blocks to ensure they will always exist whenever the call on the main thread occurs.
 		NSArray *completionBlocks = _completionBlocks;
 		
-		[self performBlockOnMainThread: ^
+		[self fd_performBlockOnMainThread: ^
 			{
 				for (FDRequestClientTaskCompletionBlock completionBlock in completionBlocks)
 				{

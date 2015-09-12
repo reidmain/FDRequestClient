@@ -1,8 +1,9 @@
 #import "FDRequestClient.h"
+
 #import "FDRequestClientTask+Private.h"
 
 
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDRequestClient
 {
@@ -11,7 +12,7 @@
 }
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)initWithOperationQueue: (NSOperationQueue *)operationQueue 
 	urlSessionConfiguration: (NSURLSessionConfiguration *)urlSessionConfiguration
@@ -111,8 +112,8 @@
 	
 	[dataTask resume];
 	
-#if TARGET_OS_IPHONE
-	[UIApplication showNetworkActivityIndicator];
+#if TARGET_OS_IOS
+	[UIApplication fd_showNetworkActivityIndicator];
 #endif
 	
 	if (_logCurlCommandsToConsole == YES)
@@ -131,7 +132,7 @@
 				}
 			}];
 		
-		FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [[[urlRequest URL] absoluteString] urlDecode]);
+		FDLog(FDLogLevelInfo, @"curl -X %@ %@\"%@\"", [urlRequest HTTPMethod], headerOptions, [[[urlRequest URL] absoluteString] fd_urlDecode]);
 	}
 	
 	return requestClientTask;
@@ -204,8 +205,8 @@
 	
 	[_activeTasks removeObjectForKey: @(requestClientTask.urlSessionTask.taskIdentifier)];
 	
-#if TARGET_OS_IPHONE
-	[UIApplication hideNetworkActivityIndicator];
+#if TARGET_OS_IOS
+	[UIApplication fd_hideNetworkActivityIndicator];
 #endif
 }
 

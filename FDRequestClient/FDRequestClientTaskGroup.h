@@ -1,7 +1,7 @@
 #import "FDRequestClientTask.h"
 
 
-#pragma mark Type Definitions
+#pragma mark - Type Definitions
 
 /**
 This block is called when the all the tasks in the group have finished loading.

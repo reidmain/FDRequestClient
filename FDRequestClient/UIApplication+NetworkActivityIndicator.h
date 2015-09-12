@@ -1,4 +1,4 @@
-@import UIKit.UIApplication;
+@import UIKit;
 
 
 #pragma mark Class Interface
@@ -18,14 +18,14 @@ Request the network activity indicator be shown.
 
 This method is thread-safe.
 */
-+ (void)showNetworkActivityIndicator;
++ (void)fd_showNetworkActivityIndicator;
 
 /**
 Request the network activity indicator be hidden.
 
 This method is thread-safe.
 */
-+ (void)hideNetworkActivityIndicator;
++ (void)fd_hideNetworkActivityIndicator;
 
 
 @end

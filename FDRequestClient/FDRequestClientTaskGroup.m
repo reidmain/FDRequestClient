@@ -1,8 +1,9 @@
 #import "FDRequestClientTaskGroup.h"
-#import <FDFoundationKit/FDNullOrEmpty.h>
+
+@import FDFoundationKit;
 
 
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDRequestClientTaskGroup
 {
@@ -12,7 +13,7 @@
 }
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)init
 {

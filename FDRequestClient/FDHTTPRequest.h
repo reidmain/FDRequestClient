@@ -1,7 +1,7 @@
 @import Foundation;
 
 
-#pragma mark Constants
+#pragma mark - Constants
 
 extern NSString * const FDHTTPRequestMethodGet;
 extern NSString * const FDHTTPRequestMethodPost;
@@ -64,7 +64,7 @@ Ensure you set the proper "Content-Type" header value.
 @property (nonatomic, strong) NSData *messageBody;
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 /**
 Creates a request with the specfied url and the default timeout interval and cache policy.

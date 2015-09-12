@@ -1,9 +1,9 @@
 #import "FDHTTPRequest.h"
-#import <FDFoundationKit/FDNullOrEmpty.h>
-#import <FDFoundationKit/NSDictionary+URLEncode.h>
+
+@import FDFoundationKit;
 
 
-#pragma mark Constants
+#pragma mark - Constants
 
 NSString * const FDHTTPRequestMethodGet = @"GET";
 NSString * const FDHTTPRequestMethodPost = @"POST";
@@ -20,7 +20,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 }
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 + (instancetype)requestWithURL: (NSURL *)url
 {
@@ -107,7 +107,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	NSURL *url = _url;
 	if (FDIsEmpty(_parameters) == NO)
 	{
-		NSString *queryString = [_parameters urlEncode];
+		NSString *queryString = [_parameters fd_urlEncode];
 		if (FDIsEmpty(queryString) == NO)
 		{
 			NSString *urlAsString = nil;

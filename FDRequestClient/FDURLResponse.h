@@ -1,7 +1,7 @@
 @import Foundation;
 
 
-#pragma mark Enumerations
+#pragma mark - Enumerations
 
 typedef NS_ENUM(NSUInteger, FDURLResponseStatus)
 {

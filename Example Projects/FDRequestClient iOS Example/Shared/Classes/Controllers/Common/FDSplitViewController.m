@@ -10,7 +10,7 @@
 
 - (UIViewController *)masterViewController
 {
-	UIViewController *masterViewController = [self.viewControllers tryObjectAtIndex: 0];
+	UIViewController *masterViewController = [self.viewControllers fd_tryObjectAtIndex: 0];
 	
 	return masterViewController;
 }
@@ -24,7 +24,7 @@
 
 - (UIViewController *)detailViewController
 {
-	UIViewController *detailViewController = [self.viewControllers tryObjectAtIndex: 1];
+	UIViewController *detailViewController = [self.viewControllers fd_tryObjectAtIndex: 1];
 	
 	return detailViewController;
 }

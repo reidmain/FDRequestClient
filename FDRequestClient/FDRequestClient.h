@@ -1,21 +1,27 @@
-#import <FDFoundationKit/FDFoundationKit.h>
+@import Foundation;
+
 #import "FDHTTPRequest.h"
 #import "FDURLResponse.h"
 #import "FDRequestClientTask.h"
 #import "FDRequestClientTaskGroup.h"
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
 #import "UIApplication+NetworkActivityIndicator.h"
 #endif
 
+@import FDFoundationKit;
 
-#pragma mark Class Interface
+
+#pragma mark - Class Interface
 
 /**
 FDRequestClient is a wrapper class around NSURLSession which ensapsulates all the boilerplate work that is done around managing NSURLSessionTask objects.
 
 It handles all of the delegate methods that are associated with loading a task from a NSURLSession and wraps them in blocks that are scoped to the request that is being made.
 */
-@interface FDRequestClient : NSObject<NSURLSessionDataDelegate>
+@interface FDRequestClient : NSObject
+<
+	NSURLSessionDataDelegate
+>
 
 
 #pragma mark - Properties
@@ -35,7 +41,7 @@ By default the "Authorization" field is the only field that is logged.
 @property (nonatomic, copy) NSArray *headerFieldsToLog;
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 /**
 Returns an initialized request client with the specfied operation queue and session configuration.

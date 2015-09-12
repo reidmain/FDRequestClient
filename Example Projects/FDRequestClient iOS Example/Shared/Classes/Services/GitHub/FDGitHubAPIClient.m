@@ -68,7 +68,7 @@ static NSDateFormatter *_dateFormatter;
 {
 	// Create resource URL for search request.
 	NSString *resourceURLAsString = [NSString stringWithFormat: @"https://api.github.com/legacy/repos/search/%@", 
-		[query urlEncode]];
+		[query fd_urlEncode]];
 	
 	NSURL *resourceURL = [NSURL URLWithString: resourceURLAsString];
 	

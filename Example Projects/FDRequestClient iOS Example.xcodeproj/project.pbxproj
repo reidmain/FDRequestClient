@@ -56,13 +56,6 @@
 			remoteGlobalIDString = 2762725819BFB36600625CA4;
 			remoteInfo = "FDRequestClient iOS";
 		};
-		27B86D9019B79269007B5F5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27AE0F3616AD966A001F5771;
-			remoteInfo = "FDRequestClient iOS";
-		};
 		27B86D9219B79269007B5F5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27B86D8A19B79269007B5F5E /* FDRequestClient.xcodeproj */;
@@ -428,7 +421,6 @@
 			children = (
 				2762728219BFB57700625CA4 /* FDRequestClient.framework */,
 				27B86D9319B79269007B5F5E /* FDRequestClient.framework */,
-				27B86D9119B79269007B5F5E /* libFDRequestClient.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -462,7 +454,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FD;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 07162310160AAD2900346A3C /* Build configuration list for PBXProject "FDRequestClient iOS Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -493,13 +485,6 @@
 			fileType = wrapper.framework;
 			path = FDRequestClient.framework;
 			remoteRef = 2762728119BFB57700625CA4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		27B86D9119B79269007B5F5E /* libFDRequestClient.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFDRequestClient.a;
-			remoteRef = 27B86D9019B79269007B5F5E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		27B86D9319B79269007B5F5E /* FDRequestClient.framework */ = {
@@ -607,6 +592,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FDRequestClient iOS Example/Supporting Files/Entitlements.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -713,6 +699,7 @@
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.fdrequestclient.example;
 				PRODUCT_NAME = "${TARGETNAME}";
 			};
 			name = Debug;
@@ -726,6 +713,7 @@
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.fdrequestclient.example;
 				PRODUCT_NAME = "${TARGETNAME}";
 			};
 			name = "Ad Hoc";
@@ -739,6 +727,7 @@
 				GCC_PREFIX_HEADER = "FDRequestClient iOS Example/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "FDRequestClient iOS Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.fdrequestclient.example;
 				PRODUCT_NAME = "${TARGETNAME}";
 			};
 			name = "App Store";

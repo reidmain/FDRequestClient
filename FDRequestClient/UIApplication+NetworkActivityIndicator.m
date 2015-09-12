@@ -1,8 +1,9 @@
 #import "UIApplication+NetworkActivityIndicator.h"
-#import <FDFoundationKit/NSObject+PerformBlock.h>
+
+@import FDFoundationKit;
 
 
-#pragma mark Constants
+#pragma mark - Constants
 
 static NSInteger _ActivityCounter = 0;
 
@@ -14,7 +15,7 @@ static NSInteger _ActivityCounter = 0;
 
 #pragma mark - Public Methods
 
-+ (void)showNetworkActivityIndicator
++ (void)fd_showNetworkActivityIndicator
 {
 	UIApplication *sharedApplication = [UIApplication sharedApplication];
 	@synchronized(sharedApplication)
@@ -22,7 +23,7 @@ static NSInteger _ActivityCounter = 0;
 		// If the activity counter is zero start the network activity indicator before incrementing the counter.
 		if (_ActivityCounter == 0)
 		{
-			[sharedApplication performBlockOnMainThread: ^
+			[sharedApplication fd_performBlockOnMainThread: ^
 				{
 					sharedApplication.networkActivityIndicatorVisible = YES;
 				}];
@@ -32,7 +33,7 @@ static NSInteger _ActivityCounter = 0;
 	}
 }
 
-+ (void)hideNetworkActivityIndicator
++ (void)fd_hideNetworkActivityIndicator
 {
 	UIApplication *sharedApplication = [UIApplication sharedApplication];
 	@synchronized(sharedApplication)
@@ -42,7 +43,7 @@ static NSInteger _ActivityCounter = 0;
 		
 		if (_ActivityCounter <= 0)
 		{
-			[sharedApplication performBlockOnMainThread: ^
+			[sharedApplication fd_performBlockOnMainThread: ^
 				{
 					sharedApplication.networkActivityIndicatorVisible = NO;
 				}];

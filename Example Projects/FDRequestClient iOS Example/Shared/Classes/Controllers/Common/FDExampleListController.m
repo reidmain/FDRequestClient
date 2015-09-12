@@ -202,7 +202,7 @@ static NSString * const CellIdentifier = @"CellIdentifier";
 					completion: ^(BOOL granted, NSError *error)
 						{
 							// NOTE: The completion handler is called on an arbitrary queue.
-							[self performBlockOnMainThread:^
+							[self fd_performBlockOnMainThread:^
 								{
 									if (granted == YES)
 									{

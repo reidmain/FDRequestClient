@@ -1,13 +1,12 @@
-#import "FDURLResponse.h"
 #import "FDURLResponse+Private.h"
 
 
-#pragma mark Class Definition
+#pragma mark - Class Definition
 
 @implementation FDURLResponse
 
 
-#pragma mark - Constructors
+#pragma mark - Initializers
 
 - (instancetype)initWithStatus: (FDURLResponseStatus)status 
 	content: (id)content 

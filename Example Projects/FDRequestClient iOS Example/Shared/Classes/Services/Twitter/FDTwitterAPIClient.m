@@ -332,9 +332,9 @@ static NSDateFormatter *_apiDateFormatter;
 	
 	for (NSDictionary *jsonURL in jsonURLs)
 	{
-		NSString *rawURLAsString = [jsonURL nonNullObjectForKey: @"url"];
-		NSString *displayURLAsString = [jsonURL nonNullObjectForKey: @"display_url"];
-		NSString *expandedURLAsString = [jsonURL nonNullObjectForKey: @"expanded_url"];
+		NSString *rawURLAsString = [jsonURL fd_nonNullObjectForKey: @"url"];
+		NSString *displayURLAsString = [jsonURL fd_nonNullObjectForKey: @"display_url"];
+		NSString *expandedURLAsString = [jsonURL fd_nonNullObjectForKey: @"expanded_url"];
 		
 		FDTwitterURL *url = [[FDTwitterURL alloc] 
 			init];

@@ -1,5 +1,4 @@
 Pod::Spec.new do |s|
-
   s.name = "FDRequestClient"
   s.version = "1.0.0"
   s.summary = "A block-based networking layer by 1414 Degrees."
@@ -9,8 +8,8 @@ Pod::Spec.new do |s|
   s.author = "Reid Main"
   s.social_media_url = "http://twitter.com/reidmain"
 
-  s.ios.deployment_target = "7.0"
-  s.osx.deployment_target = "10.9"
+  s.ios.deployment_target = "9.0"
+  s.osx.deployment_target = "10.11"
   s.source = { :git => "https://github.com/reidmain/FDRequestClient.git", :tag => s.version }
   s.source_files = "FDRequestClient/**/*.{h,m}"
   s.private_header_files = "FDRequestClient/**/*+Private.h"
