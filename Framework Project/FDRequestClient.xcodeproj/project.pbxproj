@@ -29,6 +29,9 @@
 		27B3485F1BA3D9870064276F /* FDRequestClientTaskGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 27B2AA791987EB7400148A7D /* FDRequestClientTaskGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27B348601BA3D9870064276F /* FDRequestClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB21196AF5F80050BA4D /* FDRequestClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27B348611BA3D9870064276F /* FDURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB27196AF5F80050BA4D /* FDURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27B348941BA3DB470064276F /* FDRequestClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2762725819BFB36600625CA4 /* FDRequestClient.framework */; settings = {ASSET_TAGS = (); }; };
+		27B3489E1BA3DBB60064276F /* FDHTTPRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B3489B1BA3DBB60064276F /* FDHTTPRequestTests.m */; settings = {ASSET_TAGS = (); }; };
+		27B3489F1BA3DBB60064276F /* FDHTTPRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B3489B1BA3DBB60064276F /* FDHTTPRequestTests.m */; settings = {ASSET_TAGS = (); }; };
 		27F79DDF19B788FA00E118DB /* FDHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB1F196AF5F80050BA4D /* FDHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27F79DE019B788FA00E118DB /* FDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 279FAB20196AF5F80050BA4D /* FDHTTPRequest.m */; };
 		27F79DE119B788FA00E118DB /* FDRequestClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 279FAB21196AF5F80050BA4D /* FDRequestClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,6 +87,20 @@
 			remoteGlobalIDString = 27994A5E1BA2A5C700B40846;
 			remoteInfo = "FDFoundationKit watchOS";
 		};
+		27B348771BA3DB360064276F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27AE0F2D16AD966A001F5771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2762725719BFB36600625CA4;
+			remoteInfo = "FDRequestClient iOS";
+		};
+		27B348A21BA3DC4C0064276F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27AE0F2D16AD966A001F5771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F79D8819B7881A00E118DB;
+			remoteInfo = "FDRequestClient OS X";
+		};
 		27F79DB319B7881A00E118DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2737BE4419B7828F0057209A /* FDFoundationKit.xcodeproj */;
@@ -120,6 +137,10 @@
 		27B2AA7A1987EB7400148A7D /* FDRequestClientTaskGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRequestClientTaskGroup.m; sourceTree = "<group>"; };
 		27B348671BA3D9870064276F /* FDRequestClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FDRequestClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B3486A1BA3D9FE0064276F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B348711BA3DB360064276F /* FDRequestClient iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FDRequestClient iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B3488F1BA3DB470064276F /* FDRequestClient OS X Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FDRequestClient OS X Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B3489B1BA3DBB60064276F /* FDHTTPRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDHTTPRequestTests.m; sourceTree = "<group>"; };
+		27B3489D1BA3DBB60064276F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F79D8919B7881A00E118DB /* FDRequestClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FDRequestClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F79DB919B7887D00E118DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +157,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B3486E1BA3DB360064276F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B3488C1BA3DB470064276F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B348941BA3DB470064276F /* FDRequestClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				27AE0F3B16AD966A001F5771 /* FDRequestClient Framework */,
+				27B348811BA3DB3D0064276F /* FDRequestClient Tests */,
 				27AE0F3716AD966A001F5771 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,6 +251,8 @@
 				27F79D8919B7881A00E118DB /* FDRequestClient.framework */,
 				2762725819BFB36600625CA4 /* FDRequestClient.framework */,
 				27B348671BA3D9870064276F /* FDRequestClient.framework */,
+				27B348711BA3DB360064276F /* FDRequestClient iOS Tests.xctest */,
+				27B3488F1BA3DB470064276F /* FDRequestClient OS X Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +275,31 @@
 				27B3486A1BA3D9FE0064276F /* Info.plist */,
 			);
 			path = "watchOS Supporting Files";
+			sourceTree = "<group>";
+		};
+		27B348811BA3DB3D0064276F /* FDRequestClient Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27B3489A1BA3DBB60064276F /* Classes */,
+				27B3489C1BA3DBB60064276F /* Supporting Files */,
+			);
+			path = "FDRequestClient Tests";
+			sourceTree = "<group>";
+		};
+		27B3489A1BA3DBB60064276F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27B3489B1BA3DBB60064276F /* FDHTTPRequestTests.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		27B3489C1BA3DBB60064276F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27B3489D1BA3DBB60064276F /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		27F79DB819B7887D00E118DB /* OS X Supporting Files */ = {
@@ -327,6 +391,42 @@
 			productReference = 27B348671BA3D9870064276F /* FDRequestClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		27B348701BA3DB360064276F /* FDRequestClient iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B348791BA3DB360064276F /* Build configuration list for PBXNativeTarget "FDRequestClient iOS Tests" */;
+			buildPhases = (
+				27B3486D1BA3DB360064276F /* Sources */,
+				27B3486E1BA3DB360064276F /* Frameworks */,
+				27B3486F1BA3DB360064276F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B348781BA3DB360064276F /* PBXTargetDependency */,
+			);
+			name = "FDRequestClient iOS Tests";
+			productName = "FDRequestClient iOS Tests";
+			productReference = 27B348711BA3DB360064276F /* FDRequestClient iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27B3488E1BA3DB470064276F /* FDRequestClient OS X Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B348971BA3DB470064276F /* Build configuration list for PBXNativeTarget "FDRequestClient OS X Tests" */;
+			buildPhases = (
+				27B3488B1BA3DB470064276F /* Sources */,
+				27B3488C1BA3DB470064276F /* Frameworks */,
+				27B3488D1BA3DB470064276F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B348A31BA3DC4C0064276F /* PBXTargetDependency */,
+			);
+			name = "FDRequestClient OS X Tests";
+			productName = "FDRequestClient OS X Tests";
+			productReference = 27B3488F1BA3DB470064276F /* FDRequestClient OS X Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27F79D8819B7881A00E118DB /* FDRequestClient OS X */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F79DB519B7881A00E118DB /* Build configuration list for PBXNativeTarget "FDRequestClient OS X" */;
@@ -358,6 +458,12 @@
 					2762725719BFB36600625CA4 = {
 						CreatedOnToolsVersion = 6.0;
 					};
+					27B348701BA3DB360064276F = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					27B3488E1BA3DB470064276F = {
+						CreatedOnToolsVersion = 7.0;
+					};
 				};
 			};
 			buildConfigurationList = 27AE0F3016AD966A001F5771 /* Build configuration list for PBXProject "FDRequestClient" */;
@@ -381,6 +487,8 @@
 				2762725719BFB36600625CA4 /* FDRequestClient iOS */,
 				27B348511BA3D9870064276F /* FDRequestClient watchOS */,
 				27F79D8819B7881A00E118DB /* FDRequestClient OS X */,
+				27B348701BA3DB360064276F /* FDRequestClient iOS Tests */,
+				27B3488E1BA3DB470064276F /* FDRequestClient OS X Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -438,6 +546,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27B3486F1BA3DB360064276F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B3488D1BA3DB470064276F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F79D8719B7881A00E118DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +595,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27B3486D1BA3DB360064276F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B3489E1BA3DBB60064276F /* FDHTTPRequestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B3488B1BA3DB470064276F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B3489F1BA3DBB60064276F /* FDHTTPRequestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F79D8419B7881A00E118DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,6 +635,16 @@
 			isa = PBXTargetDependency;
 			name = "FDFoundationKit watchOS";
 			targetProxy = 27B3486B1BA3DA170064276F /* PBXContainerItemProxy */;
+		};
+		27B348781BA3DB360064276F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2762725719BFB36600625CA4 /* FDRequestClient iOS */;
+			targetProxy = 27B348771BA3DB360064276F /* PBXContainerItemProxy */;
+		};
+		27B348A31BA3DC4C0064276F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F79D8819B7881A00E118DB /* FDRequestClient OS X */;
+			targetProxy = 27B348A21BA3DC4C0064276F /* PBXContainerItemProxy */;
 		};
 		27F79DED19B78E2000E118DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -646,6 +794,56 @@
 			};
 			name = Release;
 		};
+		27B3487A1BA3DB360064276F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "FDRequestClient Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.requestclient.ios.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		27B3487B1BA3DB360064276F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "FDRequestClient Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.requestclient.ios.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		27B348981BA3DB470064276F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "FDRequestClient Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.requestclient.osx.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		27B348991BA3DB470064276F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "FDRequestClient Tests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.1414degrees.requestclient.osx.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		27F79DAE19B7881A00E118DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +916,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		27B348791BA3DB360064276F /* Build configuration list for PBXNativeTarget "FDRequestClient iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B3487A1BA3DB360064276F /* Debug */,
+				27B3487B1BA3DB360064276F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		27B348971BA3DB470064276F /* Build configuration list for PBXNativeTarget "FDRequestClient OS X Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B348981BA3DB470064276F /* Debug */,
+				27B348991BA3DB470064276F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		27F79DB519B7881A00E118DB /* Build configuration list for PBXNativeTarget "FDRequestClient OS X" */ = {
 			isa = XCConfigurationList;

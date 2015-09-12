@@ -78,6 +78,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	
 	return httpHeaderFields;
 }
+
 - (void)setHttpHeaderFields: (NSDictionary *)httpHeaderFields
 {
 	[_httpHeaderFields removeAllObjects];
@@ -91,6 +92,7 @@ NSString * const FDHTTPRequestMethodPut = @"PUT";
 	
 	return parameters;
 }
+
 - (void)setParameters: (NSDictionary *)parameters
 {
 	[_parameters removeAllObjects];
